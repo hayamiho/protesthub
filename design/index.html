@@ -22,15 +22,15 @@
   <meta property="og:site_name" content="Protest Hub">
   <meta property="og:title" id="og-title" content="Protest Hub Design Wall">
   <meta property="og:description" id="og-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
-  <meta property="og:url" id="og-url" content="https://protesthub.vercel.app/design/">
+  <meta property="og:url" id="og-url" content="https://www.protesthub.jp/design/">
   <meta property="og:type" content="website">
-  <meta property="og:image" id="og-image" content="https://protesthub.vercel.app/images/ogp.png">
+  <meta property="og:image" id="og-image" content="https://www.protesthub.jp/images/ogp.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" id="tw-title" content="Protest Hub Design Wall">
   <meta name="twitter:description" id="tw-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
-  <meta name="twitter:image" id="tw-image" content="https://protesthub.vercel.app/images/ogp.png">
+  <meta name="twitter:image" id="tw-image" content="https://www.protesthub.jp/images/ogp.png">
 
   <link rel="icon" href="/favicon.png" type="image/png">
   <style>
@@ -984,10 +984,10 @@
         const poster = posters.find(item => item.file === p);
         if (poster) {
           // OGPメタタグ書き換え (クローラー向け)
-          const shareUrl = window.location.href;
+          const shareUrl = `https://www.protesthub.jp/design/index.html?p=${poster.file}`;
           const shareTitle = `${poster.title} / Protest Hub Design`;
           const shareDesc = poster.desc || "プロテストハブで公開中のデザインです。";
-          const shareImg = new URL(imageRoot + poster.file, window.location.href).href;
+          const shareImg = `https://www.protesthub.jp/design/images/${poster.file}`;
 
           document.getElementById('og-title').setAttribute('content', shareTitle);
           document.getElementById('tw-title').setAttribute('content', shareTitle);
