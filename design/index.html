@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPR12YHXZH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EPR12YHXZH');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protest Hub Design Wall</title>
+  <meta name="description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="Protest Hub">
+  <meta property="og:title" id="og-title" content="Protest Hub Design Wall">
+  <meta property="og:description" id="og-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+  <meta property="og:url" id="og-url" content="https://protesthub.vercel.app/design/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" id="og-image" content="https://protesthub.vercel.app/images/ogp_default.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="Protest Hub Design Wall">
+  <meta name="twitter:description" id="tw-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+  <meta name="twitter:image" id="tw-image" content="https://protesthub.vercel.app/images/ogp_default.jpg">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #201916;
+      --muted: #695f59;
+      --paper: #f7f0e4;
+      --sheet: #fffaf1;
+      --line: #ded0c0;
+      --yellow: #f4c915;
+      --teal: #31ada3;
+      --red: #df594d;
+      --shadow: 0 14px 42px rgba(38, 27, 19, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+      background:
+        linear-gradient(90deg, rgba(32, 25, 22, .035) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(0deg, rgba(32, 25, 22, .028) 1px, transparent 1px) 0 0 / 28px 28px,
+        var(--paper);
+      color: var(--ink);
+    }
+
+    button,
+    a {
+      color: inherit;
+      font: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(32, 25, 22, .12);
+      background: rgba(247, 240, 228, .86);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      width: calc(100% - 18px);
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-width: max-content;
+      color: var(--ink);
+      font-family: "Arial Black", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 900;
+      line-height: 1;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      display: block;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .about-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 0 4px;
+    }
+
+    .about-link:hover {
+      text-decoration: underline;
+    }
+
+    /* スマホ表示(max-width: 700px)微調整 */
+    @media (max-width: 700px) {
+      .brand-logo {
+        height: 38px;
+        /* デスクトップと同じ高さを維持して視認性確保 */
+        width: auto;
+      }
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .search {
+      width: min(30vw, 300px);
+      min-width: 150px;
+      height: 38px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: var(--sheet);
+      color: var(--ink);
+      padding: 0 12px;
+      font-size: 13px;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .search::placeholder {
+      color: rgba(105, 95, 89, .82);
+      font-weight: 500;
+    }
+
+    .select {
+      height: 38px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: var(--sheet);
+      color: var(--ink);
+      padding: 0 28px 0 9px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      width: auto;
+    }
+
+    .search:focus,
+    .select:focus {
+      box-shadow: 0 0 0 4px rgba(49, 173, 163, .24);
+    }
+
+    .wall {
+      width: calc(100% - 18px);
+      margin: 0 auto;
+      padding: 12px 0 24px;
+      column-width: 190px;
+      column-gap: 12px;
+    }
+
+    .pin {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 12px;
+      padding: 0;
+      break-inside: avoid;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--sheet);
+      box-shadow: 5px 5px 0 rgba(32, 25, 22, .13);
+      appearance: none;
+      cursor: zoom-in;
+      font-size: 0;
+      line-height: 0;
+      text-align: inherit;
+      vertical-align: top;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .pin:hover {
+      transform: translateY(-2px);
+      box-shadow: 7px 7px 0 rgba(32, 25, 22, .16);
+    }
+
+    .pin img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: var(--sheet);
+      object-fit: contain;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: none;
+      place-items: center;
+      padding: 12px;
+      background: rgba(32, 25, 22, .78);
+    }
+
+    .modal.is-open {
+      display: grid;
+    }
+
+    .modal-panel {
+      position: relative;
+      width: min(1360px, calc(100vw - 24px));
+      max-height: calc(100vh - 24px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 380px);
+      overflow: hidden;
+      border: 3px solid var(--ink);
+      border-radius: 8px;
+      background: var(--sheet);
+      box-shadow: var(--shadow);
+    }
+
+    .modal-art {
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      overflow: auto;
+      background: #efe7da;
+    }
+
+    .modal-art img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 30px);
+      object-fit: contain;
+    }
+
+    .modal-side {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      min-width: 0;
+      padding: 20px;
+      border-left: 3px solid var(--ink);
+      overflow-y: auto;
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .modal-file,
+    .modal-description {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .rights-text {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+
+    .variant-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .variant-thumb {
+      width: 72px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--sheet);
+    }
+
+    .section-title {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .share-status {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.5;
+      word-break: break-all;
+    }
+
+    .creator-wrap {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .creator-link {
+      width: fit-content;
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 1px;
+    }
+
+    .rights {
+      display: grid;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 250, 241, .78);
+    }
+
+    .agree {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.45;
+      cursor: pointer;
+    }
+
+    .agree input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      accent-color: var(--ink);
+      cursor: pointer;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--sheet);
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: var(--sheet);
+      color: var(--ink);
+    }
+
+    .button:disabled,
+    .button.is-disabled {
+      opacity: .38;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .modal-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .share-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .share-button {
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      min-height: auto;
+    }
+
+    .share-icon {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 45;
+      width: 36px;
+      height: 36px;
+      display: none;
+      place-items: center;
+      border: none;
+      background: none;
+      color: var(--ink);
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .modal.is-open .close {
+      display: grid;
+    }
+
+    .close:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        width: calc(100% - 12px);
+        min-height: 92px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 0;
+      }
+
+      .brand-wrap {
+        width: 100%;
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+      }
+
+      .brand {
+        flex: 0 0 auto;
+        min-width: 0;
+        font-size: 20px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .about-link {
+        flex: 0 0 auto;
+        font-size: 14px;
+      }
+
+      .tools {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .search {
+        width: min(46vw, 210px);
+        min-width: 120px;
+      }
+
+      .select {
+        width: auto;
+        min-width: 92px;
+      }
+
+      .wall {
+        width: calc(100% - 12px);
+      }
+
+      .wall {
+        column-count: 3;
+        column-gap: 7px;
+        padding-top: 7px;
+      }
+
+      .pin {
+        margin-bottom: 7px;
+        border-width: 2px;
+        /* 枠線の太さを維持 */
+        border-radius: 6px;
+        box-shadow: 3px 3px 0 rgba(32, 25, 22, .12);
+      }
+
+      .modal {
+        align-items: start;
+        padding: 8px;
+        overflow-y: auto;
+      }
+
+      .modal-panel {
+        width: calc(100vw - 16px);
+        max-height: none;
+        grid-template-columns: 1fr;
+        overflow: visible;
+      }
+
+      .modal-art {
+        overflow: visible;
+      }
+
+      .modal-art img {
+        width: 100%;
+        max-height: none;
+      }
+
+      .modal-side {
+        border-left: 0;
+        border-top: 3px solid var(--ink);
+        overflow: visible;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body.is-printing> :not(.modal) {
+        display: none !important;
+      }
+
+      body.is-printing .modal {
+        position: static;
+        display: block;
+        padding: 0;
+        background: #fff !important;
+      }
+
+      body.is-printing .close,
+      body.is-printing .modal-side {
+        display: none !important;
+      }
+
+      body.is-printing .modal-panel {
+        display: block;
+        width: 100%;
+        max-height: none;
+        border: 0;
+        box-shadow: none;
+        background: #fff !important;
+      }
+
+      body.is-printing .modal-art {
+        background: #fff !important;
+        padding: 0;
+        margin: 0;
+      }
+
+      body.is-printing .modal-art img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100vw;
+        max-height: 100vh;
+        object-fit: contain;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="ProtestHub">
+          <img class="brand-logo" src="../images/logo.png" alt="ProtestHub">
+        </a>
+        <a href="../about.html" class="about-link">初めての方へ</a>
+      </div>
+      <div class="tools" aria-label="デザイン検索">
+        <input class="search" id="search" type="search" placeholder="検索" autocomplete="off">
+        <select class="select" id="category" aria-label="カテゴリ">
+          <option value="all">すべて(27)</option>
+          <option value="反戦">反戦</option>
+          <option value="税">税</option>
+          <option value="政治">政治</option>
+          <option value="制度">制度</option>
+        </select>
+        <select class="select" id="sort" aria-label="並べ替え">
+          <option value="random">ランダム</option>
+          <option value="newest">新着順</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="wall" id="wall" aria-label="デザイン一覧"></main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <button class="close" id="close" type="button" aria-label="閉じる">×</button>
+
+      <div class="modal-art">
+        <img id="modal-image" src="" alt="">
+      </div>
+      <aside class="modal-side">
+        <h1 class="modal-title" id="modal-title"></h1>
+        <p class="modal-file" id="modal-file"></p>
+        <span class="tag" id="modal-tag"></span>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="creator-wrap">
+          <span>制作：</span>
+          <a class="creator-link" id="creator-link" href="#" target="_blank" rel="noopener">-</a>
+        </div>
+        <div class="rights">
+          <p class="rights-text">・著作権は制作者様に帰属しています</p>
+          <p class="rights-text">・改変/転載/商用利用/AI学習いずれも不可</p>
+          <label class="agree">
+            <input id="rights-agree" type="checkbox">
+            <span>上記2点に同意します</span>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="button" id="modal-download" type="button" disabled>ダウンロード</button>
+          <button class="button secondary" id="print" type="button" disabled>印刷</button>
+        </div>
+        <div class="share-actions" aria-label="SNSシェア">
+          <button class="button secondary share-button" id="share-x" type="button" aria-label="Xでシェア">
+            <img class="share-icon" src="../images/icon_x.png" alt="">
+          </button>
+          <button class="button secondary share-button" id="share-facebook" type="button" aria-label="Facebookでシェア">
+            <img class="share-icon" src="../images/icon_fb.png" alt="">
+          </button>
+          <button class="button secondary share-button" id="share-instagram" type="button" aria-label="Instagramでシェア">
+            <img class="share-icon" src="../images/icon_ig.png" alt="">
+          </button>
+        </div>
+        <div><strong class="section-title">バリエーション</strong>
+          <div class="variant-list" id="variant-list"></div>
+        </div>
+        <div>
+          <strong class="section-title" id="author-title">他の作品</strong>
+          <div class="variant-list" id="author-list"></div>
+        </div>
+        <p class="share-status" id="share-status" aria-live="polite"></p>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const posters = [
+      { file: "pl-000001-a.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000001-b.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000001-c.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000002-a.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000002-b.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000002-c.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000003-a.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000003-b.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000003-c.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000004-a.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000004-b.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000004-c.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000005-a.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000005-b.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000005-c.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000006-a.png", title: "国旗損壊罪 要らない！", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国旗損壊罪", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000006-b.png", title: "武器輸出 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["武器輸出", "横", "反戦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000006-c.png", title: "減税 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "税", tags: ["減税", "横", "税"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000007-a.png", title: "国家情報局 要らない!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国家情報局", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000007-b.png", title: "憲法改悪 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["憲法", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000007-c.png", title: "総辞職 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["総辞職", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000008-a.png", title: "要らない!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000008-b.png", title: "やめろ!!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000008-c.png", title: "早くしろ!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000009-a.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000009-b.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
+      { file: "pl-000009-c.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" }
+    ];
+
+    const imageRoot = "images/";
+    const wall = document.querySelector("#wall");
+    const search = document.querySelector("#search");
+    const category = document.querySelector("#category");
+    const modal = document.querySelector("#modal");
+    const modalImage = document.querySelector("#modal-image");
+    const modalTitle = document.querySelector("#modal-title");
+    const modalFile = document.querySelector("#modal-file");
+    const modalTag = document.querySelector("#modal-tag");
+    const modalDescription = document.querySelector("#modal-description");
+    const creatorLink = document.querySelector("#creator-link");
+    const modalDownload = document.querySelector("#modal-download");
+    const closeButton = document.querySelector("#close");
+    const rightsAgree = document.querySelector("#rights-agree");
+    const shareXButton = document.querySelector("#share-x");
+    const shareFacebookButton = document.querySelector("#share-facebook");
+    const shareInstagramButton = document.querySelector("#share-instagram");
+    const printButton = document.querySelector("#print");
+    const shareStatus = document.querySelector("#share-status");
+    const authorTitle = document.querySelector("#author-title");
+    const sortSelect = document.querySelector("#sort");
+    let activePoster = null;
+    let filteredPosters = [...posters];
+
+    function openPoster(poster) {
+      const src = imageRoot + poster.file;
+      activePoster = poster;
+      modalImage.src = src;
+      modalImage.alt = poster.title;
+
+      modalTitle.textContent = poster.title;
+      modalFile.textContent = poster.file;
+      modalTag.textContent = [poster.cat, ...poster.tags].join(" / ");
+      modalDescription.textContent = poster.desc || "";
+
+      creatorLink.textContent = poster.by || "-";
+      creatorLink.href = poster.url || "#";
+
+      const variantList = document.querySelector("#variant-list");
+      const id = poster.id || poster.file.match(/pl-(\d{6})/)[1];
+      const variants = posters.filter(p => (p.id || p.file.match(/pl-(\d{6})/)[1]) === id);
+      variantList.innerHTML = "";
+      variants.forEach(v => {
+        const img = document.createElement("img");
+        img.src = imageRoot + v.file;
+        img.className = "variant-thumb";
+        img.onclick = () => openPoster(v);
+        variantList.appendChild(img);
+      });
+
+      const authorList = document.querySelector("#author-list");
+      authorList.innerHTML = "";
+      authorTitle.textContent = `${poster.by}の作品一覧`;
+
+      const sameAuthor = posters.filter(p => p.by === poster.by);
+      const uniqueDesigns = [];
+
+      sameAuthor.forEach(p => {
+        const designId = p.id || p.file.match(/pl-(\d{6})/)[1];
+        if (!uniqueDesigns.some(item => (item.id || item.file.match(/pl-(\d{6})/)[1]) === designId)) {
+          uniqueDesigns.push(p);
+        }
+      });
+
+      const currentDesignId = poster.id || poster.file.match(/pl-(\d{6})/)[1];
+      const filteredDesigns = uniqueDesigns.filter(p => (p.id || p.file.match(/pl-(\d{6})/)[1]) !== currentDesignId);
+
+      filteredDesigns.slice(0, 12).forEach(v => {
+        const img = document.createElement("img");
+        img.src = imageRoot + v.file;
+        img.className = "variant-thumb";
+        img.onclick = () => openPoster(v);
+        authorList.appendChild(img);
+      });
+
+      rightsAgree.checked = false;
+      updateRightsLockedState();
+      shareStatus.textContent = "";
+      modal.classList.add("is-open");
+      closeButton.focus();
+    }
+
+    function closePoster() {
+      modal.classList.remove("is-open");
+      modalImage.src = "";
+      activePoster = null;
+    }
+
+    function updateRightsLockedState() {
+      const isAllowed = rightsAgree.checked;
+      modalDownload.disabled = !isAllowed;
+      printButton.disabled = !isAllowed;
+    }
+
+    function posterMatches(poster) {
+      const query = search.value.trim().toLowerCase();
+      const categoryValue = category.value;
+      const haystack = `${poster.title} ${poster.cat} ${poster.tags.join(" ")} ${poster.file} ${poster.by}`.toLowerCase();
+      return (!query || haystack.includes(query)) && (categoryValue === "all" || poster.cat === categoryValue);
+    }
+
+    function createPin(poster) {
+      const button = document.createElement("button");
+      button.className = "pin";
+      button.type = "button";
+      button.setAttribute("aria-label", `${poster.title}を開く`);
+      button.innerHTML = `<img src="${imageRoot + poster.file}" alt="${poster.title}" loading="lazy">`;
+      button.addEventListener("click", () => openPoster(poster));
+      return button;
+    }
+
+    function renderWall() {
+      filteredPosters.forEach((poster) => {
+        wall.append(createPin(poster));
+      });
+    }
+
+    function resetWall() {
+      const query = search.value.trim().toLowerCase();
+      const categoryValue = category.value;
+      const sortValue = sortSelect.value;
+
+      // フィルタリング
+      filteredPosters = posters.filter(posterMatches);
+
+      // ソート
+      if (sortValue === "random") {
+        for (let i = filteredPosters.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [filteredPosters[i], filteredPosters[j]] = [filteredPosters[j], filteredPosters[i]];
+        }
+      } else {
+        // 新着順（配列の逆順：数字が大きいIDが上）
+        filteredPosters.reverse();
+      }
+
+      wall.innerHTML = "";
+      if (filteredPosters.length === 0) return;
+      renderWall();
+    }
+
+    function setCategoryCounts() {
+      const counts = posters.reduce((totals, poster) => {
+        totals[poster.cat] = (totals[poster.cat] || 0) + 1;
+        return totals;
+      }, {});
+      [...category.options].forEach((option) => {
+        const total = option.value === "all" ? posters.length : counts[option.value] || 0;
+        const label = option.value === "all" ? "すべて" : option.value;
+        option.textContent = `${label}(${total})`;
+      });
+    }
+
+    // ダウンロード処理の安全強化版
+    async function downloadPoster() {
+      if (!activePoster || modalDownload.disabled) return;
+      const src = imageRoot + activePoster.file;
+      try {
+        const response = await fetch(src);
+        const blob = await response.blob();
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = objectUrl;
+        link.download = activePoster.file;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+      } catch {
+        // CORS等でワンクリック自動保存が弾かれた場合は、同じ画面を維持するために「別タブ」で開く仕様に変更
+        const link = document.createElement("a");
+        link.href = src;
+        link.target = "_blank"; // 別タブで開く
+        link.rel = "noopener";
+        document.body.append(link);
+        link.click();
+        link.remove();
+      }
+    }
+
+    function sharePoster(service) {
+      if (!activePoster) return;
+
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('p', activePoster.file);
+      const shareUrl = currentUrl.href;
+      const shareText = `${activePoster.title} / Protest Hub`;
+
+      if (service === "x") {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, "_blank", "noopener");
+        shareStatus.textContent = "Xの投稿画面を開きました。";
+        return;
+      }
+
+      if (service === "facebook") {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, "_blank", "noopener");
+        shareStatus.textContent = "Facebookの共有画面を開きました。";
+        return;
+      }
+
+      navigator.clipboard.writeText(imageUrl)
+        .then(() => {
+          shareStatus.textContent = "Instagram用に画像リンクをコピーしました。";
+        })
+        .catch(() => {
+          window.open("https://www.instagram.com/", "_blank", "noopener");
+          shareStatus.textContent = "Instagramを開きました。画像リンクはコピーできませんでした。";
+        });
+    }
+
+    setCategoryCounts();
+    resetWall();
+
+    // URLパラメータによる動的OGP & 自動オープン
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get('p');
+      if (p) {
+        const poster = posters.find(item => item.file === p);
+        if (poster) {
+          // OGPメタタグ書き換え (クローラー向け)
+          const shareUrl = window.location.href;
+          const shareTitle = `${poster.title} / Protest Hub Design`;
+          const shareDesc = poster.desc || "プロテストハブで公開中のデザインです。";
+          const shareImg = new URL(imageRoot + poster.file, window.location.href).href;
+
+          document.getElementById('og-title').setAttribute('content', shareTitle);
+          document.getElementById('tw-title').setAttribute('content', shareTitle);
+          document.getElementById('og-description').setAttribute('content', shareDesc);
+          document.getElementById('tw-description').setAttribute('content', shareDesc);
+          document.getElementById('og-image').setAttribute('content', shareImg);
+          document.getElementById('tw-image').setAttribute('content', shareImg);
+          document.getElementById('og-url').setAttribute('content', shareUrl);
+
+          // モーダルを開く
+          openPoster(poster);
+        }
+      }
+    })();
+
+    search.addEventListener("input", resetWall);
+    category.addEventListener("change", resetWall);
+    sortSelect.addEventListener("change", resetWall);
+    closeButton.addEventListener("click", closePoster);
+    rightsAgree.addEventListener("change", updateRightsLockedState);
+    modalDownload.addEventListener("click", downloadPoster);
+    shareXButton.addEventListener("click", () => sharePoster("x"));
+    shareFacebookButton.addEventListener("click", () => sharePoster("facebook"));
+    shareInstagramButton.addEventListener("click", () => sharePoster("instagram"));
+
+    // 印刷処理：ブラウザ互換性の高い「用紙方向自動インジェクション」方式
+    printButton.addEventListener("click", () => {
+      if (!modalImage.complete) return;
+
+      const isLandscape = modalImage.naturalWidth > modalImage.naturalHeight;
+
+      document.body.classList.add("is-printing");
+      closeButton.style.setProperty("display", "none", "important");
+
+      // 横長画像の場合のみ印刷用「用紙横向き指示」スタイルシートを動的に生成
+      let styleElement = null;
+      if (isLandscape) {
+        styleElement = document.createElement("style");
+        styleElement.textContent = "@media print { @page { size: landscape !important; } }";
+        document.head.appendChild(styleElement);
+      }
+
+      window.print();
+
+      // 印刷後に設定とスタイルを撤去
+      setTimeout(() => {
+        document.body.classList.remove("is-printing");
+        closeButton.style.removeProperty("display");
+        if (styleElement) {
+          styleElement.remove();
+        }
+      }, 400);
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closePoster();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) closePoster();
+    });
+  </script>
+</body>
+
+</html>
