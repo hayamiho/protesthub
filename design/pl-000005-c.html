@@ -14,12 +14,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>戦争反対｜Protest Hub</title>
-    <meta name="description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+    <meta name="description" content="明日すぐ使えるプラカードまとめサイト。市民プロテストを、もっと気楽にカジュアルに。">
 
     <!-- OGP -->
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="戦争反対｜Protest Hub">
-    <meta property="og:description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+    <meta property="og:description" content="明日すぐ使えるプラカードまとめサイト。市民プロテストを、もっと気楽にカジュアルに。">
     <meta property="og:url" content="https://www.protesthub.jp/design/pl-000005-c.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000005-c.png">
@@ -30,12 +30,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="戦争反対｜Protest Hub">
-    <meta name="twitter:description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+    <meta name="twitter:description" content="明日すぐ使えるプラカードまとめサイト。市民プロテストを、もっと気楽にカジュアルに。">
     <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000005-c.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <style>
-        /* CSSはindex.htmlから抽出して共通化 */
         :root {
             color-scheme: light;
             --ink: #201916;
@@ -163,6 +162,19 @@
             margin: 0;
         }
 
+        .creator-wrap {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .creator-link {
+            color: var(--ink);
+            text-decoration: underline;
+        }
+
         .rights {
             padding: 12px;
             border: 1px solid var(--line);
@@ -211,7 +223,7 @@
 
         .actions {
             display: grid;
-            gap: 8px;
+            gap: 10px;
         }
 
         .share-actions {
@@ -232,6 +244,33 @@
             font-weight: 800;
             text-decoration: none;
             font-size: 14px;
+        }
+
+        .section-title {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .variant-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .variant-thumb {
+            width: 72px;
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            cursor: pointer;
+            background: var(--sheet);
+            transition: transform 0.1s;
+        }
+
+        .variant-thumb:hover {
+            transform: translateY(-2px);
         }
 
         @media (max-width: 800px) {
@@ -269,6 +308,11 @@
                     <div><span class="tag">反戦 / 戦争反対 / 縦 / 日本語</span></div>
                     <p class="desc">2970×4200px　A3/A4兼用</p>
 
+                    <div class="creator-wrap">
+                        <span>制作：</span>
+                        <a class="creator-link" href="https://x.com/protesthub_jp" target="_blank" rel="noopener">protesthub_jp</a>
+                    </div>
+
                     <div class="rights">
                         <p class="rights-text">・著作権は制作者様に帰属しています</p>
                         <p class="rights-text">・改変/転載/商用利用/AI学習いずれも不可</p>
@@ -291,12 +335,25 @@
                             <img src="../images/icon_fb.png" alt="FB" class="share-icon">
                         </a>
                     </div>
+
+                    <div id="variants-section" style="display: none;">
+                        <strong class="section-title">バリエーション</strong>
+                        <div class="variant-list" id="variant-list"></div>
+                    </div>
+
+                    <div id="author-section" style="display: none;">
+                        <strong class="section-title" id="author-title">作者の他作品</strong>
+                        <div class="variant-list" id="author-list"></div>
+                    </div>
                 </aside>
             </div>
         </div>
     </main>
 
     <script>
+        const currentFile = "pl-000005-c.png";
+        const currentBy = "protesthub_jp";
+
         const agree = document.getElementById('rights-agree');
         const dlBtn = document.getElementById('download');
         const prBtn = document.getElementById('print');
@@ -308,15 +365,15 @@
 
         dlBtn.onclick = () => {
             const link = document.createElement('a');
-            link.href = 'images/pl-000005-c.png';
-            link.download = 'pl-000005-c.png';
+            link.href = 'images/' + currentFile;
+            link.download = currentFile;
             link.click();
-            gtag('event', 'download', { 'event_category': 'design', 'event_label': 'pl-000005-c.png' });
+            gtag('event', 'download', { 'event_category': 'design', 'event_label': currentFile });
         };
 
         prBtn.onclick = () => {
             window.print();
-            gtag('event', 'print', { 'event_category': 'design', 'event_label': 'pl-000005-c.png' });
+            gtag('event', 'print', { 'event_category': 'design', 'event_label': currentFile });
         };
 
         // SNS Share
@@ -324,6 +381,52 @@
         const shareText = '戦争反対｜Protest Hub';
         document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+        // Dynamic Lists
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                const currentId = currentFile.match(/pl-(\d{6})/)[1];
+
+                // バリエーション
+                const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+                if (variants.length > 0) {
+                    const list = document.getElementById('variant-list');
+                    variants.forEach(v => {
+                        const a = document.createElement('a');
+                        a.href = v.file.replace('.png', '.html');
+                        a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                        list.appendChild(a);
+                    });
+                    document.getElementById('variants-section').style.display = 'block';
+                }
+
+                // 作者の他作品
+                const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+                // 重複デザイン（IDが同じもの）は1つだけ表示
+                const uniqueAuthorWorks = [];
+                const seenIds = new Set();
+                authorWorks.forEach(p => {
+                    const id = p.file.match(/pl-(\d{6})/)[1];
+                    if (!seenIds.has(id)) {
+                        uniqueAuthorWorks.push(p);
+                        seenIds.add(id);
+                    }
+                });
+
+                if (uniqueAuthorWorks.length > 0) {
+                    const list = document.getElementById('author-list');
+                    document.getElementById('author-title').textContent = currentBy + 'の他作品';
+                    uniqueAuthorWorks.slice(0, 12).forEach(v => {
+                        const a = document.createElement('a');
+                        a.href = v.file.replace('.png', '.html');
+                        a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                        list.appendChild(a);
+                    });
+                    document.getElementById('author-section').style.display = 'block';
+                }
+            })
+            .catch(err => console.error('Data fetch error:', err));
     </script>
 </body>
 

@@ -35,6 +35,8 @@ function generate() {
         content = content.replace(/{{DESC}}/g, item.desc);
         content = content.replace(/{{FILE_IMAGE}}/g, item.file);
         content = content.replace(/{{FILE_HTML}}/g, outputFileName);
+        content = content.replace(/{{BY}}/g, item.by);
+        content = content.replace(/{{URL}}/g, item.url);
 
         const catTags = [item.cat, ...item.tags].join(" / ");
         content = content.replace(/{{CAT_TAGS}}/g, catTags);
