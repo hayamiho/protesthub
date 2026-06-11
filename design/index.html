@@ -24,13 +24,13 @@
   <meta property="og:description" id="og-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
   <meta property="og:url" id="og-url" content="https://protesthub.vercel.app/design/">
   <meta property="og:type" content="website">
-  <meta property="og:image" id="og-image" content="https://protesthub.vercel.app/images/ogp_default.jpg">
+  <meta property="og:image" id="og-image" content="https://protesthub.vercel.app/images/ogp.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" id="tw-title" content="Protest Hub Design Wall">
   <meta name="twitter:description" id="tw-description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
-  <meta name="twitter:image" id="tw-image" content="https://protesthub.vercel.app/images/ogp_default.jpg">
+  <meta name="twitter:image" id="tw-image" content="https://protesthub.vercel.app/images/ogp.png">
 
   <link rel="icon" href="/favicon.png" type="image/png">
   <style>
@@ -645,7 +645,9 @@
         <select class="select" id="sort" aria-label="並べ替え">
           <option value="random">ランダム</option>
           <option value="newest">新着順</option>
+          <option value="popular">人気順</option>
         </select>
+
       </div>
     </div>
   </header>
@@ -706,33 +708,34 @@
 
   <script>
     const posters = [
-      { file: "pl-000001-a.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000001-b.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000001-c.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000002-a.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000002-b.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000002-c.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000003-a.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000003-b.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000003-c.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000004-a.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000004-b.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000004-c.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000005-a.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000005-b.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000005-c.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000006-a.png", title: "国旗損壊罪 要らない！", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国旗損壊罪", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000006-b.png", title: "武器輸出 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["武器輸出", "横", "反戦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000006-c.png", title: "減税 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "税", tags: ["減税", "横", "税"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000007-a.png", title: "国家情報局 要らない!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国家情報局", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000007-b.png", title: "憲法改悪 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["憲法", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000007-c.png", title: "総辞職 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["総辞職", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000008-a.png", title: "要らない!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000008-b.png", title: "やめろ!!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000008-c.png", title: "早くしろ!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000009-a.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000009-b.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" },
-      { file: "pl-000009-c.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp" }
+      { file: "pl-000001-a.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 245 },
+      { file: "pl-000001-b.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 182 },
+      { file: "pl-000001-c.png", title: "反戦", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "タイポグラフィ", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 96 },
+      { file: "pl-000002-a.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 312 },
+      { file: "pl-000002-b.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 124 },
+      { file: "pl-000002-c.png", title: "NO WAR", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "横", "英字"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 88 },
+      { file: "pl-000003-a.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 420 },
+      { file: "pl-000003-b.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 215 },
+      { file: "pl-000003-c.png", title: "高市首相、減税まだ？", desc: "2970×4200px　A3/A4兼用", cat: "税", tags: ["減税", "縦", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 156 },
+      { file: "pl-000004-a.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 198 },
+      { file: "pl-000004-b.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 142 },
+      { file: "pl-000004-c.png", title: "NOWAR", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["NO WAR", "ピース", "縦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 110 },
+      { file: "pl-000005-a.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 275 },
+      { file: "pl-000005-b.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 168 },
+      { file: "pl-000005-c.png", title: "戦争反対", desc: "2970×4200px　A3/A4兼用", cat: "反戦", tags: ["戦争反対", "縦", "日本語"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 134 },
+      { file: "pl-000006-a.png", title: "国旗損壊罪 要らない！", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国旗損壊罪", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 388 },
+      { file: "pl-000006-b.png", title: "武器輸出 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "反戦", tags: ["武器輸出", "横", "反戦"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 456 },
+      { file: "pl-000006-c.png", title: "減税 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "税", tags: ["減税", "横", "税"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 890 },
+      { file: "pl-000007-a.png", title: "国家情報局 要らない!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["国家情報局", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 212 },
+      { file: "pl-000007-b.png", title: "憲法改悪 やめろ!!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["憲法", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 567 },
+      { file: "pl-000007-c.png", title: "総辞職 早くしろ!", desc: "4200×2970px　A3/A4兼用", cat: "政治", tags: ["総辞職", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 723 },
+      { file: "pl-000008-a.png", title: "要らない!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 189 },
+      { file: "pl-000008-b.png", title: "やめろ!!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 145 },
+      { file: "pl-000008-c.png", title: "早くしろ!", desc: "上半分に書きこめます。<br>4200×2970px　A3/A4兼用", cat: "政治", tags: ["短文", "横", "政治"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 231 },
+      { file: "pl-000009-a.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 156 },
+      { file: "pl-000009-b.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 112 },
+      { file: "pl-000009-c.png", title: "議員定数 減らすな!", desc: "4200×2970px　A3/A4兼用", cat: "制度", tags: ["議員定数", "横", "制度"], by: "protesthub_jp", url: "https://x.com/protesthub_jp", views: 94 }
+
     ];
 
     const imageRoot = "images/";
@@ -815,7 +818,14 @@
       shareStatus.textContent = "";
       modal.classList.add("is-open");
       closeButton.focus();
+
+      // GA: Select Content
+      gtag('event', 'select_content', {
+        content_type: 'image',
+        item_id: poster.file
+      });
     }
+
 
     function closePoster() {
       modal.classList.remove("is-open");
@@ -866,10 +876,14 @@
           const j = Math.floor(Math.random() * (i + 1));
           [filteredPosters[i], filteredPosters[j]] = [filteredPosters[j], filteredPosters[i]];
         }
+      } else if (sortValue === "popular") {
+        // 人気順（views の降順）
+        filteredPosters.sort((a, b) => (b.views || 0) - (a.views || 0));
       } else {
         // 新着順（配列の逆順：数字が大きいIDが上）
         filteredPosters.reverse();
       }
+
 
       wall.innerHTML = "";
       if (filteredPosters.length === 0) return;
@@ -913,7 +927,14 @@
         link.click();
         link.remove();
       }
+
+      // GA: File Download
+      gtag('event', 'file_download', {
+        file_name: activePoster.file,
+        file_extension: 'png'
+      });
     }
+
 
     function sharePoster(service) {
       if (!activePoster) return;
@@ -940,10 +961,17 @@
           shareStatus.textContent = "Instagram用に画像リンクをコピーしました。";
         })
         .catch(() => {
-          window.open("https://www.instagram.com/", "_blank", "noopener");
           shareStatus.textContent = "Instagramを開きました。画像リンクはコピーできませんでした。";
         });
+
+      // GA: Share
+      gtag('event', 'share', {
+        method: service,
+        content_type: 'image',
+        item_id: activePoster.file
+      });
     }
+
 
     setCategoryCounts();
     resetWall();
@@ -985,7 +1013,17 @@
     shareFacebookButton.addEventListener("click", () => sharePoster("facebook"));
     shareInstagramButton.addEventListener("click", () => sharePoster("instagram"));
 
+    creatorLink.addEventListener("click", () => {
+      if (!activePoster) return;
+      gtag('event', 'click_creator_link', {
+        item_id: activePoster.file,
+        creator: activePoster.by,
+        url: creatorLink.href
+      });
+    });
+
     // 印刷処理：ブラウザ互換性の高い「用紙方向自動インジェクション」方式
+
     printButton.addEventListener("click", () => {
       if (!modalImage.complete) return;
 
@@ -1003,6 +1041,12 @@
       }
 
       window.print();
+
+      // GA: Print
+      gtag('event', 'print_content', {
+        item_id: activePoster.file
+      });
+
 
       // 印刷後に設定とスタイルを撤去
       setTimeout(() => {
