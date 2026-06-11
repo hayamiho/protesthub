@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPR12YHXZH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EPR12YHXZH');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>いらない!｜Protest Hub</title>
+    <meta name="description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+
+    <!-- OGP -->
+    <meta property="og:site_name" content="Protest Hub">
+    <meta property="og:title" content="いらない!｜Protest Hub">
+    <meta property="og:description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+    <meta property="og:url" content="https://www.protesthub.jp/design/pl-000008-a.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000008-a.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@protesthub_jp">
+    <meta name="twitter:title" content="いらない!｜Protest Hub">
+    <meta name="twitter:description" content="デモや街頭宣伝で使えるプラカードデザイン。ダウンロード・印刷して自由に使用できます。">
+    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000008-a.png">
+
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        /* CSSはindex.htmlから抽出して共通化 */
+        :root {
+            color-scheme: light;
+            --ink: #201916;
+            --muted: #695f59;
+            --paper: #f7f0e4;
+            --sheet: #fffaf1;
+            --line: #ded0c0;
+            --yellow: #f4c915;
+            --teal: #31ada3;
+            --red: #df594d;
+            --shadow: 0 14px 42px rgba(38, 27, 19, .13);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+            background:
+                linear-gradient(90deg, rgba(32, 25, 22, .035) 1px, transparent 1px) 0 0 / 28px 28px,
+                linear-gradient(0deg, rgba(32, 25, 22, .028) 1px, transparent 1px) 0 0 / 28px 28px,
+                var(--paper);
+            color: var(--ink);
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(32, 25, 22, .12);
+            background: rgba(247, 240, 228, .86);
+            backdrop-filter: blur(16px);
+        }
+
+        .topbar-inner {
+            width: calc(100% - 18px);
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--ink);
+            font-family: "Arial Black", sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            height: 38px;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            padding: 24px 12px;
+        }
+
+        .panel {
+            position: relative;
+            width: min(1200px, 100%);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px;
+            border: 3px solid var(--ink);
+            border-radius: 8px;
+            background: var(--sheet);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .art {
+            display: grid;
+            place-items: center;
+            background: #efe7da;
+            padding: 20px;
+        }
+
+        .art img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .side {
+            padding: 24px;
+            border-left: 3px solid var(--ink);
+            display: grid;
+            gap: 16px;
+            align-content: start;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .file {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 4px 8px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .rights {
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: rgba(255, 250, 241, .78);
+            font-size: 12px;
+        }
+
+        .rights-text {
+            margin: 0 0 4px;
+            color: var(--muted);
+        }
+
+        .agree {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            background: var(--ink);
+            color: #fff;
+            font-weight: 900;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button.secondary {
+            background: #fff;
+            color: var(--ink);
+        }
+
+        .button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .actions {
+            display: grid;
+            gap: 8px;
+        }
+
+        .share-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .share-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .panel {
+                grid-template-columns: 1fr;
+            }
+
+            .side {
+                border-left: 0;
+                border-top: 3px solid var(--ink);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="../images/logo.png" alt="ProtestHub">
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="width: min(1200px, 100%);">
+            <a href="index.html" class="back-link">← デザイン一覧に戻る</a>
+            <div class="panel">
+                <div class="art">
+                    <img src="images/pl-000008-a.png" alt="いらない!">
+                </div>
+                <aside class="side">
+                    <h1 class="title">いらない!</h1>
+                    <p class="file">pl-000008-a.png</p>
+                    <div><span class="tag">政治 / 短文 / 横 / 政治</span></div>
+                    <p class="desc">上半分に書きこめます。4200×2970px　A3/A4兼用</p>
+
+                    <div class="rights">
+                        <p class="rights-text">・著作権は制作者様に帰属しています</p>
+                        <p class="rights-text">・改変/転載/商用利用/AI学習いずれも不可</p>
+                        <label class="agree">
+                            <input id="rights-agree" type="checkbox">
+                            <span>上記2点に同意します</span>
+                        </label>
+                    </div>
+
+                    <div class="actions">
+                        <button class="button" id="download" disabled>ダウンロード</button>
+                        <button class="button secondary" id="print" disabled>印刷</button>
+                    </div>
+
+                    <div class="share-actions">
+                        <a href="#" id="share-x" target="_blank" class="share-button">
+                            <img src="../images/icon_x.png" alt="X" class="share-icon">
+                        </a>
+                        <a href="#" id="share-fb" target="_blank" class="share-button">
+                            <img src="../images/icon_fb.png" alt="FB" class="share-icon">
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const agree = document.getElementById('rights-agree');
+        const dlBtn = document.getElementById('download');
+        const prBtn = document.getElementById('print');
+
+        agree.onchange = () => {
+            dlBtn.disabled = !agree.checked;
+            prBtn.disabled = !agree.checked;
+        };
+
+        dlBtn.onclick = () => {
+            const link = document.createElement('a');
+            link.href = 'images/pl-000008-a.png';
+            link.download = 'pl-000008-a.png';
+            link.click();
+            gtag('event', 'download', { 'event_category': 'design', 'event_label': 'pl-000008-a.png' });
+        };
+
+        prBtn.onclick = () => {
+            window.print();
+            gtag('event', 'print', { 'event_category': 'design', 'event_label': 'pl-000008-a.png' });
+        };
+
+        // SNS Share
+        const shareUrl = location.href;
+        const shareText = 'いらない!｜Protest Hub';
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    </script>
+</body>
+
+</html>
