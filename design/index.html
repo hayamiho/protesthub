@@ -428,6 +428,33 @@
       gap: 10px;
     }
 
+    .netprint-links {
+      margin-top: 4px;
+      display: grid;
+      gap: 2px;
+      font-size: 13px;
+    }
+
+    .netprint-title {
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .netprint-link-item {
+      display: flex;
+      gap: 2px;
+      font-weight: 800;
+    }
+
+    .netprint-bullet {
+      color: var(--ink);
+    }
+
+    .netprint-link {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
     .share-actions {
       display: flex;
       justify-content: flex-start;
@@ -687,6 +714,18 @@
         <div class="modal-actions">
           <button class="button" id="modal-download" type="button" disabled>ダウンロード</button>
           <button class="button secondary" id="print" type="button" disabled>印刷</button>
+        </div>
+        <div class="netprint-links">
+          <span class="netprint-title">ネットプリント登録</span>
+          <div class="netprint-link-item">
+            <span class="netprint-bullet">・</span>
+            <a href="https://www.printing.ne.jp/" target="_blank" rel="noopener" class="netprint-link">セブンイレブン</a>
+          </div>
+          <div class="netprint-link-item">
+            <span class="netprint-bullet">・</span>
+            <a href="https://networkprint.ne.jp/sharp_netprint/ja/top.aspx" target="_blank" rel="noopener"
+              class="netprint-link">ファミマ/ローソン/ミニストップ/ポプラ</a>
+          </div>
         </div>
         <div class="share-actions" aria-label="SNSシェア">
           <button class="button secondary share-button" id="share-x" type="button" aria-label="Xでシェア">
