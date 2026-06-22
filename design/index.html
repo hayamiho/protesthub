@@ -909,8 +909,18 @@
     }
 
     function setCategoryCounts() {
-      // 全カテゴリーの抽出
-      const cats = [...new Set(posters.map(p => p.cat))].filter(c => c).sort();
+      const counts = posters.reduce((totals, poster) => {
+        totals[poster.cat] = (totals[poster.cat] || 0) + 1;
+        return totals;
+      }, {});
+
+      // 全カテゴリーを件数の多い順に抽出
+      const cats = [...new Set(posters.map(p => p.cat))]
+        .filter(c => c)
+        .sort((a, b) => {
+          const diff = (counts[b] || 0) - (counts[a] || 0);
+          return diff !== 0 ? diff : a.localeCompare(b);
+        });
 
       // プルダウンの再構築
       const currentVal = category.value;
@@ -923,10 +933,6 @@
       });
       category.value = cats.includes(currentVal) ? currentVal : "all";
 
-      const counts = posters.reduce((totals, poster) => {
-        totals[poster.cat] = (totals[poster.cat] || 0) + 1;
-        return totals;
-      }, {});
       [...category.options].forEach((option) => {
         const total = option.value === "all" ? posters.length : counts[option.value] || 0;
         const label = option.value === "all" ? "すべて" : option.value;
