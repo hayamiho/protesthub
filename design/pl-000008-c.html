@@ -291,10 +291,12 @@
             gap: 8px;
             flex-wrap: wrap;
             margin-bottom: 16px;
+            align-items: flex-start;
         }
 
         .variant-thumb {
             width: 72px;
+            height: auto;
             border: 2px solid var(--ink);
             border-radius: 6px;
             cursor: pointer;
@@ -397,6 +399,7 @@
         </div>
     </main>
 
+    <script src="data.js"></script>
     <script>
         const currentFile = "pl-000008-c.png";
         const currentBy = "protesthub_jp";
@@ -430,50 +433,49 @@
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
         // Dynamic Lists
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                const currentId = currentFile.match(/pl-(\d{6})/)[1];
+        function initLists() {
+            const data = POSTERS_DATA;
+            const currentId = currentFile.match(/pl-(\d{6})/)[1];
 
-                // バリエーション
-                const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
-                if (variants.length > 0) {
-                    const list = document.getElementById('variant-list');
-                    variants.forEach(v => {
-                        const a = document.createElement('a');
-                        a.href = v.file.replace('.png', '.html');
-                        a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
-                        list.appendChild(a);
-                    });
-                    document.getElementById('variants-section').style.display = 'block';
-                }
-
-                // 作者の他作品
-                const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
-                // 重複デザイン（IDが同じもの）は1つだけ表示
-                const uniqueAuthorWorks = [];
-                const seenIds = new Set();
-                authorWorks.forEach(p => {
-                    const id = p.file.match(/pl-(\d{6})/)[1];
-                    if (!seenIds.has(id)) {
-                        uniqueAuthorWorks.push(p);
-                        seenIds.add(id);
-                    }
+            // バリエーション
+            const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+            if (variants.length > 0) {
+                const list = document.getElementById('variant-list');
+                variants.forEach(v => {
+                    const a = document.createElement('a');
+                    a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
+                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                    list.appendChild(a);
                 });
+                document.getElementById('variants-section').style.display = 'block';
+            }
 
-                if (uniqueAuthorWorks.length > 0) {
-                    const list = document.getElementById('author-list');
-                    document.getElementById('author-title').textContent = currentBy + 'の他作品';
-                    uniqueAuthorWorks.slice(0, 12).forEach(v => {
-                        const a = document.createElement('a');
-                        a.href = v.file.replace('.png', '.html');
-                        a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
-                        list.appendChild(a);
-                    });
-                    document.getElementById('author-section').style.display = 'block';
+            // 作者の他作品
+            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+            // 重複デザイン（IDが同じもの）は1つだけ表示
+            const uniqueAuthorWorks = [];
+            const seenIds = new Set();
+            authorWorks.forEach(p => {
+                const id = p.file.match(/pl-(\d{6})/)[1];
+                if (!seenIds.has(id)) {
+                    uniqueAuthorWorks.push(p);
+                    seenIds.add(id);
                 }
-            })
-            .catch(err => console.error('Data fetch error:', err));
+            });
+
+            if (uniqueAuthorWorks.length > 0) {
+                const list = document.getElementById('author-list');
+                document.getElementById('author-title').textContent = currentBy + 'の他作品';
+                uniqueAuthorWorks.slice(0, 12).forEach(v => {
+                    const a = document.createElement('a');
+                    a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
+                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                    list.appendChild(a);
+                });
+                document.getElementById('author-section').style.display = 'block';
+            }
+        }
+        initLists();
     </script>
 </body>
 

@@ -1,4 +1,4 @@
-[
+const POSTERS_DATA = [
     {
         "file": "pl-000001-a.png",
         "title": "反戦",
@@ -452,4 +452,4 @@
         "og_title": "",
         "og_desc": ""
     }
-]
+];
