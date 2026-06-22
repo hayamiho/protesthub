@@ -23,24 +23,35 @@ function generate() {
     }
     const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
+    // 補助関数: HTMLタグを除去
+    const stripTags = (str) => str.replace(/<[^>]*>?/gm, '');
+    // 補助関数: クォートをエスケープ (JS文字列用)
+    const escapeJs = (str) => str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+
     let count = 0;
     data.forEach(item => {
         const fileNameBase = item.file.replace(/\.[^/.]+$/, ""); // 拡張子を除去
         const outputFileName = `${fileNameBase}.html`;
         const outputPath = path.join(OUTPUT_DIR, outputFileName);
 
+        const title = item.title || '';
+        const desc = item.desc || '';
+        const by = item.by || '';
+
         // 置換処理 (特殊文字 $ に影響されないよう split/join を使用)
         let content = template;
         const replacements = {
-            '{{TITLE}}': item.title || '',
-            '{{DESC}}': item.desc || '',
+            '{{TITLE}}': title,
+            '{{DESC}}': desc,
             '{{FILE_IMAGE}}': item.file || '',
             '{{FILE_HTML}}': outputFileName,
-            '{{BY}}': item.by || '',
+            '{{BY}}': by,
             '{{URL}}': item.url || '',
             '{{CAT_TAGS}}': [item.cat, ...(item.tags || [])].filter(t => t).join(" / "),
-            '{{OG_TITLE}}': item.og_title || item.title || '',
-            '{{OG_DESC}}': item.og_desc || item.desc || ''
+            '{{OG_TITLE}}': stripTags(item.og_title || title),
+            '{{OG_DESC}}': stripTags(item.og_desc || desc),
+            '{{JS_TITLE}}': escapeJs(title),
+            '{{JS_BY}}': escapeJs(by)
         };
 
         Object.keys(replacements).forEach(placeholder => {
