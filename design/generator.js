@@ -29,25 +29,31 @@ function generate() {
         const outputFileName = `${fileNameBase}.html`;
         const outputPath = path.join(OUTPUT_DIR, outputFileName);
 
-        // 置換処理
+        // 置換処理 (特殊文字 $ に影響されないよう split/join を使用)
         let content = template;
-        content = content.replace(/{{TITLE}}/g, item.title);
-        content = content.replace(/{{DESC}}/g, item.desc);
-        content = content.replace(/{{FILE_IMAGE}}/g, item.file);
-        content = content.replace(/{{FILE_HTML}}/g, outputFileName);
-        content = content.replace(/{{BY}}/g, item.by);
-        content = content.replace(/{{URL}}/g, item.url);
+        const replacements = {
+            '{{TITLE}}': item.title || '',
+            '{{DESC}}': item.desc || '',
+            '{{FILE_IMAGE}}': item.file || '',
+            '{{FILE_HTML}}': outputFileName,
+            '{{BY}}': item.by || '',
+            '{{URL}}': item.url || '',
+            '{{CAT_TAGS}}': [item.cat, ...(item.tags || [])].filter(t => t).join(" / "),
+            '{{OG_TITLE}}': item.og_title || item.title || '',
+            '{{OG_DESC}}': item.og_desc || item.desc || ''
+        };
 
-        const catTags = [item.cat, ...item.tags].join(" / ");
-        content = content.replace(/{{CAT_TAGS}}/g, catTags);
+        Object.keys(replacements).forEach(placeholder => {
+            content = content.split(placeholder).join(replacements[placeholder]);
+        });
 
         // 書き出し
         fs.writeFileSync(outputPath, content, 'utf8');
-        console.log(`Generated: ${outputFileName}`);
+        console.log(`[${count + 1}/${data.length}] Generated: ${outputFileName}`);
         count++;
     });
 
-    console.log(`--- Finished! Total ${count} files generated. ---`);
+    console.log(`\n--- Finished! Total ${count} files generated successfully. ---`);
 }
 
 generate();

@@ -22,40 +22,74 @@ function downloadCsv(url) {
 }
 
 function parseCsv(csv) {
-    const lines = csv.split(/\r?\n/);
-    const headers = lines[0].split(',');
     const results = [];
+    let currentField = '';
+    let inQuotes = false;
+    let currentRow = [];
 
-    for (let i = 1; i < lines.length; i++) {
-        if (!lines[i]) continue;
+    // 改行コードの正規化
+    const content = csv.replace(/\r\n/g, '\n');
 
-        // カンマ区切りのパース（簡易版：クォート内のカンマに対応）
-        const values = [];
-        let current = '';
-        let inQuotes = false;
-        for (let char of lines[i]) {
-            if (char === '"') inQuotes = !inQuotes;
-            else if (char === ',' && !inQuotes) {
-                values.push(current);
-                current = '';
+    for (let i = 0; i < content.length; i++) {
+        const char = content[i];
+        const nextChar = content[i + 1];
+
+        if (inQuotes) {
+            if (char === '"' && nextChar === '"') {
+                // 二重クォートのエスケープ
+                currentField += '"';
+                i++;
+            } else if (char === '"') {
+                // クォート終了
+                inQuotes = false;
             } else {
-                current += char;
+                currentField += char;
+            }
+        } else {
+            if (char === '"') {
+                // クォート開始
+                inQuotes = true;
+            } else if (char === ',') {
+                // フィールド区切り
+                currentRow.push(currentField);
+                currentField = '';
+            } else if (char === '\n') {
+                // 行区切り
+                currentRow.push(currentField);
+                results.push(currentRow);
+                currentRow = [];
+                currentField = '';
+            } else {
+                currentField += char;
             }
         }
-        values.push(current);
+    }
+    // 最終行の処理
+    if (currentField || currentRow.length > 0) {
+        currentRow.push(currentField);
+        results.push(currentRow);
+    }
+
+    if (results.length === 0) return [];
+
+    const headers = results[0];
+    const data = [];
+    for (let i = 1; i < results.length; i++) {
+        const row = results[i];
+        if (row.length === 1 && !row[0]) continue; // 空行スキップ
 
         const entry = {};
         headers.forEach((h, index) => {
-            let val = values[index] || '';
+            let val = (row[index] || '').trim();
             // タグは配列に変換
             if (h === 'tags') {
                 val = val.split(',').map(t => t.trim()).filter(t => t);
             }
-            entry[h] = val;
+            entry[headers[index]] = val;
         });
-        results.push(entry);
+        data.push(entry);
     }
-    return results;
+    return data;
 }
 
 async function sync() {
