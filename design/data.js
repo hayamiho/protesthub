@@ -362,7 +362,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000010-a.jpg",
         "title": "自民党の改憲草案 読んでみませんか？",
-        "desc": "3580×5033px（高解像度）<br/><a href=https://kaikensouan.com/ target=_blank>改憲草案ドットコム</a>紹介プラカードです。",
+        "desc": "3580×5033px（高解像度）<br/><a href=https://kaikensouan.com/ target=_blank>改憲草案ドットコム</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "憲法",
         "tags": [
             "自民党",
@@ -377,7 +377,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000010-b.jpg",
         "title": "自民党の改憲草案 読んでみませんか？",
-        "desc": "5033×3580px（高解像度）<br/><a href=https://kaikensouan.com/ target=_blank>改憲草案ドットコム</a>紹介プラカードです。",
+        "desc": "5033×3580px（高解像度）<br/><a href=https://kaikensouan.com/ target=_blank>改憲草案ドットコム</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "憲法",
         "tags": [
             "自民党",
@@ -392,7 +392,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000011-a.jpg",
         "title": "デモカレンダー 本日の開催地＋開催数のお知らせ",
-        "desc": "3509×4961px（高解像度）<br/><a href=https://democalendar.jp/ target=_blank>デモカレンダー</a>紹介プラカードです。",
+        "desc": "3509×4961px（高解像度）<br/><a href=https://democalendar.jp/ target=_blank>デモカレンダー</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "その他",
         "tags": [
             "デモカレンダー",
@@ -407,7 +407,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-a.jpg",
         "title": "私たちは悪政に屈しない。",
-        "desc": "3508×4961px（高解像度）",
+        "desc": "3508×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -423,7 +423,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-b.jpg",
         "title": "平和国家を過去にしないで。",
-        "desc": "3509×4961px（高解像度）",
+        "desc": "3509×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -439,7 +439,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-c.jpg",
         "title": "Don't let PEACE become the past.",
-        "desc": "3508×4961px（高解像度）",
+        "desc": "3508×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
         "cat": "反戦",
         "tags": [
             "戦争反対",
