@@ -909,6 +909,20 @@
     }
 
     function setCategoryCounts() {
+      // 全カテゴリーの抽出
+      const cats = [...new Set(posters.map(p => p.cat))].filter(c => c).sort();
+
+      // プルダウンの再構築
+      const currentVal = category.value;
+      category.innerHTML = '<option value="all">すべて</option>';
+      cats.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        category.appendChild(opt);
+      });
+      category.value = cats.includes(currentVal) ? currentVal : "all";
+
       const counts = posters.reduce((totals, poster) => {
         totals[poster.cat] = (totals[poster.cat] || 0) + 1;
         return totals;
