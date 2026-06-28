@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo Protest Hub 更新プログラムを開始します...
 echo.
 
