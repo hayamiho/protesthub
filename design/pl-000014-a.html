@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPR12YHXZH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EPR12YHXZH');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ひとの税金で武器売買すな！｜Protest Hub</title>
+    <meta name="description" content="明日すぐ使えるプラカードまとめサイト。市民プロテストを、もっと気楽にカジュアルに。">
+
+    <!-- OGP -->
+    <meta property="og:site_name" content="Protest Hub">
+    <meta property="og:title" content="ひとの税金で武器売買すな！｜Protest Hub">
+    <meta property="og:description" content="3536×5000px（高解像度）">
+    <meta property="og:url" content="https://www.protesthub.jp/design/pl-000014-a.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000014-a.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@protesthub_jp">
+    <meta name="twitter:title" content="ひとの税金で武器売買すな！｜Protest Hub">
+    <meta name="twitter:description" content="3536×5000px（高解像度）">
+    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000014-a.png">
+
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="../images/logo.png" alt="ProtestHub">
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="width: min(1200px, 100%);">
+            <a href="index.html" class="back-link">← デザイン一覧に戻る</a>
+            <div class="panel">
+                <div class="art">
+                    <img src="images/pl-000014-a.png" alt="ひとの税金で武器売買すな！">
+                </div>
+                <aside class="side">
+                    <h1 class="title">ひとの税金で武器売買すな！</h1>
+                    <p class="file">pl-000014-a.png</p>
+                    <div><span class="tag">反戦 / 戦争反対 / 縦 / 日本語 / 武器売買反対</span></div>
+                    <p class="desc">3536×5000px（高解像度）</p>
+
+                    <div class="creator-wrap">
+                        <span>制作：</span>
+                        <a class="creator-link" href="https://x.com/_tsu_ki_mi_" target="_blank" rel="noopener">_tsu_ki_mi_</a>
+                    </div>
+
+                    <div class="rights">
+                        <p class="rights-text">・著作権は制作者様に帰属しています</p>
+                        <p class="rights-text">・改変/転載/商用利用/AI学習いずれも不可</p>
+                        <label class="agree">
+                            <input id="rights-agree" type="checkbox">
+                            <span>上記2点に同意します</span>
+                        </label>
+                    </div>
+
+                    <div class="actions">
+                        <button class="button" id="download" disabled>ダウンロード</button>
+                        <button class="button secondary" id="print" disabled>印刷</button>
+                    </div>
+
+                    <div class="netprint-links">
+                        <span class="netprint-title">ネットプリント登録</span>
+                        <div class="netprint-link-item">
+                            <span class="netprint-bullet">・</span>
+                            <a href="https://www.printing.ne.jp/" target="_blank" rel="noopener"
+                                class="netprint-link">セブンイレブン</a>
+                        </div>
+                        <div class="netprint-link-item">
+                            <span class="netprint-bullet">・</span>
+                            <a href="https://networkprint.ne.jp/sharp_netprint/ja/top.aspx" target="_blank"
+                                rel="noopener" class="netprint-link">ファミマ/ローソン/ミニストップ/ポプラ</a>
+                        </div>
+                    </div>
+
+                    <div class="share-actions">
+                        <a href="#" id="share-x" target="_blank" class="share-button">
+                            <img src="../images/icon_x.png" alt="X" class="share-icon">
+                        </a>
+                        <a href="#" id="share-fb" target="_blank" class="share-button">
+                            <img src="../images/icon_fb.png" alt="FB" class="share-icon">
+                        </a>
+                    </div>
+
+                    <div id="variants-section" style="display: none;">
+                        <strong class="section-title">バリエーション</strong>
+                        <div class="variant-list" id="variant-list"></div>
+                    </div>
+
+                    <div id="author-section" style="display: none;">
+                        <strong class="section-title" id="author-title">作者の他作品</strong>
+                        <div class="variant-list" id="author-list"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script>
+        const currentFile = "pl-000014-a.png";
+        const currentBy = "_tsu_ki_mi_";
+
+        const agree = document.getElementById('rights-agree');
+        const dlBtn = document.getElementById('download');
+        const prBtn = document.getElementById('print');
+
+        agree.onchange = () => {
+            dlBtn.disabled = !agree.checked;
+            prBtn.disabled = !agree.checked;
+        };
+
+        dlBtn.onclick = () => {
+            const link = document.createElement('a');
+            link.href = 'images/' + currentFile;
+            link.download = currentFile;
+            link.click();
+            gtag('event', 'download', { 'event_category': 'design', 'event_label': currentFile });
+        };
+
+        prBtn.onclick = () => {
+            window.print();
+            gtag('event', 'print', { 'event_category': 'design', 'event_label': currentFile });
+        };
+
+        // SNS Share
+        const shareUrl = location.href;
+        const shareText = "ひとの税金で武器売買すな！｜Protest Hub";
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+        // Dynamic Lists
+        function initLists() {
+            const data = POSTERS_DATA;
+            const currentId = currentFile.match(/pl-(\d{6})/)[1];
+
+            // バリエーション
+            const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+            if (variants.length > 0) {
+                const list = document.getElementById('variant-list');
+                variants.forEach(v => {
+                    const a = document.createElement('a');
+                    a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
+                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                    list.appendChild(a);
+                });
+                document.getElementById('variants-section').style.display = 'block';
+            }
+
+            // 作者の他作品
+            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+            // 重複デザイン（IDが同じもの）は1つだけ表示
+            const uniqueAuthorWorks = [];
+            const seenIds = new Set();
+            authorWorks.forEach(p => {
+                const id = p.file.match(/pl-(\d{6})/)[1];
+                if (!seenIds.has(id)) {
+                    uniqueAuthorWorks.push(p);
+                    seenIds.add(id);
+                }
+            });
+
+            if (uniqueAuthorWorks.length > 0) {
+                const list = document.getElementById('author-list');
+                document.getElementById('author-title').textContent = currentBy + 'の他作品';
+                uniqueAuthorWorks.slice(0, 12).forEach(v => {
+                    const a = document.createElement('a');
+                    a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
+                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
+                    list.appendChild(a);
+                });
+                document.getElementById('author-section').style.display = 'block';
+            }
+        }
+        initLists();
+    </script>
+</body>
+
+</html>
