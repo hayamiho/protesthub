@@ -94,10 +94,19 @@ function parseCsv(csv) {
 
 async function sync() {
     console.log('--- Database Sync Started ---');
+    console.log('[NOTE] Googleスプレッドシートの「ウェブに公開」には最大5〜10分のキャッシュ遅延があります。');
+    console.log('       更新直後に実行した場合、最新のデータが反映されていない場合があります。');
+    console.log('');
     try {
         console.log('Fetching CSV from Google Sheets...');
         const csv = await downloadCsv(CSV_URL);
         const data = parseCsv(csv);
+
+        console.log(`Downloaded ${data.length} records.`);
+        if (data.length > 0) {
+            const files = data.map(item => item.file).filter(Boolean);
+            console.log(`Latest file in sync: ${files[files.length - 1]}`);
+        }
 
         // data.json の更新
         fs.writeFileSync(DATA_JSON, JSON.stringify(data, null, 4), 'utf8');
