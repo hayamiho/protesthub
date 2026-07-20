@@ -207,7 +207,7 @@
       break-inside: avoid;
       border: 2px solid var(--ink);
       border-radius: 8px;
-      overflow: hidden;
+      overflow: visible;
       background: var(--sheet);
       box-shadow: 5px 5px 0 rgba(32, 25, 22, .13);
       appearance: none;
@@ -217,6 +217,7 @@
       text-align: inherit;
       vertical-align: top;
       transition: transform .16s ease, box-shadow .16s ease;
+      position: relative;
     }
 
     .pin:hover {
@@ -224,12 +225,44 @@
       box-shadow: 7px 7px 0 rgba(32, 25, 22, .16);
     }
 
-    .pin img {
+    .pin>img {
       display: block;
       width: 100%;
       height: auto;
       background: var(--sheet);
       object-fit: contain;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* セット表示：サブ画像ラッパー */
+    .pin-subs {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      pointer-events: none;
+    }
+
+    /* セット表示：サブ画像（b, c） */
+    .pin-sub {
+      width: 72px;
+      height: auto;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: var(--sheet);
+      display: block;
+      cursor: zoom-in;
+      flex-shrink: 0;
+      pointer-events: auto;
+      object-fit: contain;
+    }
+
+    /* b は c に 50% 重ねる */
+    .pin-sub+.pin-sub {
+      margin-right: -36px;
     }
 
     .modal {
@@ -874,9 +907,53 @@
       return button;
     }
 
+    function createSetPin(main, subs) {
+      const button = createPin(main);
+      if (subs.length > 0) {
+        const subWrap = document.createElement("div");
+        subWrap.className = "pin-subs";
+        // b, c の順で追加（flex-direction:row-reverse により c が手前）
+        subs.forEach(sub => {
+          const img = document.createElement("img");
+          img.src = imageRoot + sub.file;
+          img.alt = sub.title;
+          img.className = "pin-sub";
+          img.loading = "lazy";
+          img.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openPoster(sub);
+          });
+          subWrap.appendChild(img);
+        });
+        button.appendChild(subWrap);
+      }
+      return button;
+    }
+
     function renderWall() {
+      const renderedSeries = new Set();
+
       filteredPosters.forEach((poster) => {
-        wall.append(createPin(poster));
+        const hasSet = poster.set === "1" || poster.set === 1;
+        if (hasSet) {
+          // set フラグあり → ファイル名からシリーズIDを取得してグループ化
+          const seriesId = poster.file.match(/([a-z]{2}-\d{6})/i)?.[1];
+          if (!seriesId || renderedSeries.has(seriesId)) return;
+          renderedSeries.add(seriesId);
+
+          // 同シリーズの全メンバーを全件から取得しファイル名順でソート
+          const members = posters
+            .filter(p => (p.set === "1" || p.set === 1)
+              && p.file.match(/([a-z]{2}-\d{6})/i)?.[1] === seriesId)
+            .sort((a, b) => a.file.localeCompare(b.file));
+
+          const main = members[0];
+          const subs = members.slice(1);
+          wall.append(createSetPin(main, subs));
+        } else {
+          // set フラグなし → 従来通り単独表示
+          wall.append(createPin(poster));
+        }
       });
     }
 
