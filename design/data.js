@@ -318,7 +318,7 @@ const POSTERS_DATA = [
         "file": "pl-000009-a.png",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
-        "cat": "制度",
+        "cat": "法案",
         "tags": [
             "議員定数",
             "横",
@@ -333,7 +333,7 @@ const POSTERS_DATA = [
         "file": "pl-000009-b.png",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
-        "cat": "制度",
+        "cat": "法案",
         "tags": [
             "議員定数",
             "横",
@@ -348,7 +348,7 @@ const POSTERS_DATA = [
         "file": "pl-000009-c.png",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
-        "cat": "制度",
+        "cat": "法案",
         "tags": [
             "議員定数",
             "横",
@@ -521,7 +521,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000015-a.png",
         "title": "家族（ペット）の命 戦争に奪わせないで",
-        "desc": "2970×4200px　A3/A4兼用<br/>ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくようになっているので、��切な家族（ペット）を守りたいという思いから作りました。",
+        "desc": "2970×4200px　A3/A4兼用<br/>ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくように��っているので、大切な家族（ペット）を守りたいという思いから作りました。",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -777,7 +777,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-a.png",
         "title": "YES PEACE",
-        "desc": "3536×5000px（高解像度）<br/><a href=\"https://www.protesthub.jp/design/images/pl-000022-a.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
+        "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-a.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -793,7 +793,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-b.png",
         "title": "LOVE PEACE",
-        "desc": "3536×5000px（高解像度）<br/><a href=\"https://www.protesthub.jp/design/images/pl-000022-b.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
+        "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-b.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -809,7 +809,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-c.png",
         "title": "LOVE PEACE",
-        "desc": "3536×5000px（高解像度）<br/><a href=\"https://www.protesthub.jp/design/images/pl-000022-c.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
+        "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-c.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
         "cat": "反戦",
         "tags": [
             "戦争反対",
@@ -819,6 +819,44 @@ const POSTERS_DATA = [
         ],
         "by": "toliodesign",
         "url": "https://x.com/toliodesign",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000001-a.png",
+        "title": "Q.どうして野党は反対ばっかりするの？ A.与党が問題のある法案ばかり通すからです。",
+        "desc": "2970×4200px　A3/A4兼用<br/>自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br/>トンボつき入稿データは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">こちらのnote記事</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
+        "cat": "政治",
+        "tags": [
+            "国会",
+            "法案",
+            "与党",
+            "野党",
+            "チラシ",
+            "フライヤー",
+            "縦"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000001-b.png",
+        "title": "いま国会で問題になっている主な法案と、その問題点",
+        "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらは裏面です＞<br/>自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br/>トンボつき入稿データは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">こちらのnote記事</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
+        "cat": "政治",
+        "tags": [
+            "国会",
+            "法案",
+            "与党",
+            "野党",
+            "チラシ",
+            "フライヤー",
+            "��"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
         "og_title": "",
         "og_desc": ""
     }
