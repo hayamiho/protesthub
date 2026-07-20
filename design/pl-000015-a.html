@@ -19,7 +19,7 @@
     <!-- OGP -->
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="家族（ペット）の命 戦争に奪わせないで｜Protest Hub">
-    <meta property="og:description" content="2970×4200px　A3/A4兼用ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくように��っているので、大切な家族（ペット）を守りたいという思いから作りました。">
+    <meta property="og:description" content="2970×4200px　A3/A4兼用ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくようになっているので、大切な家族（ペット）を守りたいという思いから作りました。">
     <meta property="og:url" content="https://www.protesthub.jp/design/pl-000015-a.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000015-a.png">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="家族（ペット）の命 戦争に奪わせないで｜Protest Hub">
-    <meta name="twitter:description" content="2970×4200px　A3/A4兼用ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくように��っているので、大切な家族（ペット）を守りたいという思いから作りました。">
+    <meta name="twitter:description" content="2970×4200px　A3/A4兼用ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくようになっているので、大切な家族（ペット）を守りたいという思いから作りました。">
     <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000015-a.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
@@ -55,7 +55,7 @@
                     <h1 class="title">家族（ペット）の命 戦争に奪わせないで</h1>
                     <p class="file">pl-000015-a.png</p>
                     <div><span class="tag">反戦 / 戦争反対 / 縦 / 日本語 / ペット</span></div>
-                    <p class="desc">2970×4200px　A3/A4兼用<br/>ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくように��っているので、大切な家族（ペット）を守りたいという思いから作りました。</p>
+                    <p class="desc">2970×4200px　A3/A4兼用<br/>ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくようになっているので、大切な家族（ペット）を守りたいという思いから作りました。</p>
 
                     <div class="creator-wrap">
                         <span>制作：</span>
@@ -149,10 +149,10 @@
         // Dynamic Lists
         function initLists() {
             const data = POSTERS_DATA;
-            const currentId = currentFile.match(/pl-(\d{6})/)[1];
+            const currentId = currentFile.match(/[a-z]{2}-(\d{6})/i)[1];
 
             // バリエーション
-            const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+            const variants = data.filter(p => p.file.match(/[a-z]{2}-(\d{6})/i)[1] === currentId && p.file !== currentFile);
             if (variants.length > 0) {
                 const list = document.getElementById('variant-list');
                 variants.forEach(v => {
@@ -165,12 +165,12 @@
             }
 
             // 作者の他作品
-            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/[a-z]{2}-(\d{6})/i)[1] !== currentId);
             // 重複デザイン（IDが同じもの）は1つだけ表示
             const uniqueAuthorWorks = [];
             const seenIds = new Set();
             authorWorks.forEach(p => {
-                const id = p.file.match(/pl-(\d{6})/)[1];
+                const id = p.file.match(/[a-z]{2}-(\d{6})/i)[1];
                 if (!seenIds.has(id)) {
                     uniqueAuthorWorks.push(p);
                     seenIds.add(id);

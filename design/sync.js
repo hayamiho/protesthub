@@ -14,9 +14,12 @@ function downloadCsv(url) {
                 // リダイレクト追従
                 return resolve(downloadCsv(res.headers.location));
             }
-            let data = '';
-            res.on('data', (chunk) => data += chunk);
-            res.on('end', () => resolve(data));
+            const chunks = [];
+            res.on('data', (chunk) => chunks.push(chunk));
+            res.on('end', () => {
+                const buffer = Buffer.concat(chunks);
+                resolve(buffer.toString('utf8'));
+            });
         }).on('error', (err) => reject(err));
     });
 }

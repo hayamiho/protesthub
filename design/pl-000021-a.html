@@ -149,10 +149,10 @@
         // Dynamic Lists
         function initLists() {
             const data = POSTERS_DATA;
-            const currentId = currentFile.match(/pl-(\d{6})/)[1];
+            const currentId = currentFile.match(/[a-z]{2}-(\d{6})/i)[1];
 
             // バリエーション
-            const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+            const variants = data.filter(p => p.file.match(/[a-z]{2}-(\d{6})/i)[1] === currentId && p.file !== currentFile);
             if (variants.length > 0) {
                 const list = document.getElementById('variant-list');
                 variants.forEach(v => {
@@ -165,12 +165,12 @@
             }
 
             // 作者の他作品
-            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/[a-z]{2}-(\d{6})/i)[1] !== currentId);
             // 重複デザイン（IDが同じもの）は1つだけ表示
             const uniqueAuthorWorks = [];
             const seenIds = new Set();
             authorWorks.forEach(p => {
-                const id = p.file.match(/pl-(\d{6})/)[1];
+                const id = p.file.match(/[a-z]{2}-(\d{6})/i)[1];
                 if (!seenIds.has(id)) {
                     uniqueAuthorWorks.push(p);
                     seenIds.add(id);
