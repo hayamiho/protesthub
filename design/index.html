@@ -795,8 +795,8 @@
       creatorLink.href = poster.url || "#";
 
       const variantList = document.querySelector("#variant-list");
-      const id = poster.id || poster.file.match(/pl-(\d{6})/)[1];
-      const variants = posters.filter(p => (p.id || p.file.match(/pl-(\d{6})/)[1]) === id);
+      const id = poster.id || poster.file.match(/[a-z]{2}-(\d{6})/i)[1];
+      const variants = posters.filter(p => (p.id || p.file.match(/[a-z]{2}-(\d{6})/i)[1]) === id);
       variantList.innerHTML = "";
       variants.forEach(v => {
         const img = document.createElement("img");
@@ -814,14 +814,14 @@
       const uniqueDesigns = [];
 
       sameAuthor.forEach(p => {
-        const designId = p.id || p.file.match(/pl-(\d{6})/)[1];
-        if (!uniqueDesigns.some(item => (item.id || item.file.match(/pl-(\d{6})/)[1]) === designId)) {
+        const designId = p.id || p.file.match(/[a-z]{2}-(\d{6})/i)[1];
+        if (!uniqueDesigns.some(item => (item.id || item.file.match(/[a-z]{2}-(\d{6})/i)[1]) === designId)) {
           uniqueDesigns.push(p);
         }
       });
 
-      const currentDesignId = poster.id || poster.file.match(/pl-(\d{6})/)[1];
-      const filteredDesigns = uniqueDesigns.filter(p => (p.id || p.file.match(/pl-(\d{6})/)[1]) !== currentDesignId);
+      const currentDesignId = poster.id || poster.file.match(/[a-z]{2}-(\d{6})/i)[1];
+      const filteredDesigns = uniqueDesigns.filter(p => (p.id || p.file.match(/[a-z]{2}-(\d{6})/i)[1]) !== currentDesignId);
 
       filteredDesigns.slice(0, 12).forEach(v => {
         const img = document.createElement("img");

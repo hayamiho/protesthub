@@ -19,7 +19,8 @@
     <!-- OGP -->
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="いま国会で問題になっている主な法案と、その問題点｜Protest Hub">
-    <meta property="og:description" content="2970×4200px　A3/A4兼用＜注：こちらは裏面です＞自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。トンボつき入稿データはこちらのnote記事から。関連タグ：#自民党無理すぎポスティング部">
+    <meta property="og:description"
+        content="2970×4200px　A3/A4兼用＜注：こちらは裏面です＞自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。トンボつき入稿データはこちらのnote記事から。関連タグ：#自民党無理すぎポスティング部">
     <meta property="og:url" content="https://www.protesthub.jp/design/fl-000001-b.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://www.protesthub.jp/design/images/fl-000001-b.png">
@@ -28,7 +29,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="いま国会で問題になっている主な法案と、その問題点｜Protest Hub">
-    <meta name="twitter:description" content="2970×4200px　A3/A4兼用＜注：こちらは裏面です＞自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。トンボつき入稿データはこちらのnote記事から。関連タグ：#自民党無理すぎポスティング部">
+    <meta name="twitter:description"
+        content="2970×4200px　A3/A4兼用＜注：こちらは裏面です＞自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。トンボつき入稿データはこちらのnote記事から。関連タグ：#自民党無理すぎポスティング部">
     <meta name="twitter:image" content="https://www.protesthub.jp/design/images/fl-000001-b.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
@@ -55,11 +57,17 @@
                     <h1 class="title">いま国会で問題になっている主な法案と、その問題点</h1>
                     <p class="file">fl-000001-b.png</p>
                     <div><span class="tag">政治 / 国会 / 法案 / 与党 / 野党 / チラシ / フライヤー / ��</span></div>
-                    <p class="desc">2970×4200px　A3/A4兼用<br/>＜注：こちらは裏面です＞<br/>自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br/>トンボつき入稿データは<a href="https://note.com/schwarzewald/n/nf95c5ff2f893" target="_blank">こちらのnote記事</a>から。<br/>関連タグ：<a href="https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click" target="_blank">#自民党無理すぎポスティング部</a></p>
+                    <p class="desc">
+                        2970×4200px　A3/A4兼用<br />＜注：こちらは裏面です＞<br />自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br />トンボつき入稿データは<a
+                            href="https://note.com/schwarzewald/n/nf95c5ff2f893"
+                            target="_blank">こちらのnote記事</a>から。<br />関連タグ：<a
+                            href="https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click"
+                            target="_blank">#自民党無理すぎポスティング部</a></p>
 
                     <div class="creator-wrap">
                         <span>制作：</span>
-                        <a class="creator-link" href="https://x.com/schwarzewald" target="_blank" rel="noopener">schwarzewald</a>
+                        <a class="creator-link" href="https://x.com/schwarzewald" target="_blank"
+                            rel="noopener">schwarzewald</a>
                     </div>
 
                     <div class="rights">
@@ -149,10 +157,10 @@
         // Dynamic Lists
         function initLists() {
             const data = POSTERS_DATA;
-            const currentId = currentFile.match(/pl-(\d{6})/)[1];
+            const currentId = currentFile.match(/[a-z]{2}-(\d{6})/i)[1];
 
             // バリエーション
-            const variants = data.filter(p => p.file.match(/pl-(\d{6})/)[1] === currentId && p.file !== currentFile);
+            const variants = data.filter(p => p.file.match(/[a-z]{2}-(\d{6})/i)[1] === currentId && p.file !== currentFile);
             if (variants.length > 0) {
                 const list = document.getElementById('variant-list');
                 variants.forEach(v => {
@@ -165,12 +173,12 @@
             }
 
             // 作者の他作品
-            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/pl-(\d{6})/)[1] !== currentId);
+            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/[a-z]{2}-(\d{6})/i)[1] !== currentId);
             // 重複デザイン（IDが同じもの）は1つだけ表示
             const uniqueAuthorWorks = [];
             const seenIds = new Set();
             authorWorks.forEach(p => {
-                const id = p.file.match(/pl-(\d{6})/)[1];
+                const id = p.file.match(/[a-z]{2}-(\d{6})/i)[1];
                 if (!seenIds.has(id)) {
                     uniqueAuthorWorks.push(p);
                     seenIds.add(id);
