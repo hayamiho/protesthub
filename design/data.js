@@ -1016,5 +1016,65 @@ const POSTERS_DATA = [
         "url": "https://x.com/itocorn",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000025-a.png",
+        "set": "",
+        "title": "政治に怒っていいんだよ！！",
+        "desc": "2970×4200px　A3/A4兼用",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "税金",
+            "軍拡",
+            "ナフサ",
+            "物価高",
+            "インフラ",
+            "重油",
+            "医療費"
+        ],
+        "by": "sukkkkkkkkkke",
+        "url": "https://x.com/sukkkkkkkkkke",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000025-b.png",
+        "set": "",
+        "title": "政府が個人情報勝手に抜くって言ってるよ！！！！！SNSも本名住所も全部紐付けで筒抜け",
+        "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらはYahooニュースのQRコードです＞",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "個人情報",
+            "国家情報局",
+            "情報漏洩",
+            "パランティア"
+        ],
+        "by": "sukkkkkkkkkke",
+        "url": "https://x.com/sukkkkkkkkkke",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000025-c.png",
+        "set": "",
+        "title": "政府が個人情報勝手に抜くって言ってるよ！！！！！SNSも本名住所も全部紐付けで筒抜け",
+        "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらは北海道新聞のQRコードです＞<br/>Yahooニュースの記事が削除された場合にご利用ください。<br/>※全文閲覧には無料会員登録が必要です",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "個人情報",
+            "国家情報局",
+            "情報漏洩",
+            "パランティア"
+        ],
+        "by": "sukkkkkkkkkke",
+        "url": "https://x.com/sukkkkkkkkkke",
+        "og_title": "",
+        "og_desc": ""
     }
 ];
