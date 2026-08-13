@@ -1076,5 +1076,56 @@ const POSTERS_DATA = [
         "url": "https://x.com/sukkkkkkkkkke",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000026-a.png",
+        "set": "",
+        "title": "NO WAR I'm an OTAKU NO arms exports! NO war! Stop amending the constitution!",
+        "desc": "3536×5000px（高解像度）",
+        "cat": "反戦",
+        "tags": [
+            "戦争反対",
+            "平和",
+            "縦",
+            "英字"
+        ],
+        "by": "nk8hlu",
+        "url": "https://x.com/nk8hlu",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000027-a.png",
+        "set": "",
+        "title": "軍拡よりも防災",
+        "desc": "3536×5000px（高解像度）<br/><a href=\"https://x.com/hashtag/%E8%BB%8D%E6%8B%A1%E3%82%88%E3%82%8A%E9%98%B2%E7%81%BD?src=hashtag_click\" target=\"_blank\">#軍拡より防災</a><br/><a href=\"https://x.com/hashtag/%E3%83%9F%E3%82%B5%E3%82%A4%E3%83%AB%E3%82%88%E3%82%8A%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%82%92?src=hashtag_click\" target=\"_blank\">#ミサイルよりエアコンを</a><br/><a href=\"https://x.com/hashtag/%E6%AD%A6%E5%99%A8%E3%82%88%E3%82%8A%E3%81%8A%E7%B1%B3?src=hashtag_click\" target=\"_blank\">#武器よりお米</a>",
+        "cat": "反戦",
+        "tags": [
+            "戦争反対",
+            "軍拡反対",
+            "縦",
+            "日本語"
+        ],
+        "by": "naminooox",
+        "url": "https://x.com/naminooox",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000027-b.png",
+        "set": "",
+        "title": "憲法変えるな！",
+        "desc": "3536×5000px（高解像度）<br/><a href=\"https://x.com/hashtag/%E8%BB%8D%E6%8B%A1%E3%82%88%E3%82%8A%E9%98%B2%E7%81%BD?src=hashtag_click\" target=\"_blank\">#軍拡より防災</a><br/><a href=\"https://x.com/hashtag/%E3%83%9F%E3%82%B5%E3%82%A4%E3%83%AB%E3%82%88%E3%82%8A%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%82%92?src=hashtag_click\" target=\"_blank\">#ミサイルよりエアコンを</a><br/><a href=\"https://x.com/hashtag/%E6%AD%A6%E5%99%A8%E3%82%88%E3%82%8A%E3%81%8A%E7%B1%B3?src=hashtag_click\" target=\"_blank\">#武器よりお米</a>",
+        "cat": "憲法",
+        "tags": [
+            "護憲",
+            "日本国憲法",
+            "縦",
+            "日本語"
+        ],
+        "by": "naminooox",
+        "url": "https://x.com/naminooox",
+        "og_title": "",
+        "og_desc": ""
     }
 ];
