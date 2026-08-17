@@ -195,14 +195,23 @@
       width: calc(100% - 18px);
       margin: 0 auto;
       padding: 12px 0 24px;
-      column-width: 190px;
-      column-gap: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .wall-column {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .pin {
-      display: inline-block;
+      display: block;
       width: 100%;
-      margin: 0 0 12px;
+      margin: 0;
       padding: 0;
       break-inside: avoid;
       border: 2px solid var(--ink);
@@ -588,20 +597,30 @@
 
       .wall {
         width: calc(100% - 12px);
-      }
-
-      .wall {
-        column-count: 3;
-        column-gap: 7px;
+        display: flex;
+        gap: 7px;
         padding-top: 7px;
       }
 
+      .wall-column {
+        gap: 7px;
+      }
+
       .pin {
-        margin-bottom: 7px;
+        margin-bottom: 0;
         border-width: 2px;
         /* 枠線の太さを維持 */
         border-radius: 6px;
         box-shadow: 3px 3px 0 rgba(32, 25, 22, .12);
+      }
+
+      /* スマホ用のサブ画像サイズ調整（崩れ防止＆見た目の最適化） */
+      .pin-sub {
+        width: 48px;
+      }
+
+      .pin-sub+.pin-sub {
+        margin-right: -24px;
       }
 
       .modal {
@@ -930,18 +949,37 @@
       return button;
     }
 
+    function getColumnCount() {
+      const width = window.innerWidth;
+      if (width <= 700) {
+        return 2;
+      }
+      const cols = Math.floor((width - 18) / (190 + 12));
+      return Math.max(2, cols);
+    }
+
     function renderWall() {
+      const colsCount = getColumnCount();
+      wall.innerHTML = "";
+
+      const columns = [];
+      for (let i = 0; i < colsCount; i++) {
+        const col = document.createElement("div");
+        col.className = "wall-column";
+        wall.appendChild(col);
+        columns.push(col);
+      }
+
       const renderedSeries = new Set();
+      const itemsToRender = [];
 
       filteredPosters.forEach((poster) => {
         const hasSet = poster.set === "1" || poster.set === 1;
         if (hasSet) {
-          // set フラグあり → ファイル名からシリーズIDを取得してグループ化
           const seriesId = poster.file.match(/([a-z]{2}-\d{6})/i)?.[1];
           if (!seriesId || renderedSeries.has(seriesId)) return;
           renderedSeries.add(seriesId);
 
-          // 同シリーズの全メンバーを全件から取得しファイル名順でソート
           const members = posters
             .filter(p => (p.set === "1" || p.set === 1)
               && p.file.match(/([a-z]{2}-\d{6})/i)?.[1] === seriesId)
@@ -949,10 +987,18 @@
 
           const main = members[0];
           const subs = members.slice(1);
-          wall.append(createSetPin(main, subs));
+          itemsToRender.push({ type: 'set', main, subs });
         } else {
-          // set フラグなし → 従来通り単独表示
-          wall.append(createPin(poster));
+          itemsToRender.push({ type: 'single', poster });
+        }
+      });
+
+      itemsToRender.forEach((item, index) => {
+        const targetCol = columns[index % colsCount];
+        if (item.type === 'set') {
+          targetCol.appendChild(createSetPin(item.main, item.subs));
+        } else {
+          targetCol.appendChild(createPin(item.poster));
         }
       });
     }
@@ -1125,6 +1171,14 @@
     search.addEventListener("input", resetWall);
     category.addEventListener("change", resetWall);
     sortSelect.addEventListener("change", resetWall);
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resetWall();
+      }, 200);
+    });
     closeButton.addEventListener("click", closePoster);
     rightsAgree.addEventListener("change", updateRightsLockedState);
     modalDownload.addEventListener("click", downloadPoster);
