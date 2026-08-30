@@ -1245,5 +1245,115 @@ const POSTERS_DATA = [
         "url": "https://x.com/shiminrengo",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "fl-000003-a.png",
+        "set": "1",
+        "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります",
+        "desc": "5000×3024px（高解像度）",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "日本語",
+            "横"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000003-b.png",
+        "set": "1",
+        "title": "全国のデモ・スタンディング情報サイト デモカレンダー",
+        "desc": "5000×3024px（高解像度）",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "日本語",
+            "横"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000003-c.png",
+        "set": "1",
+        "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります　全国のデモ・スタンディング情報サイト デモカレンダー",
+        "desc": "3536×5000px（高解像度）ミニチラシとして、両面印刷後10枚カットでお使いください。<br/>PDFは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">note</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "ミニチラシ",
+            "カード",
+            "名刺"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000004-a.png",
+        "set": "1",
+        "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります",
+        "desc": "5000×3024px（高解像度）",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "日本語",
+            "横"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000004-b.png",
+        "set": "1",
+        "title": "全国のデモ・スタンディング情報サイト デモカレンダー",
+        "desc": "5000×3024px（高解像度）",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "日本語",
+            "横"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "fl-000004-c.png",
+        "set": "1",
+        "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります　全国のデモ・スタンディング情報サイト デモカレンダー",
+        "desc": "3536×5000px（高解像度）ミニチラシとして、両面印刷後10枚カットでお使いください。<br/>PDFは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">note</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
+        "cat": "その他",
+        "tags": [
+            "デモカレンダー",
+            "デモ",
+            "サイト紹介",
+            "ミニチラシ",
+            "カード",
+            "名刺"
+        ],
+        "by": "schwarzewald",
+        "url": "https://x.com/schwarzewald",
+        "og_title": "",
+        "og_desc": ""
     }
 ];
