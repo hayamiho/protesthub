@@ -393,11 +393,14 @@ document.addEventListener('DOMContentLoaded', () => {
     category.addEventListener("change", resetWall);
     sortSelect.addEventListener("change", resetWall);
 
+    let lastWidth = window.innerWidth;
     let resizeTimer;
     window.addEventListener("resize", () => {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            resetWall();
+            renderWall();
         }, 200);
     });
     closeButton.addEventListener("click", closePoster);

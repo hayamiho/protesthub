@@ -133,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    let currentFilteredBooks = [];
+
     // Filter & Sort (デフォルト: ランダム)
     function updateList() {
         const query = searchInput.value.trim().toLowerCase();
@@ -162,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
             filtered.reverse();
         }
 
-        renderWall(filtered);
+        currentFilteredBooks = filtered;
+        renderWall(currentFilteredBooks);
     }
 
     // Extract Tweet ID from URL
@@ -279,11 +282,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    let lastWidth = window.innerWidth;
     let resizeTimer;
     window.addEventListener('resize', () => {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            updateList();
+            if (currentFilteredBooks.length > 0) {
+                renderWall(currentFilteredBooks);
+            } else {
+                updateList();
+            }
         }, 200);
     });
 
