@@ -153,11 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (sortVal === 'random') {
             filtered = shuffleArray(filtered);
-        } else if (sortVal === 'title') {
+        } else if (sortVal === 'popular') {
             filtered.sort((a, b) => {
                 const bA = resolveBook(a);
                 const bB = resolveBook(b);
-                return bA.title.localeCompare(bB.title, 'ja');
+                return bB.tweets.length - bA.tweets.length;
             });
         } else if (sortVal === 'newest') {
             // スプレッドシートの登録順で末尾（最新）を先頭（左上）にするため逆順
