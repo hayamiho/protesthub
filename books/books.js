@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 列数の算出（books.cssのブレークポイントに準拠）
     function getColumnCount() {
         const width = window.innerWidth;
-        if (width <= 480) return 2;
         if (width <= 768) return 3;
         if (width <= 992) return 4;
         if (width <= 1200) return 5;
