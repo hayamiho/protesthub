@@ -1425,5 +1425,24 @@ const POSTERS_DATA = [
         "url": "https://x.com/n_u_m_n_u_r",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000032-a.png",
+        "set": "",
+        "title": "自民党広告費予算72億に反対します!!!!",
+        "desc": "5000×3536px（高解像度）<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E5%BA%83%E5%91%8A%E8%B2%BB%E4%BA%88%E7%AE%9772%E5%84%84%E3%81%AB%E5%8F%8D%E5%AF%BE%E3%81%97%E3%81%BE%E3%81%99?src=hashtag_click\" target=\"_blank\">#自民党広告費予算72億に反対します</a><br/><a href=\"https://x.com/hashtag/%E3%81%9B%E3%83%BC%E3%81%AE%E3%81%A7%E3%82%AD%E3%83%AC%E3%81%A6%E3%81%9372%E5%84%84?src=hashtag_click\" target=\"_blank\">#せーのでキレてこ72億</a>",
+        "cat": "政治",
+        "tags": [
+            "自民党",
+            "広告費",
+            "横",
+            "72億",
+            "税金",
+            "日本語"
+        ],
+        "by": "ykhre",
+        "url": "https://x.com/ykhre",
+        "og_title": "",
+        "og_desc": ""
     }
 ];
