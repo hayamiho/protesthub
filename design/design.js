@@ -197,9 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const renderedSeries = new Set();
         const itemsToRender = [];
+        const isSearching = !!(search && search.value.trim());
 
         filteredPosters.forEach((poster) => {
-            const hasSet = poster.set === "1" || poster.set === 1;
+            const hasSet = !isSearching && (poster.set === "1" || poster.set === 1);
             if (hasSet) {
                 const seriesId = poster.file.match(/([a-z]{2}-\d{6})/i)?.[1];
                 if (!seriesId || renderedSeries.has(seriesId)) return;
