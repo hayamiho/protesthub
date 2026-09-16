@@ -104,7 +104,9 @@ const POSTERS_DATA = [
         "tags": [
             "減税",
             "縦",
-            "政治"
+            "政治",
+            "黄",
+            "イエロー"
         ],
         "by": "protesthub_jp",
         "url": "https://x.com/protesthub_jp",
@@ -344,7 +346,9 @@ const POSTERS_DATA = [
         "tags": [
             "議員定数",
             "横",
-            "制度"
+            "制度",
+            "黄",
+            "イエロー"
         ],
         "by": "protesthub_jp",
         "url": "https://x.com/protesthub_jp",
@@ -392,7 +396,9 @@ const POSTERS_DATA = [
         "tags": [
             "自民党",
             "改憲",
-            "サイト紹介"
+            "サイト紹介",
+            "黄",
+            "イエロー"
         ],
         "by": "mfk_ouu",
         "url": "https://x.com/mfk_ouu",
@@ -408,7 +414,9 @@ const POSTERS_DATA = [
         "tags": [
             "自民党",
             "改憲",
-            "サイト紹介"
+            "サイト紹介",
+            "黄",
+            "イエロー"
         ],
         "by": "mfk_ouu",
         "url": "https://x.com/mfk_ouu",
@@ -424,7 +432,9 @@ const POSTERS_DATA = [
         "tags": [
             "デモカレンダー",
             "デモ",
-            "サイト紹介"
+            "サイト紹介",
+            "黄",
+            "イエロー"
         ],
         "by": "mfk_ouu",
         "url": "https://x.com/mfk_ouu",
@@ -892,7 +902,9 @@ const POSTERS_DATA = [
             "チラシ",
             "フライヤー",
             "リーフレット",
-            "縦"
+            "縦",
+            "黄",
+            "イエロー"
         ],
         "by": "schwarzewald",
         "url": "https://x.com/schwarzewald",
@@ -963,7 +975,9 @@ const POSTERS_DATA = [
             "縦",
             "国会",
             "法律",
-            "人権"
+            "人権",
+            "黄",
+            "イエロー"
         ],
         "by": "itocorn",
         "url": "https://x.com/itocorn",
@@ -981,7 +995,9 @@ const POSTERS_DATA = [
             "縦",
             "国会",
             "法律",
-            "個人情報"
+            "個人情報",
+            "黄",
+            "イエロー"
         ],
         "by": "itocorn",
         "url": "https://x.com/itocorn",
@@ -998,7 +1014,9 @@ const POSTERS_DATA = [
             "日本語",
             "縦",
             "反戦",
-            "戦争反対"
+            "戦争反対",
+            "黄",
+            "イエロー"
         ],
         "by": "itocorn",
         "url": "https://x.com/itocorn",
@@ -1015,7 +1033,9 @@ const POSTERS_DATA = [
             "日本語",
             "縦",
             "物価",
-            "税金"
+            "税金",
+            "黄",
+            "イエロー"
         ],
         "by": "itocorn",
         "url": "https://x.com/itocorn",
@@ -1037,7 +1057,11 @@ const POSTERS_DATA = [
             "物価高",
             "インフラ",
             "重油",
-            "医療費"
+            "医療費",
+            "黄",
+            "黒",
+            "イエロー",
+            "ブラック"
         ],
         "by": "sukkkkkkkkkke",
         "url": "https://x.com/sukkkkkkkkkke",
@@ -1221,7 +1245,9 @@ const POSTERS_DATA = [
             "縦",
             "日本語",
             "鳩",
-            "ミモザ"
+            "ミモザ",
+            "黄",
+            "イエロー"
         ],
         "by": "shiminrengo",
         "url": "https://x.com/shiminrengo",
@@ -1239,7 +1265,9 @@ const POSTERS_DATA = [
             "野党共闘",
             "縦",
             "日本語",
-            "ミモザ"
+            "ミモザ",
+            "黄",
+            "イエロー"
         ],
         "by": "shiminrengo",
         "url": "https://x.com/shiminrengo",
@@ -1364,7 +1392,9 @@ const POSTERS_DATA = [
         "cat": "政治",
         "tags": [
             "日本語",
-            "縦"
+            "縦",
+            "黄",
+            "イエロー"
         ],
         "by": "komakmak",
         "url": "https://x.com/komakmak",
@@ -1387,7 +1417,9 @@ const POSTERS_DATA = [
             "プロパガンダ",
             "武器輸出",
             "カルト終了",
-            "裏金議員"
+            "裏金議員",
+            "黄",
+            "イエロー"
         ],
         "by": "komakmak",
         "url": "https://x.com/komakmak",
@@ -1438,7 +1470,9 @@ const POSTERS_DATA = [
             "横",
             "72億",
             "税金",
-            "日本語"
+            "日本語",
+            "黄",
+            "イエロー"
         ],
         "by": "ykhre",
         "url": "https://x.com/ykhre",
