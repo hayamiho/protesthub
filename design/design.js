@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let posters = typeof POSTERS_DATA !== 'undefined' ? POSTERS_DATA : [];
     let filteredPosters = [...posters];
     let activePoster = null;
+    let activeColor = null;
 
     // サムネイル用（.webp）とフル画像用（元ファイル名そのまま）のルートを分離
     const imageRoot = "images/";
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wall = document.querySelector("#wall");
     const search = document.querySelector("#search");
     const category = document.querySelector("#category");
+    const colorChips = document.querySelectorAll(".color-chip");
     const modal = document.querySelector("#modal");
     const modalImage = document.querySelector("#modal-image");
     const modalTitle = document.querySelector("#modal-title");
@@ -38,6 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareStatus = document.querySelector("#share-status");
     const authorTitle = document.querySelector("#author-title");
     const sortSelect = document.querySelector("#sort");
+
+    colorChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+            const color = chip.getAttribute("data-color");
+            if (activeColor === color) {
+                activeColor = null;
+                chip.classList.remove("active");
+            } else {
+                colorChips.forEach(c => c.classList.remove("active"));
+                chip.classList.add("active");
+                activeColor = color;
+            }
+            resetWall();
+        });
+    });
 
     function openPoster(poster) {
         // モーダル大画像はフルサイズ PNG を使用
@@ -138,7 +155,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const query = search.value.trim().toLowerCase();
         const categoryValue = category.value;
         const haystack = `${poster.title || ''} ${poster.cat || ''} ${(poster.tags || []).join(" ")} ${poster.file || ''} ${poster.by || ''}`.toLowerCase();
-        return (!query || haystack.includes(query)) && (categoryValue === "all" || poster.cat === categoryValue);
+
+        let colorMatch = true;
+        if (activeColor) {
+            if (!poster.color) {
+                colorMatch = false;
+            } else {
+                const colors = poster.color.split('|').map(c => c.trim());
+                colorMatch = colors.includes(activeColor);
+            }
+        }
+
+        return colorMatch && (!query || haystack.includes(query)) && (categoryValue === "all" || poster.cat === categoryValue);
     }
 
     // サムネイルはwebpを使用
@@ -197,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const renderedSeries = new Set();
         const itemsToRender = [];
-        const isSearching = !!(search && search.value.trim());
+        const isSearching = !!(search && search.value.trim()) || !!activeColor;
 
         filteredPosters.forEach((poster) => {
             const hasSet = !isSearching && (poster.set === "1" || poster.set === 1);

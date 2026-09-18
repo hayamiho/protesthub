@@ -121,9 +121,43 @@ a {
     justify-content: flex-end;
 }
 
+/* カラーパレット */
+.color-palette {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 4px;
+}
+
+.color-chip {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    background-color: var(--chip-color);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    flex-shrink: 0;
+}
+
+.color-chip[data-color="白"] {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.color-chip:hover {
+    transform: scale(1.15);
+}
+
+.color-chip.active {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+    transform: scale(1.1);
+}
+
 .search {
-    width: min(32vw, 320px);
-    min-width: 160px;
+    width: min(21vw, 210px);
+    min-width: 110px;
     height: 38px;
     border: 2px solid var(--ink);
     border-radius: 6px;
@@ -553,8 +587,22 @@ a {
 
     .tools {
         width: 100%;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .color-palette {
+        width: 100%;
+        justify-content: flex-start;
         gap: 6px;
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
+
+    .color-chip {
+        width: 20px;
+        height: 20px;
     }
 
     .search {
