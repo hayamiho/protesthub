@@ -53,16 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
             img = 'images/' + img;
         }
 
-        // Tweets array (tw1 ~ tw10)
+        // Tweets array (tw1 ~ twN 動的対応)
         let tweets = book.tweets;
         if (!tweets) {
             tweets = [];
-            for (let i = 1; i <= 10; i++) {
-                const tw = book[`tw${i}`] || book[`ツイート${i}`];
+            const twKeys = Object.keys(book)
+                .filter(k => /^(tw|ツイート)\d+$/i.test(k))
+                .sort((a, b) => {
+                    const numA = parseInt(a.replace(/\D/g, ''), 10);
+                    const numB = parseInt(b.replace(/\D/g, ''), 10);
+                    return numA - numB;
+                });
+
+            twKeys.forEach(k => {
+                const tw = book[k];
                 if (tw && tw.trim()) {
                     tweets.push(tw.trim());
                 }
-            }
+            });
+
+            // 新しいツイートが一番上にくるように逆順（新しい順）にする
+            tweets.reverse();
         }
 
         return {
