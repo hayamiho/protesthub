@@ -1608,5 +1608,60 @@
         "url": "https://x.com/ykhre",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000033-a.png",
+        "set": "",
+        "color": "赤",
+        "title": "独裁者は「今から独裁する」と言わない",
+        "desc": "3508×4961px（高解像度）",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "独裁",
+            "人権"
+        ],
+        "by": "kinacochrom",
+        "url": "https://x.com/kinacochrom",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000033-b.png",
+        "set": "",
+        "color": "黄",
+        "title": "戦争に課金しないで",
+        "desc": "3508×4961px（高解像度）",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対"
+        ],
+        "by": "kinacochrom",
+        "url": "https://x.com/kinacochrom",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000033-c.png",
+        "set": "",
+        "color": "青",
+        "title": "平和外交しか勝たん",
+        "desc": "3508×4961px（高解像度）",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "外交",
+            "反戦",
+            "戦争反対"
+        ],
+        "by": "kinacochrom",
+        "url": "https://x.com/kinacochrom",
+        "og_title": "",
+        "og_desc": ""
     }
 ]
