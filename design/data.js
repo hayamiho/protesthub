@@ -1663,5 +1663,124 @@ const POSTERS_DATA = [
         "url": "https://x.com/kinacochrom",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000034-a.png",
+        "set": "",
+        "color": "白",
+        "title": "憲法前文 NO WAR",
+        "desc": "2970×4200px　A3/A4兼用<br/>【戦争反対・恒久平和の念願】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-b.png",
+        "set": "",
+        "color": "白",
+        "title": "第九条 PEACE",
+        "desc": "2970×4200px　A3/A4兼用<br/>【平和の希求、戦争放棄】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-c.png",
+        "set": "",
+        "color": "白",
+        "title": "第十一条 HUMAN RIGHTS 基本的人権",
+        "desc": "2970×4200px　A3/A4兼用<br/>【】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-d.png",
+        "set": "",
+        "color": "白",
+        "title": "第十二条 OUR RIGHTS, OUR RESPONSIBILITY",
+        "desc": "2970×4200px　A3/A4兼用<br/>【私たちの自由と権利、私たちの不断の努力】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-e.png",
+        "set": "",
+        "color": "白",
+        "title": "第十二条 OUR RIGHTS, OUR RESPONSIBILITY 私たちの自由と権利、私たちの不断の努力",
+        "desc": "2970×4200px　A3/A4兼用<br/>【私たちの自由と権利、私たちの不断の努力】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-f.png",
+        "set": "",
+        "color": "白",
+        "title": "第十三条 RESPECT",
+        "desc": "2970×4200px　A3/A4兼用<br/>【個人の尊重】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000034-g.png",
+        "set": "",
+        "color": "白",
+        "title": "第十四条 EQUAL",
+        "desc": "2970×4200px　A3/A4兼用<br/>【法の下に平等】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法"
+        ],
+        "by": "__eruca",
+        "url": "https://x.com/__eruca",
+        "og_title": "",
+        "og_desc": ""
     }
 ];
