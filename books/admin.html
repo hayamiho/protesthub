@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtestHub - 書籍登録・管理ツール</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #e7e2dc;
+            --modal-left-bg: #eae3d9;
+            --modal-right-bg: #faf7f2;
+            --text-color: #2b2b2b;
+            --text-sub: #666666;
+            --border-color: #dcd6cd;
+            --accent-black: #1a1a1a;
+            --danger-color: #dc2626;
+            --success-color: #16a34a;
+            --radius-modal: 12px;
+            --radius-btn: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 上部操作ヘッダー */
+        header {
+            background: #fff;
+            border-radius: var(--radius-modal);
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-title h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-black);
+        }
+
+        .badge-tag {
+            background: var(--accent-black);
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .url-fetch-area {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .input-url {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-btn);
+            font-size: 13px;
+            outline: none;
+        }
+
+        .input-url:focus {
+            border-color: var(--accent-black);
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius-btn);
+            font-size: 13px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-black {
+            background: var(--accent-black);
+            color: #fff;
+        }
+
+        .btn-black:hover {
+            opacity: 0.85;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #15803d;
+        }
+
+        /* 通知アラート */
+        .alert-bar {
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .alert-warn {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+        }
+
+        .alert-ok {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            color: #166534;
+        }
+
+        /* モーダル再現メインカード */
+        .modal-mock-card {
+            background: var(--modal-right-bg);
+            border-radius: var(--radius-modal);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            overflow: hidden;
+            min-height: 600px;
+        }
+
+        @media (max-width: 850px) {
+            .modal-mock-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 左パネル：書影プレビュー & アクション */
+        .left-panel {
+            background-color: var(--modal-left-bg);
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .cover-frame {
+            width: 200px;
+            height: 280px;
+            background: #e2dacd;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .share-btn-preview {
+            width: 100%;
+            background: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .amazon-link-preview {
+            font-size: 13px;
+            color: #555;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        .left-inputs {
+            width: 100%;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .mini-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-sub);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .mini-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 12px;
+            background: #fff;
+            margin-bottom: 12px;
+        }
+
+        /* 右パネル：本物のモーダル見映え 穴埋めフォーム */
+        .right-panel {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            background: var(--modal-right-bg);
+            position: relative;
+        }
+
+        .editable-title-input {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-black);
+            width: 100%;
+            border: 1px solid transparent;
+            background: transparent;
+            padding: 4px 6px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            font-family: inherit;
+        }
+
+        .editable-title-input:hover,
+        .editable-title-input:focus {
+            border-color: #bbb;
+            background: #fff;
+        }
+
+        .author-pub-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #444;
+            flex-wrap: wrap;
+        }
+
+        .editable-inline-input {
+            border: 1px solid transparent;
+            background: transparent;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #333;
+        }
+
+        .editable-inline-input:hover,
+        .editable-inline-input:focus {
+            border-color: #bbb;
+            background: #fff;
+        }
+
+        .desc-area-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .desc-textarea {
+            width: 100%;
+            min-height: 90px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        /* 感想ツイート管理セクション */
+        .tweets-section {
+            margin-top: 16px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-black);
+        }
+
+        .tweet-card-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .tweet-card-item.has-dup {
+            border-color: var(--danger-color);
+            background: #fff5f5;
+        }
+
+        .dup-msg {
+            color: var(--danger-color);
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .tweet-embed-box {
+            margin-top: 10px;
+            min-height: 40px;
+        }
+
+        /* 右側フローティング検索リスト */
+        .bottom-action-bar {
+            margin-top: 24px;
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 16px 24px;
+            border-radius: var(--radius-modal);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 既存書籍モーダル検索 */
+        .search-select-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .select-book-dropdown {
+            padding: 8px 12px;
+            border-radius: var(--radius-btn);
+            border: 1px solid var(--border-color);
+            font-size: 13px;
+            max-width: 300px;
+        }
+
+        /* コピーダイアログ */
+        .dialog-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .dialog-box {
+            background: #fff;
+            border-radius: var(--radius-modal);
+            padding: 24px;
+            width: 90%;
+            max-width: 580px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 上部ヘッダー操作部 -->
+        <header>
+            <div class="header-title">
+                <span class="badge-tag">ProtestHub</span>
+                <h1>Books 管理画面</h1>
+            </div>
+
+            <div class="url-fetch-area">
+                <input type="text" id="hanmotoUrl" class="input-url"
+                    placeholder="版元ドットコムのURL (例: https://www.hanmoto.com/bd/isbn/9784907053277)">
+                <button class="btn btn-black" id="fetchBtn" onclick="fetchHanmotoData()">情報取得</button>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-outline" onclick="resetForm()">＋ 新規作成</button>
+                <button class="btn btn-success" onclick="runSyncProcess()"><span id="syncIcon">🔄</span>
+                    公開データを更新</button>
+            </div>
+        </header>
+
+        <div id="alertBar" class="alert-bar"></div>
+
+        <!-- メイン：書籍詳細モーダル完全再現 穴埋めカード -->
+        <div class="modal-mock-card">
+            <!-- 左カラム（書影プレビュー & アクション） -->
+            <div class="left-panel">
+                <div class="cover-frame">
+                    <img id="coverPreviewImg" class="cover-img" src="" alt="書影プレビュー" onerror="this.style.opacity='0.2'">
+                </div>
+
+                <div class="share-btn-preview" id="shareBtnText">#反戦読書部＋書名でシェア</div>
+                <div class="amazon-link-preview" id="amznLinkText" onclick="openAmznPreview()">Amazonで詳細を見る ↗</div>
+
+                <div class="left-inputs">
+                    <span class="mini-label">書影ファイル名 (.png)</span>
+                    <input type="text" id="bookFile" class="mini-input" placeholder="9784907053277.png" readonly>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <span class="mini-label" style="margin: 0;">Amazon リンク</span>
+                        <button class="btn btn-outline" id="copyAmznBtn"
+                            style="padding: 2px 6px; font-size: 10px; line-height: 1;"
+                            onclick="copyAmznLink()">copy</button>
+                    </div>
+                    <input type="text" id="bookAmzn" class="mini-input" placeholder="https://www.amazon.co.jp/s?k=..."
+                        oninput="updateMockDisplay()">
+                </div>
+            </div>
+
+            <!-- 右カラム（タイトル・著者/出版社・紹介文・ツイート穴埋めフォーム） -->
+            <div class="right-panel">
+                <!-- タイトル穴埋め -->
+                <div style="margin-bottom: 8px;">
+                    <span class="mini-label">タイトル *</span>
+                    <input type="text" id="bookTitle" class="editable-title-input" placeholder="タイトルを入力してください"
+                        oninput="updateMockDisplay()">
+                </div>
+
+                <!-- 著者 / 出版社 穴埋め -->
+                <div class="author-pub-group">
+                    <div style="flex: 1;">
+                        <span class="mini-label">著者名（例: 岡 真理(著)、三浦みどり(訳)） *</span>
+                        <input type="text" id="bookAuthor" class="editable-inline-input"
+                            style="width: 100%; font-weight: 500;" placeholder="岡 真理(著)" oninput="updateMockDisplay()">
+                    </div>
+                    <span style="font-size: 16px; color: #999; margin-top: 14px;">/</span>
+                    <div style="flex: 1;">
+                        <span class="mini-label">出版社名（例: 岩波書店） *</span>
+                        <input type="text" id="bookPub" class="editable-inline-input" style="width: 100%;"
+                            placeholder="大和書房" oninput="updateMockDisplay()">
+                    </div>
+                </div>
+
+                <!-- 紹介文 穴埋め -->
+                <div class="desc-area-wrapper">
+                    <span class="mini-label">紹介文</span>
+                    <textarea id="bookDesc" class="desc-textarea" placeholder="書籍の紹介文を入力してください"></textarea>
+                </div>
+
+                <!-- 感想ツイート セクション -->
+                <div class="tweets-section">
+                    <div class="section-header">
+                        <span class="section-title">💬 感想ツイート一覧 (WYSIWYG プレビュー)</span>
+                        <button class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;"
+                            onclick="addTweetField()">＋ ツイート枠追加</button>
+                    </div>
+
+                    <div id="tweetFieldsContainer">
+                        <!-- 動的ツイート枠 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下部アクションバー (保存 & 既存書籍選択) -->
+        <div class="bottom-action-bar">
+            <div class="search-select-box">
+                <span class="mini-label" style="margin: 0;">既存書籍を編集:</span>
+                <select id="bookSelectDropdown" class="select-book-dropdown" onchange="onSelectBookChange()">
+                    <option value="">-- タイトルを選択して編集 --</option>
+                </select>
+            </div>
+
+            <button class="btn btn-black" style="padding: 12px 32px; font-size: 15px;" onclick="saveBookData()">
+                💾 保存する（Googleスプレッドシート用テキスト出力）
+            </button>
+        </div>
+    </div>
+
+    <!-- コピー用モーダル -->
+    <div class="dialog-backdrop" id="copyModal">
+        <div class="dialog-box">
+            <h3 style="margin-bottom: 8px; font-size: 16px; color: var(--accent-black);">Googleスプレッドシート追加用データ</h3>
+            <p style="font-size: 12px; color: var(--text-sub); margin-bottom: 12px;">
+                以下のテキストをコピーして、Googleスプレッドシートの末尾行にそのままCtrl+Vで貼り付けてください。
+            </p>
+            <textarea id="tsvArea"
+                style="width:100%; height:110px; font-family:monospace; font-size:12px; padding:8px; border:1px solid var(--border-color); border-radius:4px;"
+                readonly></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+                <button class="btn btn-outline" onclick="closeCopyModal()">閉じる</button>
+                <button class="btn btn-black" onclick="copyTsv()">クリップボードにコピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Twitter embed widget -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script>
+        let allBooks = [];
+        let allTweetMap = new Map();
+        let currentEditFile = null;
+        let tweetCount = 0;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadBooks();
+            initTweetFields(3);
+        });
+
+        async function loadBooks() {
+            try {
+                const res = await fetch('/api/books');
+                const data = await res.json();
+                if (data.books) {
+                    allBooks = data.books;
+                    buildTweetMap();
+                    populateBookDropdown();
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function buildTweetMap() {
+            allTweetMap.clear();
+            allBooks.forEach(book => {
+                for (let i = 1; i <= 10; i++) {
+                    const twUrl = book[`tw${i}`];
+                    if (twUrl) {
+                        const twId = extractTweetId(twUrl);
+                        if (twId) allTweetMap.set(twId, book.title || '登録済み書籍');
+                    }
+                }
+            });
+        }
+
+        function populateBookDropdown() {
+            const dropdown = document.getElementById('bookSelectDropdown');
+            dropdown.innerHTML = '<option value="">-- 既存書籍を選択して編集 (' + allBooks.length + '冊) --</option>';
+            allBooks.forEach(b => {
+                const opt = document.createElement('option');
+                opt.value = b.file;
+                opt.textContent = `${b.title} (${b.pub})`;
+                dropdown.appendChild(opt);
+            });
+        }
+
+        function extractTweetId(url) {
+            const match = (url || '').match(/status\/(\d+)/);
+            return match ? match[1] : '';
+        }
+
+        // 版元ドットコム自動取得
+        async function fetchHanmotoData() {
+            const urlInput = document.getElementById('hanmotoUrl').value.trim();
+            const fetchBtn = document.getElementById('fetchBtn');
+
+            if (!urlInput) {
+                showAlert('版元ドットコムのURLを入力してください。', 'warn');
+                return;
+            }
+
+            fetchBtn.disabled = true;
+            fetchBtn.innerHTML = '<span class="spinner"></span> 取得中...';
+            hideAlert();
+
+            try {
+                const res = await fetch(`/api/hanmoto?url=${encodeURIComponent(urlInput)}`);
+                const data = await res.json();
+
+                if (!res.ok || data.error) {
+                    showAlert(data.error || '情報の取得に失敗しました。', 'warn');
+                } else {
+                    document.getElementById('bookTitle').value = data.title || '';
+                    document.getElementById('bookAuthor').value = data.author || '';
+                    document.getElementById('bookPub').value = data.pub || '';
+                    document.getElementById('bookDesc').value = data.desc || '';
+                    document.getElementById('bookFile').value = data.file || `${data.isbn}.png`;
+                    document.getElementById('bookAmzn').value = data.amzn || '';
+
+                    updateMockDisplay();
+
+                    if (!data.imageSuccess) {
+                        showAlert('⚠️ 書誌情報は取得できましたが、書影画像のダウンロードに失敗しました。必要に応じて画像をご用意ください。', 'warn');
+                    } else if (!data.hasDesc) {
+                        showAlert('⚠️ 書誌情報と書影画像を取得しました（※紹介文が見つからなかったため、必要に応じて入力してください）。', 'warn');
+                    } else {
+                        showAlert('✅ 書誌データ・書影画像・紹介文を自動取得しました！', 'ok');
+                    }
+                }
+            } catch (e) {
+                showAlert('通信エラーが発生しました: ' + e.message, 'warn');
+            } finally {
+                fetchBtn.disabled = false;
+                fetchBtn.textContent = '情報取得';
+            }
+        }
+
+        function openAmznPreview() {
+            const url = document.getElementById('bookAmzn').value.trim();
+            if (url) window.open(url, '_blank');
+        }
+
+        function copyAmznLink() {
+            const url = document.getElementById('bookAmzn').value.trim();
+            if (!url) return;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById('copyAmznBtn');
+                const origText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.color = 'var(--success-color)';
+                setTimeout(() => {
+                    btn.textContent = origText;
+                    btn.style.color = '';
+                }, 1500);
+            }).catch(() => {
+                const area = document.getElementById('bookAmzn');
+                area.select();
+                document.execCommand('copy');
+            });
+        }
+
+        function updateMockDisplay() {
+            const file = document.getElementById('bookFile').value.trim();
+            const img = document.getElementById('coverPreviewImg');
+
+            if (file) {
+                img.src = `/images/${file}?t=${Date.now()}`;
+                img.style.opacity = '1';
+            }
+        }
+
+        // ツイート枠制御
+        function initTweetFields(count) {
+            document.getElementById('tweetFieldsContainer').innerHTML = '';
+            tweetCount = 0;
+            for (let i = 1; i <= count; i++) addTweetField();
+        }
+
+        function addTweetField(val = '') {
+            tweetCount++;
+            const idx = tweetCount;
+            const container = document.getElementById('tweetFieldsContainer');
+
+            const card = document.createElement('div');
+            card.className = 'tweet-card-item';
+            card.id = `tweetCard_${idx}`;
+
+            card.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span class="mini-label" style="margin:0;">ツイート ${idx}</span>
+                    <span class="dup-msg" id="dupMsg_${idx}"></span>
+                </div>
+                <input type="text" id="twInput_${idx}" class="editable-inline-input" style="width:100%; border:1px solid var(--border-color); background:#fff;" placeholder="https://x.com/username/status/123456789..." value="${val}" oninput="onTweetChange(${idx})">
+                <div class="tweet-embed-box" id="twEmbed_${idx}"></div>
+            `;
+            container.appendChild(card);
+
+            if (val) onTweetChange(idx);
+        }
+
+        function onTweetChange(idx) {
+            const inputVal = document.getElementById(`twInput_${idx}`).value.trim();
+            const card = document.getElementById(`tweetCard_${idx}`);
+            const dupMsg = document.getElementById(`dupMsg_${idx}`);
+            const embedBox = document.getElementById(`twEmbed_${idx}`);
+
+            dupMsg.style.display = 'none';
+            card.classList.remove('has-dup');
+
+            if (!inputVal) {
+                embedBox.innerHTML = '';
+                return;
+            }
+
+            const tweetId = extractTweetId(inputVal);
+            if (tweetId) {
+                let internalDup = false;
+                for (let i = 1; i <= tweetCount; i++) {
+                    if (i !== idx) {
+                        const otherVal = document.getElementById(`twInput_${i}`)?.value || '';
+                        if (extractTweetId(otherVal) === tweetId) { internalDup = true; break; }
+                    }
+                }
+
+                const existingBookTitle = allTweetMap.get(tweetId);
+                const isSelfBook = currentEditFile && allBooks.find(b => b.file === currentEditFile && b.title === existingBookTitle);
+
+                if (internalDup) {
+                    dupMsg.textContent = '⚠️ 重複警告: フォーム内で同じツイートが重複しています';
+                    dupMsg.style.display = 'inline';
+                    card.classList.add('has-dup');
+                } else if (existingBookTitle && !isSelfBook) {
+                    dupMsg.textContent = `⚠️ 重複警告: 『${existingBookTitle}』で登録済みです`;
+                    dupMsg.style.display = 'inline';
+                    card.classList.add('has-dup');
+                }
+            }
+
+            embedBox.innerHTML = '';
+            if (window.twttr && window.twttr.widgets && tweetId) {
+                window.twttr.widgets.createTweet(tweetId, embedBox, { theme: 'light', conversation: 'none' });
+            }
+        }
+
+        // 保存処理
+        async function saveBookData() {
+            const title = document.getElementById('bookTitle').value.trim();
+            const author = document.getElementById('bookAuthor').value.trim();
+            const pub = document.getElementById('bookPub').value.trim();
+            const desc = document.getElementById('bookDesc').value.trim();
+            const file = document.getElementById('bookFile').value.trim();
+            const amzn = document.getElementById('bookAmzn').value.trim();
+            const hanmoto = document.getElementById('hanmotoUrl').value.trim();
+
+            if (!title || !author || !pub) {
+                alert('タイトル・著者・出版社は必須です。');
+                return;
+            }
+
+            const payload = { file, title, author, pub, desc, amzn, hanmoto };
+            for (let i = 1; i <= tweetCount; i++) {
+                const twVal = document.getElementById(`twInput_${i}`)?.value.trim() || '';
+                if (i <= 10) payload[`tw${i}`] = twVal;
+            }
+
+            try {
+                const res = await fetch('/api/save_book', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json();
+
+                if (res.ok && result.success) {
+                    alert('✅ データを保存しました！');
+                    await loadBooks();
+                    showCopyModal(result.book);
+                } else {
+                    alert('保存に失敗しました: ' + (result.error || '不明なエラー'));
+                }
+            } catch (e) {
+                alert('通信エラー: ' + e.message);
+            }
+        }
+
+        function showCopyModal(book) {
+            const fields = [
+                book.file, book.title, book.author, book.pub, book.desc, book.amzn, book.hanmoto,
+                book.tw1 || '', book.tw2 || '', book.tw3 || '', book.tw4 || '', book.tw5 || '',
+                book.tw6 || '', book.tw7 || '', book.tw8 || '', book.tw9 || '', book.tw10 || ''
+            ];
+            const formatted = fields.map(f => {
+                if (f.includes('\n') || f.includes('\t') || f.includes('"')) {
+                    return `"${f.replace(/"/g, '""')}"`;
+                }
+                return f;
+            }).join('\t');
+
+            document.getElementById('tsvArea').value = formatted;
+            document.getElementById('copyModal').style.display = 'flex';
+        }
+
+        function closeCopyModal() { document.getElementById('copyModal').style.display = 'none'; }
+        function copyTsv() {
+            const area = document.getElementById('tsvArea');
+            area.select();
+            document.execCommand('copy');
+            alert('クリップボードにコピーしました！スプレッドシートへCtrl+Vで貼り付けてください。');
+        }
+
+        async function runSyncProcess() {
+            const icon = document.getElementById('syncIcon');
+            icon.textContent = '⏳';
+            try {
+                const res = await fetch('/api/run_sync', { method: 'POST' });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    alert('✅ 公開データ (data_books.js) の更新が完了しました！\n\n' + result.output);
+                } else {
+                    alert('同期エラー: ' + (result.error || '失敗'));
+                }
+            } catch (e) { alert('通信エラー: ' + e.message); }
+            finally { icon.textContent = '🔄'; }
+        }
+
+        function onSelectBookChange() {
+            const file = document.getElementById('bookSelectDropdown').value;
+            if (!file) return;
+            const book = allBooks.find(b => b.file === file);
+            if (book) selectBookForEdit(book);
+        }
+
+        function selectBookForEdit(book) {
+            currentEditFile = book.file;
+            document.getElementById('bookTitle').value = book.title || '';
+            document.getElementById('bookAuthor').value = book.author || '';
+            document.getElementById('bookPub').value = book.pub || '';
+            document.getElementById('bookDesc').value = book.desc || '';
+            document.getElementById('bookFile').value = book.file || '';
+            document.getElementById('bookAmzn').value = book.amzn || '';
+            document.getElementById('hanmotoUrl').value = book.hanmoto || '';
+
+            initTweetFields(10);
+            for (let i = 1; i <= 10; i++) {
+                if (book[`tw${i}`]) {
+                    document.getElementById(`twInput_${i}`).value = book[`tw${i}`];
+                    onTweetChange(i);
+                }
+            }
+
+            updateMockDisplay();
+        }
+
+        function resetForm() {
+            currentEditFile = null;
+            document.getElementById('bookTitle').value = '';
+            document.getElementById('bookAuthor').value = '';
+            document.getElementById('bookPub').value = '';
+            document.getElementById('bookDesc').value = '';
+            document.getElementById('bookFile').value = '';
+            document.getElementById('bookAmzn').value = '';
+            document.getElementById('hanmotoUrl').value = '';
+            document.getElementById('coverPreviewImg').src = '';
+            document.getElementById('bookSelectDropdown').value = '';
+            hideAlert();
+            initTweetFields(10);
+            updateMockDisplay();
+        }
+
+        function showAlert(msg, type) {
+            const el = document.getElementById('alertBar');
+            el.className = `alert-bar alert-${type}`;
+            el.innerHTML = msg;
+            el.style.display = 'block';
+        }
+        function hideAlert() { document.getElementById('alertBar').style.display = 'none'; }
+    </script>
+</body>
+
+</html>
