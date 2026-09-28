@@ -40,8 +40,8 @@ const server = http.createServer(async (req, res) => {
         try {
             const bookData = await fetchBookDataByIsbn(isbn, inputUrl);
 
-            // 書影画像のダウンロード・保存処理
-            const imgFileName = `${isbn}.png`;
+            // 書影画像のダウンロード・保存処理 (.webp)
+            const imgFileName = `${isbn}.webp`;
             const imgPath = path.join(IMAGES_DIR, imgFileName);
 
             let downloadSuccess = false;
@@ -66,7 +66,7 @@ const server = http.createServer(async (req, res) => {
                 }
             }
 
-            bookData.file = downloadSuccess ? imgFileName : `${isbn}.png`;
+            bookData.file = isbn;
             bookData.imageSuccess = downloadSuccess;
             delete bookData.coverUrl;
 
@@ -199,8 +199,10 @@ const BOOKS_DATA = ${JSON.stringify(books, null, 4)};
 }
 
 function formatBookEntry(data) {
+    const rawFile = data.file || extractIsbn(data.hanmoto || '');
+    const cleanFile = rawFile.replace(/\.(png|jpg|jpeg|webp)$/i, '').trim();
     const entry = {
-        file: data.file || `${extractIsbn(data.hanmoto || '')}.png`,
+        file: cleanFile,
         title: (data.title || '').trim(),
         author: formatAuthor((data.author || '').trim()),
         pub: formatPub((data.pub || '').trim()),

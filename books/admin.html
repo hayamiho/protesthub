@@ -478,8 +478,8 @@
                 <div class="amazon-link-preview" id="amznLinkText" onclick="openAmznPreview()">Amazonで詳細を見る ↗</div>
 
                 <div class="left-inputs">
-                    <span class="mini-label">書影ファイル名 (.png)</span>
-                    <input type="text" id="bookFile" class="mini-input" placeholder="9784907053277.png" readonly>
+                    <span class="mini-label">ISBN / ファイルID (13桁)</span>
+                    <input type="text" id="bookFile" class="mini-input" placeholder="9784907053277" readonly>
 
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
@@ -652,7 +652,7 @@
                     document.getElementById('bookAuthor').value = data.author || '';
                     document.getElementById('bookPub').value = data.pub || '';
                     document.getElementById('bookDesc').value = data.desc || '';
-                    document.getElementById('bookFile').value = data.file || `${data.isbn}.png`;
+                    document.getElementById('bookFile').value = (data.file || data.isbn || '').replace(/\.(png|jpg|jpeg|webp)$/i, '');
                     document.getElementById('bookAmzn').value = data.amzn || '';
 
                     updateMockDisplay();
@@ -698,11 +698,12 @@
         }
 
         function updateMockDisplay() {
-            const file = document.getElementById('bookFile').value.trim();
+            const rawFile = document.getElementById('bookFile').value.trim();
             const img = document.getElementById('coverPreviewImg');
 
-            if (file) {
-                img.src = `/images/${file}?t=${Date.now()}`;
+            if (rawFile) {
+                const cleanFile = rawFile.replace(/\.(png|jpg|jpeg|webp)$/i, '');
+                img.src = `/images/${cleanFile}.webp?t=${Date.now()}`;
                 img.style.opacity = '1';
             }
         }

@@ -45,12 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return copy;
     }
 
+    let tweetObserver = null;
+
     // Helper: Book object property resolver
     function resolveBook(book) {
-        // Image path
-        let img = book.image || book.file || '';
-        if (img && !img.startsWith('http') && !img.startsWith('/') && !img.startsWith('./') && !img.startsWith('../')) {
-            img = 'images/' + img;
+        // Image path (.webp 対応 & 13桁ISBN正規化)
+        let rawImg = book.file || book.image || '';
+        let cleanFileName = rawImg.replace(/\.(png|jpg|jpeg|webp)$/i, '').trim();
+        let img = '';
+        if (rawImg.startsWith('http') || rawImg.startsWith('/') || rawImg.startsWith('./') || rawImg.startsWith('../')) {
+            img = rawImg;
+        } else if (cleanFileName) {
+            img = 'images/' + cleanFileName + '.webp';
         }
 
         // Tweets array (tw1 ~ twN 動的対応)
@@ -192,6 +198,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalRight) modalRight.scrollTop = 0;
         if (modalLeft) modalLeft.scrollTop = 0;
 
+        // Disconnect previous tweet observer if any
+        if (tweetObserver) {
+            tweetObserver.disconnect();
+            tweetObserver = null;
+        }
+
         modalCover.src = book.image;
         modalCover.alt = book.title;
         modalTitle.textContent = book.title;
@@ -216,35 +228,67 @@ document.addEventListener('DOMContentLoaded', () => {
             descriptionWrap.style.display = 'none';
         }
 
-        // 関連ポスト（X公式埋め込み表示）
+        // 関連ポスト（IntersectionObserverによるスクロール遅延エンベッド）
         modalTweetsContainer.innerHTML = '';
         if (book.tweets && book.tweets.length > 0) {
             modalTweetsContainer.style.display = 'flex';
+
+            if ('IntersectionObserver' in window) {
+                tweetObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const wrapper = entry.target;
+                            const tweetId = wrapper.dataset.tweetId;
+                            const twUrl = wrapper.dataset.tweetUrl;
+
+                            if (tweetId && window.twttr && window.twttr.widgets) {
+                                window.twttr.widgets.createTweet(tweetId, wrapper, {
+                                    theme: 'light',
+                                    conversation: 'none',
+                                    dnt: true
+                                });
+                            } else if (twUrl) {
+                                wrapper.innerHTML = `
+                                    <blockquote class="twitter-tweet" data-dnt="true">
+                                      <a href="${twUrl}"></a>
+                                    </blockquote>
+                                `;
+                                if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
+                                    window.twttr.widgets.load(wrapper);
+                                }
+                            }
+                            observer.unobserve(wrapper);
+                        }
+                    });
+                }, {
+                    root: modalRight || modalPanel,
+                    rootMargin: '120px 0px',
+                    threshold: 0.01
+                });
+            }
 
             book.tweets.forEach(twUrl => {
                 const tweetId = getTweetId(twUrl);
                 const tweetItemWrapper = document.createElement('div');
                 tweetItemWrapper.className = 'tweet-embed-item';
+                tweetItemWrapper.style.minHeight = '100px';
+                if (tweetId) tweetItemWrapper.dataset.tweetId = tweetId;
+                tweetItemWrapper.dataset.tweetUrl = twUrl;
 
-                if (tweetId && window.twttr && window.twttr.widgets) {
-                    window.twttr.widgets.createTweet(tweetId, tweetItemWrapper, {
-                        theme: 'light',
-                        conversation: 'none',
-                        dnt: true
-                    });
-                } else if (twUrl.startsWith('http')) {
-                    tweetItemWrapper.innerHTML = `
-            <blockquote class="twitter-tweet" data-dnt="true">
-              <a href="${twUrl}"></a>
-            </blockquote>
-          `;
-                }
                 modalTweetsContainer.appendChild(tweetItemWrapper);
-            });
 
-            if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
-                window.twttr.widgets.load(modalTweetsContainer);
-            }
+                if (tweetObserver) {
+                    tweetObserver.observe(tweetItemWrapper);
+                } else {
+                    if (tweetId && window.twttr && window.twttr.widgets) {
+                        window.twttr.widgets.createTweet(tweetId, tweetItemWrapper, {
+                            theme: 'light',
+                            conversation: 'none',
+                            dnt: true
+                        });
+                    }
+                }
+            });
         } else {
             modalTweetsContainer.style.display = 'none';
         }
@@ -266,6 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Close
     function closeModal() {
+        if (tweetObserver) {
+            tweetObserver.disconnect();
+            tweetObserver = null;
+        }
         modalEl.classList.remove('is-open');
         document.body.style.overflow = '';
     }

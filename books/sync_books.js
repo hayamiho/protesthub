@@ -74,7 +74,11 @@ function parseCsv(csv) {
 
         const entry = {};
         headers.forEach((h, index) => {
-            entry[h] = (row[index] || '').trim();
+            let val = (row[index] || '').trim();
+            if (h === 'file') {
+                val = val.replace(/\.(png|jpg|jpeg|webp)$/i, '');
+            }
+            entry[h] = val;
         });
         data.push(entry);
     }
