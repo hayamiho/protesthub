@@ -58,7 +58,7 @@ a {
 .brand-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
@@ -79,6 +79,40 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+/* ヘッダーアイコンナビゲーション（アバウト・サポート） */
+.header-icon-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.icon-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background .15s ease, transform .15s ease;
+  text-decoration: none;
+}
+
+.icon-nav-btn img {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.icon-nav-btn:hover {
+  background: rgba(32, 25, 22, .08);
+  transform: scale(1.05);
+}
+
+.icon-nav-btn.active {
+  background: rgba(32, 25, 22, .12);
 }
 
 .nav-btn {
@@ -475,15 +509,30 @@ a {
     padding: 10px 0;
   }
 
-  /* スマホ表示時：ロゴの後に改行し、2行目にボタン群が横一列に並ぶ */
+  /* スマホ表示時：1行目にロゴ(左)とアイコン(右)、2行目にBooks/Designボタン */
   .brand-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand icon-nav"
+      "nav nav";
+    row-gap: 10px;
+    column-gap: 12px;
     width: 100%;
   }
 
+  .brand {
+    grid-area: brand;
+  }
+
+  .header-icon-nav {
+    grid-area: icon-nav;
+    justify-self: end;
+    margin-left: 0;
+  }
+
   .header-nav {
+    grid-area: nav;
     display: flex;
     gap: 8px;
     width: 100%;

@@ -18,8 +18,8 @@
   <title>初めての方へ | Protest Hub</title>
   <meta name="description" content="明日すぐ使えるプラカードまとめサイト。市民プロテストを、もっと気楽にカジュアルに。">
 
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <meta property="og:site_name" content="Protest Hub">
   <meta property="og:title" content="初めての方へ | Protest Hub">
@@ -36,37 +36,12 @@
   <meta name="twitter:image" content="https://www.protesthub.jp/images/ogp20260611.png">
 
   <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="books/books.css">
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #201916;
-      --muted: #695f59;
-      --paper: #f7f0e4;
-      --sheet: #fffaf1;
-      --line: #ded0c0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
-      /* メインページと同じ、温かみのあるグリッド背景 */
-      background:
-        linear-gradient(90deg, rgba(32, 25, 22, .035) 1px, transparent 1px) 0 0 / 28px 28px,
-        linear-gradient(0deg, rgba(32, 25, 22, .028) 1px, transparent 1px) 0 0 / 28px 28px,
-        var(--paper);
-      color: var(--ink);
-      line-height: 1.7;
-    }
-
-    /* 読みやすい幅に制限したコンテンツエリア */
+    /* about.html 個別スタイル調整 */
     .container {
       width: min(800px, calc(100% - 32px));
-      margin: 40px auto 80px;
+      margin: 32px auto 80px;
       padding: 40px;
       background: var(--sheet);
       border: 2px solid var(--ink);
@@ -74,13 +49,23 @@
       box-shadow: 5px 5px 0 rgba(32, 25, 22, .13);
     }
 
-    h1 {
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-top: 0;
       margin-bottom: 24px;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       border-bottom: 2px solid var(--ink);
-      padding-bottom: 8px;
+      padding-bottom: 12px;
+    }
+
+    .heading-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     p {
@@ -101,15 +86,19 @@
       text-decoration: none;
     }
 
-    /* スマホ用の調整 */
     @media (max-width: 600px) {
       .container {
         margin: 20px auto 40px;
         padding: 20px;
       }
 
-      h1 {
+      .page-title {
         font-size: 22px;
+      }
+
+      .heading-icon {
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
@@ -117,21 +106,50 @@
 
 <body>
 
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="ProtestHub Home">
+          <img class="brand-logo" src="images/logo.png" alt="ProtestHub">
+        </a>
+        <nav class="header-nav">
+          <a class="nav-btn" href="books/index.html">Books</a>
+          <a class="nav-btn" href="design/index.html">Design</a>
+        </nav>
+        <div class="header-icon-nav">
+          <a class="icon-nav-btn active" href="about.html" aria-label="初めての方へ">
+            <img src="images/icon_about.svg" alt="初めての方へ">
+          </a>
+          <a class="icon-nav-btn" href="support.html" aria-label="サポート">
+            <img src="images/icon_support.svg" alt="サポート">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
-    <h1>初めての方へ</h1>
+    <h1 class="page-title">
+      <img src="images/icon_about.svg" class="heading-icon" alt="">
+      初めての方へ
+    </h1>
 
     <h3>ProtestHubについて</h3>
     <p>ここは、一個人が「市民プロテストをもっと身近に、気軽に取り組めるものにしたいな」という思いから立ち上げたサイトです。</p>
-<p>たとえばプラカード。さまざまなデモに参加する中で、毎回プラカードを探して印刷することの大変さを感じていました。SNSで見かけた素敵な作品も、時間とともに見失ってしまったり、ネットプリントに対応したコンビニが近くになかったり。</p>
+    <p>たとえばプラカード。さまざまなデモに参加する中で、毎回プラカードを探して印刷することの大変さを感じていました。SNSで見かけた素敵な作品も、時間とともに見失ってしまったり、ネットプリントに対応したコンビニが近くになかったり。
+    </p>
 
     <p><strong>「明日すぐ使える情報へたどり着ける場所があったらな」</strong></br>
-その第一歩として、デモで使えるプラカードのデザイン情報をまとめて、誰でも検索・ダウンロードできる仕組みを作ることから始めました。SNSで素敵な作品を発信されている方々にお声がけし、許可を頂きながら少しずつ掲載を増やしています。</p>
+      そこで、プラカード情報をまとめて誰でも検索・ダウンロードできる仕組みをつくり始めました。SNSで素敵な作品を発信されている方々にお声がけし、許可を頂きながら少しずつ掲載を増やしています。
+    </p>
 
-    <p>プラカードをはじめ、ブックカバーやチラシなど、市民が声を上げるためのさまざまなアイテムや知恵が集まる場へ育てていけたらと考えています。デザインを探している方も、制作した作品を届けたい方も、一緒に場を作りたい方も、ぜひ気軽にご参加いただけたら嬉しいです。</p>
+    <p>
+      プラカードをはじめ、ブックカバーやチラシなど、市民が声を上げるためのさまざまなアイテムや知恵が集まる場へ育てていけたらと考えています。デザインを探している方も、制作した作品を届けたい方も、ぜひ気軽にご参加いただけたら嬉しいです。
+    </p>
 
-    <p>【9/9追記】読書プロテストに参加した方々のツイートをまとめた<a href="books/index.html">Booksページ</a>を公開しました。随時追加予定です。選書のお役に立てば嬉しいです。</p>
+    <p>【9/9追記】読書プロテストに参加した方々のツイートをまとめた<a href="books/index.html">Booksページ</a>を公開しました。随時追加予定です。選書のお役に立てば幸いです。</p>
 
-<hr>
+    <hr>
 
     <h3>ProtestHub/<a href="books/index.html">Design</a>でできること</h3>
 
@@ -149,34 +167,37 @@
       ・改変／転載／商用利用／AI学習への利用を禁じます。</br>
       ・利用条件は、各作品の表示内容もあわせてご確認ください。</p>
 
-    <h3>掲載をご希望の方へ</h3>
+    <h3 id="keisai">掲載をご希望の方へ</h3>
 
-<p>・ご応募は、作品の制作者ご本人（または掲載許可を得ている方）に限ります。</br>
-・生成AIを使用した作品は掲載いたしかねます。</br>
-・サイトの掲載趣旨に照らし、ご希望に沿えない場合もありますのでご了承ください。</p>
+    <p>・ご応募は、作品の制作者ご本人（または掲載許可を得ている方）に限ります。</br>
+      ・生成AIを使用した作品は掲載いたしかねます。</br>
+      ・サイトの掲載趣旨に照らし、ご希望に沿えない場合もありますのでご了承ください。</p>
 
     <h3>データ形式について（ご応募の方・ご依頼の方 共通）</h3>
-・2970×4200px以上のpngまたはPDFデータを運営（<a href="https://x.com/protesthub_jp">@protesthub_jp</a>）DMへご送付ください。</br>
-（画像添付はXで自動縮小される事があるため、<a href="https://gigafile.nu/">ギガファイル便</a>などを推奨します）</br>
-・作品には任意で説明テキストも掲載できます。ぜひお寄せください。ご参考：<a href="https://protesthub.jp/design/pl-000013-a.html ">１</a>/<a href="https://protesthub.jp/design/pl-000015-a.html ">２</a>/<a href="https://protesthub.jp/design/pl-000020-a.html ">３</a></br>
-      ・手作業で登録しているため、掲載までお時間をいただく場合があります。</br>
-      ・掲載後も、ご希望があればいつでも掲載を取り下げいたします。</br>
-</p>
+    ・2970×4200px以上のpngまたはPDFデータを運営（<a href="https://x.com/protesthub_jp">@protesthub_jp</a>）DMへご送付ください。</br>
+    （画像添付はXで自動縮小される事があるため、<a href="https://gigafile.nu/">ギガファイル便</a>などを推奨します）</br>
+    ・作品には任意で説明テキストも掲載できます。ぜひお寄せください。ご参考：<a href="https://protesthub.jp/design/pl-000013-a.html ">１</a>/<a
+      href="https://protesthub.jp/design/pl-000015-a.html ">２</a>/<a
+      href="https://protesthub.jp/design/pl-000020-a.html ">３</a></br>
+    ・手作業で登録しているため、掲載までお時間をいただく場合があります。</br>
+    ・掲載後も、ご希望があればいつでも掲載を取り下げいたします。</br>
+    </p>
 
-<hr>
+    <hr>
 
     <h3>ProtestHub/<a href="books/index.html">Books</a>でできること</h3>
 
     <p>・タイトルや著者名から、書籍を検索できます。</br>
-      ・書籍の紹介や、みんなの感想ツイートを見ることができます。</br>
+      ・版元による紹介文や、みんなの感想ツイートを見ることができます。</br>
       ・書名に「#反戦読書部」タグを付けてシェアできます。</br>
       ・Amazonで購入できます。</br><small>※AmazonアソシエイトとしてProtestHubは適格販売により収入を得ています。収益はサイト維持費へ充てさせて頂きます。</small></p>
 
-<hr>
+    <hr>
 
-<p>運営：<a href="https://x.com/protesthub_jp">@protesthub_jp</a>　作者：<a href="https://x.com/ykhre">@ykhre</a></p>
+    <p>運営：<a href="https://x.com/protesthub_jp">@protesthub_jp</a>　作者：<a href="https://x.com/ykhre">@ykhre</a></p>
 
-    <a href="design/index.html" class="back-link">← デザイン一覧へ</a>　<a href="books/index.html" class="back-link">← ブックス一覧へ</a>
+    <a href="books/index.html" class="back-link">←
+      Books一覧へ</a>　<a href="design/index.html" class="back-link">← Design一覧へ</a>
   </main>
 
 </body>
