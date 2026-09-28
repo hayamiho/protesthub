@@ -303,11 +303,12 @@ a {
 
 .modal-panel {
   position: relative;
-  width: min(920px, calc(100vw - 32px));
+  width: min(840px, calc(100vw - 32px));
   max-height: min(88vh, 850px);
   display: grid;
-  grid-template-columns: 320px 1fr;
-  overflow: hidden;
+  grid-template-columns: 300px 1fr;
+  overflow-x: hidden;
+  overflow-y: hidden;
   border: 3px solid var(--ink);
   border-radius: 8px;
   background: var(--sheet);
@@ -368,8 +369,9 @@ a {
 }
 
 .modal-right {
-  padding: 28px 24px;
+  padding: 28px 20px;
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: min(88vh, 850px);
   display: flex;
   flex-direction: column;
@@ -453,22 +455,25 @@ a {
 .modal-tweets-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   min-height: 50px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .tweet-embed-item {
   display: block;
-  margin-bottom: 20px !important;
+  width: 125% !important;
+  margin: 0 !important;
+  zoom: 0.8;
 }
 
-.tweet-embed-item:last-child {
-  margin-bottom: 0 !important;
-}
-
-.modal-tweets-container .twitter-tweet {
+.modal-tweets-container .twitter-tweet,
+.modal-tweets-container iframe {
   margin: 0 !important;
   width: 100% !important;
+  max-width: none !important;
+  min-width: 100% !important;
 }
 
 .button {
