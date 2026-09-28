@@ -119,20 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         card.addEventListener('click', (e) => {
-            if (book.isbn) {
-                window.location.href = `${book.isbn}.html`;
-            } else {
-                openModal(book);
-            }
+            e.preventDefault();
+            openModal(book);
         });
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                if (book.isbn) {
-                    window.location.href = `${book.isbn}.html`;
-                } else {
-                    openModal(book);
-                }
+                openModal(book);
             }
         });
         return card;
@@ -201,13 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (sortVal === 'random') {
-            const orderMap = getRandomOrderMap();
-            const orderIndices = new Map(orderMap.map((isbn, idx) => [isbn, idx]));
-            filtered.sort((a, b) => {
-                const isbnA = resolveBook(a).isbn;
-                const isbnB = resolveBook(b).isbn;
-                return (orderIndices.get(isbnA) ?? 0) - (orderIndices.get(isbnB) ?? 0);
-            });
+            filtered = shuffleArray(filtered);
         } else if (sortVal === 'popular') {
             filtered.sort((a, b) => {
                 const bA = resolveBook(a);
@@ -337,8 +324,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Share X （指定文面フォーマット）
         modalShareX.onclick = () => {
-            const tagsText = SHARE_HASHTAGS.join('\n');
-            const shareText = `「${book.title}」\n${tagsText}\n\n📚️プロテスターの本棚📚️\nhttps://www.protesthub.jp/books/index.html`;
+            const pageUrl = book.isbn ? `https://protesthub.jp/books/${book.isbn}.html` : `https://protesthub.jp/books/index.html`;
+            const shareText = `『${book.title}』\n#反戦読書部\n${pageUrl}`;
             const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
             window.open(xUrl, '_blank', 'noopener,noreferrer');
         };

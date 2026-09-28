@@ -12,10 +12,19 @@ if %errorlevel% neq 0 (
 )
 echo.
 
-echo [2/2] 書籍個別ページを生成中...
+echo [2/3] 書籍個別ページを生成中...
 node generator.js
 if %errorlevel% neq 0 (
     echo [ERROR] ページの生成に失敗しました。
+    pause
+    exit /b %errorlevel%
+)
+echo.
+
+echo [3/3] OGP用画像を生成中...
+node generate_ogp.js
+if %errorlevel% neq 0 (
+    echo [ERROR] OGP画像の生成に失敗しました。
     pause
     exit /b %errorlevel%
 )
