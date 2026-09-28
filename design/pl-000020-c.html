@@ -20,16 +20,16 @@
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="次のデモは いつ・どこで？そんな時はデモカレンダー！｜Protest Hub">
     <meta property="og:description" content="3496×4961px（高解像度）【デモカレンダー】をお知らせするプラカードを作りました。パッと読めるように情報量は少なめ／QRコードでかめにしました。複数枚設置できるシッティングと相性いいかも！セブンイレブン ネップリ～8/4：6QB73SZL">
-    <meta property="og:url" content="https://www.protesthub.jp/design/pl-000020-c.html">
+    <meta property="og:url" content="https://protesthub.jp/design/pl-000020-c.html">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000020-c.png">
+    <meta property="og:image" content="https://protesthub.jp/design/images/pl-000020-c.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="次のデモは いつ・どこで？そんな時はデモカレンダー！｜Protest Hub">
     <meta name="twitter:description" content="3496×4961px（高解像度）【デモカレンダー】をお知らせするプラカードを作りました。パッと読めるように情報量は少なめ／QRコードでかめにしました。複数枚設置できるシッティングと相性いいかも！セブンイレブン ネップリ～8/4：6QB73SZL">
-    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000020-c.png">
+    <meta name="twitter:image" content="https://protesthub.jp/design/images/pl-000020-c.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -142,8 +142,8 @@
 
         // SNS Share
         const shareUrl = location.href;
-        const shareText = "次のデモは いつ・どこで？そんな時はデモカレンダー！｜Protest Hub";
-        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        const shareText = `次のデモは いつ・どこで？そんな時はデモカレンダー！ / Protest Hub\n${shareUrl}`;
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
         // Dynamic Lists

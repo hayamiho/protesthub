@@ -20,16 +20,16 @@
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="政治が変だよ チェックしてみて！｜Protest Hub">
     <meta property="og:description" content="3496×4961px（高解像度）にかもとひなびさん制作の『報道記事リンクサイト』をお知らせできるミニチラシを作りました。（A3印刷後、カットしてご利用ください）政治の話をしたけど「報道してないじゃん」と言われた時に「報道してるよ！」と返すための新聞・TVの報道記事リンクサイトです。">
-    <meta property="og:url" content="https://www.protesthub.jp/design/fl-000006-b.html">
+    <meta property="og:url" content="https://protesthub.jp/design/fl-000006-b.html">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.protesthub.jp/design/images/fl-000006-b.png">
+    <meta property="og:image" content="https://protesthub.jp/design/images/fl-000006-b.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="政治が変だよ チェックしてみて！｜Protest Hub">
     <meta name="twitter:description" content="3496×4961px（高解像度）にかもとひなびさん制作の『報道記事リンクサイト』をお知らせできるミニチラシを作りました。（A3印刷後、カットしてご利用ください）政治の話をしたけど「報道してないじゃん」と言われた時に「報道してるよ！」と返すための新聞・TVの報道記事リンクサイトです。">
-    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/fl-000006-b.png">
+    <meta name="twitter:image" content="https://protesthub.jp/design/images/fl-000006-b.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -142,8 +142,8 @@
 
         // SNS Share
         const shareUrl = location.href;
-        const shareText = "政治が変だよ チェックしてみて！｜Protest Hub";
-        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        const shareText = `政治が変だよ チェックしてみて！ / Protest Hub\n${shareUrl}`;
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
         // Dynamic Lists

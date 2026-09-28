@@ -20,16 +20,16 @@
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="国会で、やばい法律決まりそう。あなたの自由と権利なくなるの大丈夫そ？THINK ABOUT IT.まずは、知ることから。｜Protest Hub">
     <meta property="og:description" content="3536×5000px（高解像度）何が起きてるか知らない人向けに、危機感を共有するプラカードです。">
-    <meta property="og:url" content="https://www.protesthub.jp/design/pl-000024-a.html">
+    <meta property="og:url" content="https://protesthub.jp/design/pl-000024-a.html">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000024-a.png">
+    <meta property="og:image" content="https://protesthub.jp/design/images/pl-000024-a.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="国会で、やばい法律決まりそう。あなたの自由と権利なくなるの大丈夫そ？THINK ABOUT IT.まずは、知ることから。｜Protest Hub">
     <meta name="twitter:description" content="3536×5000px（高解像度）何が起きてるか知らない人向けに、危機感を共有するプラカードです。">
-    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000024-a.png">
+    <meta name="twitter:image" content="https://protesthub.jp/design/images/pl-000024-a.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -142,8 +142,8 @@
 
         // SNS Share
         const shareUrl = location.href;
-        const shareText = "国会で、やばい法律決まりそう。あなたの自由と権利なくなるの大丈夫そ？THINK ABOUT IT.まずは、知ることから。｜Protest Hub";
-        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        const shareText = `国会で、やばい法律決まりそう。あなたの自由と権利なくなるの大丈夫そ？THINK ABOUT IT.まずは、知ることから。 / Protest Hub\n${shareUrl}`;
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
         // Dynamic Lists

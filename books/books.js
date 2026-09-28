@@ -6,8 +6,7 @@
 // --------------------------------------------------------------------------
 // ※ 期間終了後（例: 9/23以降）は、以下の配列から不要なタグを削除・コメントアウトしてください。
 const SHARE_HASHTAGS = [
-    '#反戦読書部',
-    '#オンライン反戦読書デモ2026秋'
+    '#反戦読書部'
 ];
 // --------------------------------------------------------------------------
 
@@ -83,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         return {
+            isbn: cleanFileName,
             title: book.title || '',
             author: book.author || '',
             publisher: book.publisher || book.pub || '',
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return 6;
     }
 
-    // 書籍カードエレメント生成
+    // 書籍カードエレメント生成（クリック時に個別HTMLへ遷移）
     function createBookCard(book) {
         const card = document.createElement('article');
         card.className = 'book-card';
@@ -110,15 +110,29 @@ document.addEventListener('DOMContentLoaded', () => {
         card.setAttribute('tabindex', '0');
         card.setAttribute('aria-label', `${book.title} の詳細を表示`);
 
+        const targetUrl = book.isbn ? `${book.isbn}.html` : '#';
+
         card.innerHTML = `
-            <img src="${book.image}" alt="${book.title}" loading="lazy" onerror="this.src='../images/logo.png';">
+            <a href="${targetUrl}" style="display: block; width: 100%; height: 100%; text-decoration: none; color: inherit;">
+                <img src="${book.image}" alt="${book.title}" loading="lazy" onerror="this.src='../images/logo.png';">
+            </a>
         `;
 
-        card.addEventListener('click', () => openModal(book));
+        card.addEventListener('click', (e) => {
+            if (book.isbn) {
+                window.location.href = `${book.isbn}.html`;
+            } else {
+                openModal(book);
+            }
+        });
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openModal(book);
+                if (book.isbn) {
+                    window.location.href = `${book.isbn}.html`;
+                } else {
+                    openModal(book);
+                }
             }
         });
         return card;
@@ -149,6 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ランダムソート順のセッション保持
+    function getRandomOrderMap(forceNew = false) {
+        let orderMap = null;
+        if (!forceNew) {
+            try {
+                const stored = sessionStorage.getItem('books_random_order');
+                if (stored) orderMap = JSON.parse(stored);
+            } catch (e) { }
+        }
+        if (!orderMap || !Array.isArray(orderMap) || orderMap.length !== BOOKS_DATA.length) {
+            const shuffled = shuffleArray([...BOOKS_DATA]);
+            orderMap = shuffled.map(b => resolveBook(b).isbn);
+            try {
+                sessionStorage.setItem('books_random_order', JSON.stringify(orderMap));
+            } catch (e) { }
+        }
+        return orderMap;
+    }
+
     let currentFilteredBooks = [];
 
     // Filter & Sort (デフォルト: ランダム)
@@ -168,7 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (sortVal === 'random') {
-            filtered = shuffleArray(filtered);
+            const orderMap = getRandomOrderMap();
+            const orderIndices = new Map(orderMap.map((isbn, idx) => [isbn, idx]));
+            filtered.sort((a, b) => {
+                const isbnA = resolveBook(a).isbn;
+                const isbnB = resolveBook(b).isbn;
+                return (orderIndices.get(isbnA) ?? 0) - (orderIndices.get(isbnB) ?? 0);
+            });
         } else if (sortVal === 'popular') {
             filtered.sort((a, b) => {
                 const bA = resolveBook(a);
@@ -331,7 +370,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     searchInput.addEventListener('input', updateList);
-    sortSelect.addEventListener('change', updateList);
+    sortSelect.addEventListener('change', () => {
+        if (sortSelect.value === 'random') {
+            getRandomOrderMap(true);
+        }
+        updateList();
+    });
     closeBtn.addEventListener('click', closeModal);
 
     modalEl.addEventListener('click', (e) => {

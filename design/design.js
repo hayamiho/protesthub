@@ -351,11 +351,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!activePoster) return;
 
         const fileNameBase = activePoster.file.replace(/\.[^/.]+$/, "");
-        const shareUrl = `https://www.protesthub.jp/design/${fileNameBase}.html`;
-        const shareText = `${activePoster.title} / Protest Hub`;
+        const shareUrl = `https://protesthub.jp/design/${fileNameBase}.html`;
+        const shareText = `${activePoster.title} / Protest Hub\n${shareUrl}`;
 
         if (service === "x") {
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, "_blank", "noopener");
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`, "_blank", "noopener");
             shareStatus.textContent = "Xの投稿画面を開きました。";
             return;
         }
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const imageUrl = `https://www.protesthub.jp/design/images/${activePoster.file}`;
+        const imageUrl = `https://protesthub.jp/design/images/${activePoster.file}`;
         navigator.clipboard.writeText(imageUrl)
             .then(() => {
                 shareStatus.textContent = "Instagram用に画像リンクをコピーしました。";
@@ -396,10 +396,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const poster = posters.find(item => item.file === p);
                 if (poster) {
                     // OGPメタタグ書き換え（クローラー向け）
-                    const shareUrl = `https://www.protesthub.jp/design/index.html?p=${poster.file}`;
+                    const shareUrl = `https://protesthub.jp/design/index.html?p=${poster.file}`;
                     const shareTitle = `${poster.title} / Protest Hub Design`;
                     const shareDesc = poster.desc || "プロテストハブで公開中のデザインです。";
-                    const shareImg = `https://www.protesthub.jp/design/images/${poster.file}`;
+                    const shareImg = `https://protesthub.jp/design/images/${poster.file}`;
 
                     document.getElementById('og-title').setAttribute('content', shareTitle);
                     document.getElementById('tw-title').setAttribute('content', shareTitle);

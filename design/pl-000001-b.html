@@ -20,16 +20,16 @@
     <meta property="og:site_name" content="Protest Hub">
     <meta property="og:title" content="反戦｜Protest Hub">
     <meta property="og:description" content="2970×4200px　A3/A4兼用">
-    <meta property="og:url" content="https://www.protesthub.jp/design/pl-000001-b.html">
+    <meta property="og:url" content="https://protesthub.jp/design/pl-000001-b.html">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.protesthub.jp/design/images/pl-000001-b.png">
+    <meta property="og:image" content="https://protesthub.jp/design/images/pl-000001-b.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="反戦｜Protest Hub">
     <meta name="twitter:description" content="2970×4200px　A3/A4兼用">
-    <meta name="twitter:image" content="https://www.protesthub.jp/design/images/pl-000001-b.png">
+    <meta name="twitter:image" content="https://protesthub.jp/design/images/pl-000001-b.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -142,8 +142,8 @@
 
         // SNS Share
         const shareUrl = location.href;
-        const shareText = "反戦｜Protest Hub";
-        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        const shareText = `反戦 / Protest Hub\n${shareUrl}`;
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
         document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
         // Dynamic Lists

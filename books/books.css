@@ -453,8 +453,17 @@ a {
 .modal-tweets-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   min-height: 50px;
+}
+
+.tweet-embed-item {
+  display: block;
+  margin-bottom: 20px !important;
+}
+
+.tweet-embed-item:last-child {
+  margin-bottom: 0 !important;
 }
 
 .modal-tweets-container .twitter-tweet {
