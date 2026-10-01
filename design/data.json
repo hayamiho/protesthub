@@ -1824,5 +1824,60 @@
         "url": "https://x.com/nakatue2337",
         "og_title": "",
         "og_desc": ""
+    },
+    {
+        "file": "pl-000035-a.png",
+        "set": "",
+        "color": "青",
+        "title": "NO WAR 反戦 うちらが主権者",
+        "desc": "2970×4200px　A3/A4兼用",
+        "cat": "反戦",
+        "tags": [
+            "戦争反対",
+            "縦",
+            "英語"
+        ],
+        "by": "yu_kku_ri",
+        "url": "https://x.com/yu_kku_ri",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000035-b.png",
+        "set": "",
+        "color": "青",
+        "title": "反戦 NO WAR",
+        "desc": "2970×4200px　A3/A4兼用",
+        "cat": "反戦",
+        "tags": [
+            "戦争反対",
+            "護憲",
+            "縦",
+            "日本語",
+            "英語"
+        ],
+        "by": "yu_kku_ri",
+        "url": "https://x.com/yu_kku_ri",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000035-c.png",
+        "set": "",
+        "color": "桃",
+        "title": "ウチら、政治に食い潰されてない？",
+        "desc": "4200×2970px　A3/A4兼用",
+        "cat": "政治",
+        "tags": [
+            "横",
+            "日本語",
+            "円安ホクホク",
+            "国旗",
+            "国旗損壊罪"
+        ],
+        "by": "yu_kku_ri",
+        "url": "https://x.com/yu_kku_ri",
+        "og_title": "",
+        "og_desc": ""
     }
 ]
