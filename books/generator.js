@@ -183,8 +183,20 @@ function generate() {
             twKeys.forEach(k => {
                 if (book[k] && book[k].trim()) tweets.push(book[k].trim());
             });
-            tweets.reverse(); // 新しい順
         }
+
+        // 投稿日時が新しい順（降順）にソート
+        tweets.sort((aUrl, bUrl) => {
+            const aInfo = getTweetUserInfo(aUrl);
+            const bInfo = getTweetUserInfo(bUrl);
+            const aCached = aInfo.tweetId ? tweetsCache[aInfo.tweetId] : null;
+            const bCached = bInfo.tweetId ? tweetsCache[bInfo.tweetId] : null;
+
+            const aTime = (aCached && aCached.created_at) ? new Date(aCached.created_at).getTime() : 0;
+            const bTime = (bCached && bCached.created_at) ? new Date(bCached.created_at).getTime() : 0;
+
+            return bTime - aTime; // 新しい順
+        });
 
         let tweetsHtml = '';
         if (tweets.length > 0) {

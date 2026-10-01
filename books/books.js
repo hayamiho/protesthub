@@ -269,7 +269,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (book.tweets && book.tweets.length > 0) {
             modalTweetsContainer.style.display = 'flex';
 
-            book.tweets.forEach(twUrl => {
+            // 投稿日時が新しい順（降順）にソート
+            const sortedTweets = [...book.tweets].sort((aUrl, bUrl) => {
+                const aInfo = getTweetUserInfo(aUrl);
+                const bInfo = getTweetUserInfo(bUrl);
+                const aCached = (typeof TWEETS_CACHE !== 'undefined' && aInfo.tweetId) ? TWEETS_CACHE[aInfo.tweetId] : null;
+                const bCached = (typeof TWEETS_CACHE !== 'undefined' && bInfo.tweetId) ? TWEETS_CACHE[bInfo.tweetId] : null;
+
+                const aTime = (aCached && aCached.created_at) ? new Date(aCached.created_at).getTime() : 0;
+                const bTime = (bCached && bCached.created_at) ? new Date(bCached.created_at).getTime() : 0;
+
+                return bTime - aTime; // 新しい順
+            });
+
+            sortedTweets.forEach(twUrl => {
                 const info = getTweetUserInfo(twUrl);
                 const cached = (typeof TWEETS_CACHE !== 'undefined' && info.tweetId) ? TWEETS_CACHE[info.tweetId] : null;
 
