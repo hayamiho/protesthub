@@ -217,6 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return match ? match[1] : null;
     }
 
+    // Extract User Info & Tweet ID from URL
+    function getTweetUserInfo(twUrl) {
+        if (!twUrl) return { username: 'x_user', tweetId: '' };
+        const match = twUrl.match(/(?:twitter|x)\.com\/([^\/]+)\/status\/(\d+)/i);
+        if (match) {
+            return { username: match[1], tweetId: match[2] };
+        }
+        return { username: 'x_user', tweetId: '' };
+    }
+
     // Modal Open
     function openModal(book) {
         // Reset scroll positions
@@ -254,66 +264,113 @@ document.addEventListener('DOMContentLoaded', () => {
             descriptionWrap.style.display = 'none';
         }
 
-        // 関連ポスト（IntersectionObserverによるスクロール遅延エンベッド）
+        // 関連ポスト（Togetter風・本物ツイート内容完全再現超軽量HTMLカード）
         modalTweetsContainer.innerHTML = '';
         if (book.tweets && book.tweets.length > 0) {
             modalTweetsContainer.style.display = 'flex';
 
-            if ('IntersectionObserver' in window) {
-                tweetObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const wrapper = entry.target;
-                            const tweetId = wrapper.dataset.tweetId;
-                            const twUrl = wrapper.dataset.tweetUrl;
-
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            } else if (twUrl) {
-                                wrapper.innerHTML = `
-                                    <blockquote class="twitter-tweet" data-dnt="true">
-                                      <a href="${twUrl}"></a>
-                                    </blockquote>
-                                `;
-                                if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
-                                    window.twttr.widgets.load(wrapper);
-                                }
-                            }
-                            observer.unobserve(wrapper);
-                        }
-                    });
-                }, {
-                    root: modalRight || modalPanel,
-                    rootMargin: '120px 0px',
-                    threshold: 0.01
-                });
-            }
-
             book.tweets.forEach(twUrl => {
-                const tweetId = getTweetId(twUrl);
-                const tweetItemWrapper = document.createElement('div');
-                tweetItemWrapper.className = 'tweet-embed-item';
-                tweetItemWrapper.style.minHeight = '100px';
-                if (tweetId) tweetItemWrapper.dataset.tweetId = tweetId;
-                tweetItemWrapper.dataset.tweetUrl = twUrl;
+                const info = getTweetUserInfo(twUrl);
+                const cached = (typeof TWEETS_CACHE !== 'undefined' && info.tweetId) ? TWEETS_CACHE[info.tweetId] : null;
 
-                modalTweetsContainer.appendChild(tweetItemWrapper);
+                const card = document.createElement('a');
+                card.className = 'togetter-tweet-card';
+                card.href = twUrl;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
 
-                if (tweetObserver) {
-                    tweetObserver.observe(tweetItemWrapper);
-                } else {
-                    if (tweetId && window.twttr && window.twttr.widgets) {
-                        window.twttr.widgets.createTweet(tweetId, tweetItemWrapper, {
-                            theme: 'light',
-                            conversation: 'none',
-                            dnt: true
-                        });
-                    }
+                const authorName = cached && cached.author_name ? cached.author_name : `@${info.username}`;
+                const screenName = cached && cached.screen_name ? cached.screen_name : info.username;
+                const avatarUrl = cached && cached.avatar_url ? cached.avatar_url : '';
+                const tweetText = cached && cached.text ? cached.text : '#反戦読書部 で共有されたポストを見る';
+
+                card.setAttribute('aria-label', `@${screenName} のXポストを開く`);
+
+                // Avatar HTML
+                const avatarHtml = avatarUrl
+                    ? `<img class="tt-avatar-img" src="${avatarUrl}" alt="${authorName}" onerror="this.style.display='none'">`
+                    : `<div class="tt-avatar-img" style="display:flex;align-items:center;justify-content:center;background:#1d9bf0;color:#fff;font-weight:bold;font-size:14px;">${screenName.charAt(0).toUpperCase()}</div>`;
+
+                // Photos HTML
+                let mediaHtml = '';
+                if (cached && cached.photos && cached.photos.length > 0) {
+                    const imgTags = cached.photos.map(pUrl => `<img class="tt-media-img" src="${pUrl}" alt="ツイート添付画像" loading="lazy">`).join('');
+                    mediaHtml = `<div class="tt-media-grid">${imgTags}</div>`;
                 }
+
+                // Quote Tweet HTML
+                let quoteHtml = '';
+                if (cached && cached.quote) {
+                    const q = cached.quote;
+                    const qAuthorName = q.author_name || `@${q.screen_name}`;
+                    const qScreenName = q.screen_name || '';
+                    const qAvatarUrl = q.avatar_url || '';
+                    const qText = q.text || '';
+
+                    const qAvatarHtml = qAvatarUrl
+                        ? `<img class="tt-quote-avatar" src="${qAvatarUrl}" alt="${qAuthorName}" onerror="this.style.display='none'">`
+                        : `<div class="tt-quote-avatar" style="display:flex;align-items:center;justify-content:center;background:#1d9bf0;color:#fff;font-weight:bold;font-size:10px;">${qScreenName.charAt(0).toUpperCase()}</div>`;
+
+                    let qMediaHtml = '';
+                    if (q.photos && q.photos.length > 0) {
+                        const qImgTags = q.photos.map(pUrl => `<img class="tt-quote-media-img" src="${pUrl}" alt="引用ツイート添付画像" loading="lazy">`).join('');
+                        qMediaHtml = `<div class="tt-quote-media-grid">${qImgTags}</div>`;
+                    }
+
+                    const qTextP = document.createElement('p');
+                    qTextP.className = 'tt-quote-text';
+                    qTextP.textContent = qText;
+
+                    quoteHtml = `
+                        <div class="tt-quote-card">
+                            <div class="tt-quote-header">
+                                ${qAvatarHtml}
+                                <span class="tt-quote-author">${qAuthorName}</span>
+                                <span class="tt-quote-username">@${qScreenName}</span>
+                            </div>
+                            ${qTextP.outerHTML}
+                            ${qMediaHtml}
+                        </div>
+                    `;
+                }
+
+                // Date String
+                let dateStr = '';
+                if (cached && cached.created_at) {
+                    try {
+                        const d = new Date(cached.created_at);
+                        if (!isNaN(d.getTime())) {
+                            dateStr = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+                        }
+                    } catch (e) { }
+                }
+
+                // Escape text for safety
+                const textP = document.createElement('p');
+                textP.className = 'tt-text';
+                textP.textContent = tweetText;
+
+                card.innerHTML = `
+                    <div class="tt-header">
+                        <div class="tt-user-container">
+                            ${avatarHtml}
+                            <div class="tt-user-info">
+                                <span class="tt-author-name">${authorName}</span>
+                                <span class="tt-username">@${screenName}</span>
+                            </div>
+                        </div>
+                        <span class="tt-badge">Xで開く ↗</span>
+                    </div>
+                    <div class="tt-body">
+                        ${textP.outerHTML}
+                        ${mediaHtml}
+                        ${quoteHtml}
+                    </div>
+                    <div class="tt-footer">
+                        <span class="tt-date">${dateStr}</span>
+                    </div>
+                `;
+                modalTweetsContainer.appendChild(card);
             });
         } else {
             modalTweetsContainer.style.display = 'none';

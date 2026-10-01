@@ -52,9 +52,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -119,12 +116,72 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2079234285572334062" data-tweet-url="https://x.com/OsaruBonobo/status/2079234285572334062"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/OsaruBonobo/status/2079234285572334062" target="_blank" rel="noopener noreferrer" aria-label="@OsaruBonobo のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1250708030112464896/4U69oUbv_200x200.jpg" alt="ぼのぼのお猿🐒" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">ぼのぼのお猿🐒</span>
+                                        <span class="tt-username">@OsaruBonobo</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">このタグには大学で横目に見てた
+本物の本読みさんたちが居る
+（前半で止まってるこれを再スタートさせようと）
+#オンライン反戦読書デモ0719
+#夏休みオンライン反戦読書デモ2026</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNrsV9ja8AAknYn.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                        <div class="tt-quote-card">
+                            <div class="tt-quote-header">
+                                <img class="tt-quote-avatar" src="https://pbs.twimg.com/profile_images/2054337483568267264/8qjE6xnp_200x200.jpg" alt="えり" onerror="this.style.display='none'">
+                                <span class="tt-quote-author">えり</span>
+                                <span class="tt-quote-username">@erihime1187</span>
+                            </div>
+                            <p class="tt-quote-text">#オンライン反戦読書デモ0719
+にご参加頂いた皆様、ありがとうございました🙇‍♀️
+こちらが大変ご好評だったので、続編を行います☺️
+
+7/21(火)~8/31(月) 0:00~23:59
+の期間中、X・Instagramにて
+#夏休みオンライン反戦読書デモ2026
+のハッシュタグを付けて投稿してください！
+
+参加冊数���計測し集計します</p>
+                            <div class="tt-quote-media-grid"><img class="tt-quote-media-img" src="https://pbs.twimg.com/media/HNq3ZdVb0AApcJn.jpg?name=orig" alt="引用ツイート添付画像" loading="lazy"></div>
+                        </div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月21日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">このタグには大学で横目に見てた
+本物の本読みさんたちが居る
+（前半で止まってるこれを再スタートさせようと）
+#オンライン反戦読書デモ0719
+#夏休みオンライン反戦読書デモ2026</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNrsV9ja8AAknYn.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月21日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -165,45 +222,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

@@ -49,9 +49,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -115,12 +112,54 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2090035240689713390" data-tweet-url="https://x.com/mimamuraidori/status/2090035240689713390"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/mimamuraidori/status/2090035240689713390" target="_blank" rel="noopener noreferrer" aria-label="@mimamuraidori のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1047865590117847040/igSXhYIy_200x200.jpg" alt="今村翠◇『電波のとどく時空にいます』③9/9発売📚" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">今村翠◇『電波のとどく時空にいます』③9/9発売📚</span>
+                                        <span class="tt-username">@mimamuraidori</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">これは行き帰りのお供　帯の強さが好きすぎるのでカバーなしでお外にも連れてく
+中脇初枝『天までのぼれ』
+土佐の民権活動家、「民権ばあさん」楠瀬喜多のおはなしだよ！！
+#国会正門前大行動0819
+#夏休みオンライン反戦読書デモ2026</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HQFL-H5bYAAFLWs.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年8月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">これは行き帰りのお供　帯の強さが好きすぎるのでカバーなしでお外にも連れてく
+中脇初枝『天までのぼれ』
+土佐の民権活動家、「民権ばあさん」楠瀬喜多のおはなしだよ！！
+#国会正門前大行動0819
+#夏休みオンライン反戦読書デモ2026</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HQFL-H5bYAAFLWs.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年8月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -161,45 +200,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

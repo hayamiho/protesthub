@@ -40,9 +40,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -101,12 +98,60 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2078819207115067404" data-tweet-url="https://x.com/Kg0fpr_Nemuta13/status/2078819207115067404"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/Kg0fpr_Nemuta13/status/2078819207115067404" target="_blank" rel="noopener noreferrer" aria-label="@Kg0fpr_Nemuta13 のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1611360361843949570/f0BlSX2P_200x200.jpg" alt="ぐらにん。" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">ぐらにん。</span>
+                                        <span class="tt-username">@Kg0fpr_Nemuta13</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">#オンライン反戦読書デモ0719
+
+最近図書館から借りてきて読んでる途中ですが、加害国としての責任と反省を、絶対に捨ててはならないと強く受け止めています。
+
+『七三一部隊のはなし　十代のあなたへのメッセージ』
+著者　西野瑠美子
+さし絵　日野多津子
+明石書店</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNlzC5iagAA8KRn.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">#オンライン反戦読書デモ0719
+
+最近図書館から借りてきて読んでる途中ですが、加害国としての責任と反省を、絶対に捨ててはならないと強く受け止めています。
+
+『七三一部隊のはなし　十代のあなたへのメッセージ』
+著者　西野瑠美子
+さし絵　日野多津子
+明石書店</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNlzC5iagAA8KRn.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -147,45 +192,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

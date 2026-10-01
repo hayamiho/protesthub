@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const DATA_FILE = path.join(__dirname, 'data_books.js');
+const TWEETS_FILE = path.join(__dirname, 'data_tweets.js');
 const TEMPLATE_FILE = path.join(__dirname, 'template.html');
 const OUTPUT_DIR = __dirname; // books/ 直下
 
@@ -10,10 +12,103 @@ function extractIsbn(str) {
     return match ? match[0] : '';
 }
 
-function getTweetId(urlStr) {
-    if (!urlStr) return null;
-    const match = urlStr.match(/\/status\/(\d+)/);
-    return match ? match[1] : null;
+function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function getTweetUserInfo(twUrl) {
+    if (!twUrl) return { username: 'x_user', tweetId: '' };
+    const match = twUrl.match(/(?:twitter|x)\.com\/([^\/]+)\/status\/(\d+)/i);
+    if (match) {
+        return { username: match[1], tweetId: match[2] };
+    }
+    return { username: 'x_user', tweetId: '' };
+}
+
+function createTweetCardHtml(twUrl, tweetsCache) {
+    const info = getTweetUserInfo(twUrl);
+    const tweetId = info.tweetId;
+    const cached = tweetId ? tweetsCache[tweetId] : null;
+
+    const authorName = escapeHtml(cached && cached.author_name ? cached.author_name : `@${info.username}`);
+    const screenName = escapeHtml(cached && cached.screen_name ? cached.screen_name : info.username);
+    const avatarUrl = cached && cached.avatar_url ? cached.avatar_url : '';
+    const tweetText = escapeHtml(cached && cached.text ? cached.text : '#反戦読書部 で共有されたポストを見る');
+
+    const avatarHtml = avatarUrl
+        ? `<img class="tt-avatar-img" src="${avatarUrl}" alt="${authorName}" onerror="this.style.display='none'">`
+        : `<div class="tt-avatar-img" style="display:flex;align-items:center;justify-content:center;background:#1d9bf0;color:#fff;font-weight:bold;font-size:14px;">${screenName.charAt(0).toUpperCase()}</div>`;
+
+    let mediaHtml = '';
+    if (cached && cached.photos && cached.photos.length > 0) {
+        const imgTags = cached.photos.map(pUrl => `<img class="tt-media-img" src="${pUrl}" alt="ツイート添付画像" loading="lazy">`).join('');
+        mediaHtml = `<div class="tt-media-grid">${imgTags}</div>`;
+    }
+
+    let quoteHtml = '';
+    if (cached && cached.quote) {
+        const q = cached.quote;
+        const qAuthorName = escapeHtml(q.author_name || `@${q.screen_name}`);
+        const qScreenName = escapeHtml(q.screen_name || '');
+        const qAvatarUrl = q.avatar_url || '';
+        const qText = escapeHtml(q.text || '');
+
+        const qAvatarHtml = qAvatarUrl
+            ? `<img class="tt-quote-avatar" src="${qAvatarUrl}" alt="${qAuthorName}" onerror="this.style.display='none'">`
+            : `<div class="tt-quote-avatar" style="display:flex;align-items:center;justify-content:center;background:#1d9bf0;color:#fff;font-weight:bold;font-size:10px;">${qScreenName.charAt(0).toUpperCase()}</div>`;
+
+        let qMediaHtml = '';
+        if (q.photos && q.photos.length > 0) {
+            const qImgTags = q.photos.map(pUrl => `<img class="tt-quote-media-img" src="${pUrl}" alt="引用ツイート添付画像" loading="lazy">`).join('');
+            qMediaHtml = `<div class="tt-quote-media-grid">${qImgTags}</div>`;
+        }
+
+        quoteHtml = `
+                        <div class="tt-quote-card">
+                            <div class="tt-quote-header">
+                                ${qAvatarHtml}
+                                <span class="tt-quote-author">${qAuthorName}</span>
+                                <span class="tt-quote-username">@${qScreenName}</span>
+                            </div>
+                            <p class="tt-quote-text">${qText}</p>
+                            ${qMediaHtml}
+                        </div>`;
+    }
+
+    let dateStr = '';
+    if (cached && cached.created_at) {
+        try {
+            const d = new Date(cached.created_at);
+            if (!isNaN(d.getTime())) {
+                dateStr = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+            }
+        } catch (e) { }
+    }
+
+    return `                        <a class="togetter-tweet-card" href="${twUrl}" target="_blank" rel="noopener noreferrer" aria-label="@${screenName} のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    ${avatarHtml}
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">${authorName}</span>
+                                        <span class="tt-username">@${screenName}</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">${tweetText}</p>
+                                ${mediaHtml}
+                                ${quoteHtml}
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">${dateStr}</span>
+                            </div>
+                        </a>`;
 }
 
 function generate() {
@@ -23,20 +118,27 @@ function generate() {
         console.error('Error: data_books.js not found');
         return;
     }
-    const dataJsContent = fs.readFileSync(DATA_FILE, 'utf8');
-    const dataMatch = dataJsContent.match(/const\s+BOOKS_DATA\s*=\s*([\s\S]*?);?\s*$/);
-    if (!dataMatch || !dataMatch[1]) {
-        console.error('Error: Failed to parse BOOKS_DATA from data_books.js');
-        return;
+
+    // Load TWEETS_CACHE
+    let tweetsCache = {};
+    if (fs.existsSync(TWEETS_FILE)) {
+        try {
+            let dataTweetsContent = fs.readFileSync(TWEETS_FILE, 'utf8').replace('const TWEETS_CACHE =', 'var TWEETS_CACHE =');
+            const tweetsContext = {};
+            vm.createContext(tweetsContext);
+            vm.runInContext(dataTweetsContent, tweetsContext);
+            tweetsCache = tweetsContext.TWEETS_CACHE || {};
+        } catch (e) {
+            console.warn('Warning loading data_tweets.js:', e.message);
+        }
     }
 
-    let booksData = [];
-    try {
-        booksData = JSON.parse(dataMatch[1]);
-    } catch (e) {
-        console.error('Error parsing JSON from data_books.js:', e.message);
-        return;
-    }
+    // Load BOOKS_DATA
+    let dataJsContent = fs.readFileSync(DATA_FILE, 'utf8').replace('const BOOKS_DATA =', 'var BOOKS_DATA =');
+    const booksContext = {};
+    vm.createContext(booksContext);
+    vm.runInContext(dataJsContent, booksContext);
+    const booksData = booksContext.BOOKS_DATA || [];
 
     if (!fs.existsSync(TEMPLATE_FILE)) {
         console.error('Error: template.html not found');
@@ -70,7 +172,6 @@ function generate() {
             metaStr = author || pub || '';
         }
 
-        // ツイート配列の収集
         let tweets = [];
         if (book.tweets && Array.isArray(book.tweets)) {
             tweets = book.tweets;
@@ -87,12 +188,7 @@ function generate() {
 
         let tweetsHtml = '';
         if (tweets.length > 0) {
-            tweetsHtml = tweets.map(twUrl => {
-                const tweetId = getTweetId(twUrl);
-                return `<div class="tweet-embed-item" data-tweet-id="${tweetId || ''}" data-tweet-url="${twUrl}"></div>`;
-            }).join('\n');
-        } else {
-            tweetsHtml = '';
+            tweetsHtml = tweets.map(twUrl => createTweetCardHtml(twUrl, tweetsCache)).join('\n');
         }
 
         const outputFileName = `${cleanIsbn}.html`;
@@ -118,7 +214,6 @@ function generate() {
 
         fs.writeFileSync(outputPath, content, 'utf8');
         count++;
-        console.log(`[${count}/${booksData.length}] Generated: ${outputFileName}`);
     });
 
     console.log(`\n--- Finished! Total ${count} HTML files generated successfully. ---`);

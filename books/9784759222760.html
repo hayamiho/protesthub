@@ -40,9 +40,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -102,12 +99,52 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2078834142691958980" data-tweet-url="https://x.com/Cinnammonon/status/2078834142691958980"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/Cinnammonon/status/2078834142691958980" target="_blank" rel="noopener noreferrer" aria-label="@Cinnammonon のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1440912820837629959/C7Iyrs1u_200x200.jpg" alt="シナモン" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">シナモン</span>
+                                        <span class="tt-username">@Cinnammonon</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">「どうしてあの時…」っていわれたくない。
+https://www.kaihou-s.com/book/b575934.html
+ #オンライン反戦読書デモ0719
+#NOWAR</p>
+                                
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">「どうしてあの時…」っていわれたくない。
+https://www.kaihou-s.com/book/b575934.html
+ #オンライン反戦読書デモ0719
+#NOWAR</p>
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -148,45 +185,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

@@ -55,9 +55,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -123,12 +120,64 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2078693617389203840" data-tweet-url="https://x.com/produce48aiueo/status/2078693617389203840"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/produce48aiueo/status/2078693617389203840" target="_blank" rel="noopener noreferrer" aria-label="@produce48aiueo のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/2100167994962010112/Rx77I07I_200x200.jpg" alt="小さい姉妹" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">小さい姉妹</span>
+                                        <span class="tt-username">@produce48aiueo</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">読んで抵抗✊
+#国会正門前大行動0719
+#オンライン反戦読書デモ
+#オンライン反戦読書デモ0719
+#反戦読書部
+#反戦読書会
+#反戦積読部
+#ブックカバーデモ
+#読書は抵抗 
+（4枚目『100分de名著 侍女の物語 誓願』）</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03HaYAAEotQ.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03IaUAA4yWe.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03HbwAAEZnb.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03cagAA7DT0.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">読んで抵抗✊
+#国会正門前大行動0719
+#オンライン反戦読書デモ
+#オンライン反戦読書デモ0719
+#反戦読書部
+#反戦読書会
+#反戦積読部
+#ブックカバーデモ
+#読書は抵抗 
+（4枚目『100分de名著 侍女の物語 誓願』）</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03HaYAAEotQ.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03IaUAA4yWe.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03HbwAAEZnb.jpg?name=orig" alt="ツイート添付画像" loading="lazy"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkA03cagAA7DT0.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -169,45 +218,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

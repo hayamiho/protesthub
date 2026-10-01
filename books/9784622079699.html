@@ -46,9 +46,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -116,12 +113,50 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2078641438162866439" data-tweet-url="https://x.com/Uzukinii/status/2078641438162866439"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/Uzukinii/status/2078641438162866439" target="_blank" rel="noopener noreferrer" aria-label="@Uzukinii のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1535565238963404802/GVLdcTOC_200x200.jpg" alt="卯月にい" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">卯月にい</span>
+                                        <span class="tt-username">@Uzukinii</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">国会議事堂前に行くことができないのでオンラインでオンライン反戦読書デモ0719参加。再読のものもあるし、積読もある。
+本当はオーウェルのカタロニア讃歌も読みたいけど、今、ちょっと見当たらない。
+#オンライン反戦読書デモ0719</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNjRXrCaAAAZcCN.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">国会議事堂前に行くことができないのでオンラインでオンライン反戦読書デモ0719参加。再読のものもあるし、積読もある。
+本当はオーウェルのカタロニア讃歌も読みたいけど、今、ちょっと見当たらない。
+#オンライン反戦読書デモ0719</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNjRXrCaAAAZcCN.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -162,45 +197,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>

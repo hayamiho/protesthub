@@ -40,9 +40,6 @@
 
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="books.css">
-
-    <!-- X / Twitter Widgets SDK -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -101,12 +98,66 @@
                     </div>
 
                     <div class="modal-tweets-container" id="modal-tweets">
-                        <div class="tweet-embed-item" data-tweet-id="2078745682060644547" data-tweet-url="https://x.com/Itokawa_Noe/status/2078745682060644547"></div>
+                        <a class="togetter-tweet-card" href="https://x.com/Itokawa_Noe/status/2078745682060644547" target="_blank" rel="noopener noreferrer" aria-label="@Itokawa_Noe のXポストを開く">
+                            <div class="tt-header">
+                                <div class="tt-user-container">
+                                    <img class="tt-avatar-img" src="https://pbs.twimg.com/profile_images/1703616414014480384/_yJk69mt_200x200.jpg" alt="糸川乃衣" onerror="this.style.display='none'">
+                                    <div class="tt-user-info">
+                                        <span class="tt-author-name">糸川乃衣</span>
+                                        <span class="tt-username">@Itokawa_Noe</span>
+                                    </div>
+                                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">#国会正門前大行動0719
+#オンライン反戦読書デモ0719
+
+写真は私の個人的な課題図書の一部。自身が当事者となってしまっている暴力や植民地主義と向きあうために早急に読まねばと思っている、のだけど、悪政が生活を破壊してゆく音を耳元で聞きながらではおちおち開くこともできやしない。本を読ませろ</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkvXCIawAANMLu.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                                
+                        <div class="tt-quote-card">
+                            <div class="tt-quote-header">
+                                <img class="tt-quote-avatar" src="https://pbs.twimg.com/profile_images/1564040186350424065/ax2Ovv2c_200x200.jpg" alt="こばと通信 -声を上げる市民-" onerror="this.style.display='none'">
+                                <span class="tt-quote-author">こばと通信 -声を上げる市民-</span>
+                                <span class="tt-quote-username">@KobatoTimes</span>
+                            </div>
+                            <p class="tt-quote-text">7/19(日)15:30～おかしな法案ばかりが、ろくに国会で議論もせず通される。声を上げよう！
+NO WAR！憲法変えるな！7･19国会正門前大行動
+#国会正門前大行動0719 #19日行動
+戦争させない・９条壊すな！総がかり行動実行委員会／９条改憲NO！全国市民アクション
+Live/UDTalk
+https://youtube.com/live/LwOG13fjNFs</p>
+                            
+                        </div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                                <span class="tt-badge">Xで開く ↗</span>
+                            </div>
+                            <div class="tt-body">
+                                <p class="tt-text">#国会正門前大行動0719
+#オンライン反戦読書デモ0719
+
+写真は私の個人的な課題図書の一部。自身が当事者となってしまっている暴力や植民地主義と向きあうために早急に読まねばと思っている、のだけど、悪政が生活を破壊してゆく音を耳元で聞きながらではおちおち開くこともできやしない。本を読ませろ</p>
+                                <div class="tt-media-grid"><img class="tt-media-img" src="https://pbs.twimg.com/media/HNkvXCIawAANMLu.jpg?name=orig" alt="ツイート添付画像" loading="lazy"></div>
+                            </div>
+                            <div class="tt-footer">
+                                <span class="tt-date">2026年7月19日</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="data_tweets.js"></script>
+    <script src="data_books.js"></script>
 
     <script>
         // 背景クリックまたは閉じるボタンで一覧へ戻る
@@ -147,45 +198,6 @@
             };
         } else if (descWrap) {
             descWrap.style.display = 'none';
-        }
-
-        // IntersectionObserver によるスクロール遅延エンベッド
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const wrapper = entry.target;
-                        if (wrapper.dataset.loaded) return;
-                        wrapper.dataset.loaded = 'true';
-
-                        const tweetId = wrapper.dataset.tweetId;
-
-                        const renderTweet = () => {
-                            if (tweetId && window.twttr && window.twttr.widgets) {
-                                window.twttr.widgets.createTweet(tweetId, wrapper, {
-                                    theme: 'light',
-                                    conversation: 'none',
-                                    dnt: true
-                                });
-                            }
-                        };
-
-                        if (window.twttr && window.twttr.widgets) {
-                            renderTweet();
-                        } else {
-                            const checkInterval = setInterval(() => {
-                                if (window.twttr && window.twttr.widgets) {
-                                    clearInterval(checkInterval);
-                                    renderTweet();
-                                }
-                            }, 50);
-                        }
-                        obs.unobserve(wrapper);
-                    }
-                });
-            }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-            document.querySelectorAll('.tweet-embed-item').forEach(item => observer.observe(item));
         }
     </script>
 </body>
