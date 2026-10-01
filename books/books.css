@@ -463,17 +463,16 @@ a {
 
 .tweet-embed-item {
   display: block;
-  width: 125% !important;
-  margin: 0 !important;
-  zoom: 0.8;
+  width: 100% !important;
+  margin: 0 auto !important;
 }
 
 .modal-tweets-container .twitter-tweet,
 .modal-tweets-container iframe {
-  margin: 0 !important;
+  margin: 0 auto !important;
   width: 100% !important;
-  max-width: none !important;
-  min-width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 .button {
