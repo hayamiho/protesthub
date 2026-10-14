@@ -1885,7 +1885,7 @@ const POSTERS_DATA = [
         "set": "",
         "color": "赤",
         "title": "LOOK AT POLITICS",
-        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされた素敵なトップス・バッグ・ステッカー等を<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>様にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
+        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
         "cat": "政治",
         "tags": [
             "横",
@@ -1902,7 +1902,7 @@ const POSTERS_DATA = [
         "set": "",
         "color": "白",
         "title": "LOOK AT POLITICS",
-        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされた素敵なトップス・バッグ・ステッカー等を<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>様にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
+        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
         "cat": "政治",
         "tags": [
             "横",
@@ -1919,7 +1919,7 @@ const POSTERS_DATA = [
         "set": "",
         "color": "黒",
         "title": "LOOK AT POLITICS",
-        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされた素敵なトップス・バッグ・ステッカー等を<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>様にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
+        "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
         "cat": "政治",
         "tags": [
             "横",
