@@ -225,13 +225,14 @@ const TWEETS_CACHE = {
     "2078856871273009211": {
         "id": "2078856871273009211",
         "url": "https://x.com/i0rainbow/status/2078856871273009211",
-        "text": "ポストを表示する（Xで開く）",
-        "author_name": "i0rainbow",
+        "text": "ツイートするの忘れてた！ギリギリ参加！\n#オンライン反戦読書デモ0719",
+        "author_name": "麻花",
         "screen_name": "i0rainbow",
-        "avatar_url": "",
-        "created_at": "",
-        "photos": [],
-        "quote": null
+        "avatar_url": "https://pbs.twimg.com/profile_images/2096173331146014720/OjtimWN3_200x200.png",
+        "created_at": "Sun Jul 19 14:57:56 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmVTcTa8AAxRyn.jpg?name=orig"
+        ]
     },
     "2078699107955413361": {
         "id": "2078699107955413361",
@@ -909,13 +910,14 @@ const TWEETS_CACHE = {
     "2078774418747408419": {
         "id": "2078774418747408419",
         "url": "https://x.com/kumamizi/status/2078774418747408419",
-        "text": "ポストを表示する（Xで開く）",
-        "author_name": "kumamizi",
+        "text": "今読んでいるのは朱喜哲さんの本。私たちは本質を承認し合えなくても小さな要素を積み上げて連帯していくのだ。\nほか4冊は地元のピクニックデモに持参する本。\n\n#オンライン反戦読書デモ0719",
+        "author_name": "さんしょう",
         "screen_name": "kumamizi",
-        "avatar_url": "",
-        "created_at": "",
-        "photos": [],
-        "quote": null
+        "avatar_url": "https://pbs.twimg.com/profile_images/1780163977047310336/B_NSNATi_200x200.jpg",
+        "created_at": "Sun Jul 19 09:30:17 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNlKTRCa0AAS9OQ.jpg?name=orig"
+        ]
     },
     "2078793102761025745": {
         "id": "2078793102761025745",
@@ -978,8 +980,7 @@ const TWEETS_CACHE = {
         "screen_name": "manju_crab",
         "avatar_url": "",
         "created_at": "",
-        "photos": [],
-        "quote": null
+        "photos": []
     },
     "2101938044224033075": {
         "id": "2101938044224033075",
@@ -1722,5 +1723,301 @@ const TWEETS_CACHE = {
             "https://pbs.twimg.com/media/HSPqKPzbcAA3Xmo.jpg?name=orig"
         ],
         "quote": null
+    },
+    "2078982763055857771": {
+        "id": "2078982763055857771",
+        "url": "https://x.com/Aika_kprincess/status/2078982763055857771",
+        "text": "当日参加出来なくて申し訳ないですわ……😭\n\n此方に近代の貴族制度についての本を読んでおりますの\n#オンライン反戦読書デモ0719",
+        "author_name": "子玉あいか/固定ツイートご覧になって",
+        "screen_name": "Aika_kprincess",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2109625606577258496/740fZVgU_200x200.png",
+        "created_at": "Sun Jul 19 23:18:11 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNoHzRpa0AA8nqT.jpg?name=orig"
+        ]
+    },
+    "2078845929017532609": {
+        "id": "2078845929017532609",
+        "url": "https://x.com/c0q_hrks/status/2078845929017532609",
+        "text": "このタグ滅茶苦茶良い！読みたい本リストがどんどん伸びていく～📚\n#オンライン反戦読書デモ0719",
+        "author_name": "ヒロセ",
+        "screen_name": "c0q_hrks",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1241330235418636288/h_mPv9b-_200x200.jpg",
+        "created_at": "Sun Jul 19 14:14:27 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmLWQsaoAAeYYp.jpg?name=orig"
+        ]
+    },
+    "2078849038766768160": {
+        "id": "2078849038766768160",
+        "url": "https://x.com/grunherz054/status/2078849038766768160",
+        "text": "#オンライン反戦読書デモ0719\n\n導入の過程が国旗損壊罪法に似すぎ。",
+        "author_name": "TF/湘南クラシック音楽（&漫画、特撮）を愛する会",
+        "screen_name": "grunherz054",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1936783488662798336/4zhRAQ2O_200x200.jpg",
+        "created_at": "Sun Jul 19 14:26:48 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmMxkla8AAiYo-.jpg?name=orig"
+        ]
+    },
+    "2078841398783263105": {
+        "id": "2078841398783263105",
+        "url": "https://x.com/momonnganomomo/status/2078841398783263105",
+        "text": "私にとって、初めての「反戦読書」は小学校中学年で出会った『ガラスのうさぎ』\n母が本と映画両方に出会わせてくれた\n夏バテ気味で、今日は国会前のデモも渋谷でのデモも参加を諦めたけど、私も微力ながらオンラインで意思表明！\nむちゃくちゃな政治に異議を申し立てます\n#オンライン反戦読書デモ0719",
+        "author_name": "ももんがのもも",
+        "screen_name": "momonnganomomo",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1961686793532874752/ZAbwsC0x_200x200.jpg",
+        "created_at": "Sun Jul 19 13:56:27 +0000 2026",
+        "photos": []
+    },
+    "2078853456887263543": {
+        "id": "2078853456887263543",
+        "url": "https://x.com/akRidge3/status/2078853456887263543",
+        "text": "#オンライン反戦読書デモ0719\n\n今日は移動中、澤田大樹記者の本読んでいました",
+        "author_name": "まいり(旧a.k.Ridge)",
+        "screen_name": "akRidge3",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1169148636808273920/iDKKlyhA_200x200.jpg",
+        "created_at": "Sun Jul 19 14:44:22 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmSMzrbIAAC6Sc.jpg?name=orig"
+        ]
+    },
+    "2078836219040165923": {
+        "id": "2078836219040165923",
+        "url": "https://x.com/blessedcocochan/status/2078836219040165923",
+        "text": "『「キノコ雲」の上と下の物語』\n 広島と長崎の両方で被爆された、いわゆる二十被爆者の山口彊さんのお孫さんと、両方の投下で爆撃機に搭乗していたビーザーさんのお孫さんによる一冊。 \nhttps://publications.asahi.com/product/25476.html\n#オンライン反戦読書デモ0719",
+        "author_name": "coco.。",
+        "screen_name": "blessedcocochan",
+        "avatar_url": "https://pbs.twimg.com/profile_images/969141655151427585/jbTPzaqf_200x200.jpg",
+        "created_at": "Sun Jul 19 13:35:52 +0000 2026",
+        "photos": []
+    },
+    "2078683317059088496": {
+        "id": "2078683317059088496",
+        "url": "https://x.com/sasame_ikuko/status/2078683317059088496",
+        "text": "かこさとし『未来のだるまちゃんへ』で参加します🍀\n19才で敗戦を経験したかこさとしさんは、自分も戦争に加担した1人だったという痛切な思いから、次の世代のために何ができるのか必死に考えた。\nかこさんのメッセージが詰まった1冊。\n#オンライン反戦読書デモ0719\n#国会正門前大行動に連帯します",
+        "author_name": "笹目いく子",
+        "screen_name": "sasame_ikuko",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1874702448243134465/JHedtyPV_200x200.jpg",
+        "created_at": "Sun Jul 19 03:28:17 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNj3dS0XcAEd4hJ.jpg?name=orig",
+            "https://pbs.twimg.com/media/HNj3dfVWMAASQaG.jpg?name=orig"
+        ]
+    },
+    "2097263456454132118": {
+        "id": "2097263456454132118",
+        "url": "https://x.com/daphne_triangle/status/2097263456454132118",
+        "text": "「暴君の権力は、古い秩序がまだあるときのほうが有効だ。皆の同意で物事が決まるような安心な構造は骨抜きとなり、単なる飾りとなるが、まだ存在はするので、心理的な安心と安寧を求める傍観者は、法の支配が続いていると錯覚できるのだ」\n『暴君』スティーブン・グリーンブラット\n#反戦読書部 #読書",
+        "author_name": "ダフネ",
+        "screen_name": "daphne_triangle",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1866846457573281796/kCtE15LL_200x200.jpg",
+        "created_at": "Tue Sep 08 09:59:07 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HRr5_wUbwAAgiBX.jpg?name=orig"
+        ]
+    },
+    "2078855147980193970": {
+        "id": "2078855147980193970",
+        "url": "https://x.com/yavuzaduma9long/status/2078855147980193970",
+        "text": "#オンライン反戦読書デモ0719 \n\n日本みたいな平和な国になりたいと口にしたアフガニスタンの人をペルシャ湾派兵で踏みにじったのみならずさらに踏みにじろうとしてるのを許せない",
+        "author_name": "夜渦🐉通販固定",
+        "screen_name": "yavuzaduma9long",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1992424943611760640/eUXmALuI_200x200.jpg",
+        "created_at": "Sun Jul 19 14:51:05 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmTvJsbQAABMuv.jpg?name=orig"
+        ]
+    },
+    "2078833406415405102": {
+        "id": "2078833406415405102",
+        "url": "https://x.com/piasio2916/status/2078833406415405102",
+        "text": "#オンライン反戦読書デモ0719 \nフランク•パヴロフ　『茶色の朝』\n高橋哲哉さんのメッセージも是非読んでほしいです📖",
+        "author_name": "しお",
+        "screen_name": "piasio2916",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1300410876608933893/cvtVBQ22_200x200.jpg",
+        "created_at": "Sun Jul 19 13:24:41 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNl_9uoaUAApQMT.jpg?name=orig"
+        ]
+    },
+    "2078836261088117105": {
+        "id": "2078836261088117105",
+        "url": "https://x.com/wani_teez/status/2078836261088117105",
+        "text": "📗茶色の朝/フランクパヴロフ\n反ファシズムの寓話\nとても短くインパクトが強い。絶対読んで。(私の固定ポスト見てね)\n\n📗嵐を呼ぶ少女とよばれて/菱山南帆子\nプロテストに疲れて読もうと決めた本\nまだ読めてなかったからこの機会に…\n\n(こんな感じでいいのかな)\n#オンライン反戦読書デモ0719",
+        "author_name": "小指",
+        "screen_name": "wani_teez",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1958675995214716929/T7vMI6dE_200x200.jpg",
+        "created_at": "Sun Jul 19 13:36:02 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNmCj0ybkAAXFHI.jpg?name=orig"
+        ]
+    },
+    "2101600412117901760": {
+        "id": "2101600412117901760",
+        "url": "https://x.com/tk_yui18/status/2101600412117901760",
+        "text": "📕茶色の朝\n\n「茶色のペット以外を飼ってはいけない」という法律から始まる話。\n一見、自分の生活には大きく関係なさそうな決まりが次々と施行され、それに慣れていく人々。\n「みんなと同じなら大丈夫」「従っているから安心」と思っていたら……。\n\n#オンライン反戦読書デモ2026秋",
+        "author_name": "結",
+        "screen_name": "tk_yui18",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2101295260790079488/glaPD1f1_200x200.jpg",
+        "created_at": "Sun Sep 20 09:12:38 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HSpib1laoAA_5jt.jpg?name=orig"
+        ]
+    },
+    "2093694771709759866": {
+        "id": "2093694771709759866",
+        "url": "https://x.com/NORA_L8690/status/2093694771709759866",
+        "text": "フランクパブロフの【茶色の朝】\n読んだ。\nデモに行く理由が「なんか最近オカシくない？」で十分なのは、茶色の安心安全に慣らされない為。\n釈然としない気持ちに蓋をして思考を止めれば、いつだって明日は我が身だ。\n見て見ぬ振りは狭まる檻の中に自ら入ること。\n#夏休みオンライン反戦読書デモ2026",
+        "author_name": "NORA",
+        "screen_name": "NORA_L8690",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1699465108089626627/3zG9KsHH_200x200.jpg",
+        "created_at": "Sat Aug 29 13:38:27 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HQ5MS3uawAAEIEL.jpg?name=orig"
+        ]
+    },
+    "2087413106653684019": {
+        "id": "2087413106653684019",
+        "url": "https://x.com/asakiyumemisi12/status/2087413106653684019",
+        "text": "#夏休みオンライン反戦読書デモ2026\n\n上からの命令で最大限の成果をあげる者を優秀ともてはやしてきた日本人\n\n茶色の朝を迎えないためにその命令が妥当か考えよう\n疑問や異論を唱えて冷遇された人たちも、もう一度立ち上がろう\n\n茶色の朝 - 大月書店 https://share.google/TAErlqkwnT78nxjwL",
+        "author_name": "朧月夜",
+        "screen_name": "asakiyumemisi12",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2259718967/DSC_0053_200x200.JPG",
+        "created_at": "Wed Aug 12 05:37:21 +0000 2026",
+        "photos": []
+    },
+    "2085591053906919770": {
+        "id": "2085591053906919770",
+        "url": "https://x.com/akaryy33558/status/2085591053906919770",
+        "text": "「茶色の朝」解説者の高橋哲哉さん著作、ようやく読了しました。\n昭和天皇の天皇メッセージ、沖縄へ基地が集中するに至る経緯、日米安保体制の下での沖縄への基地負担。\n今読んで良かったです。\n#夏休みオンライン反戦読書デモ2026",
+        "author_name": "akaryy",
+        "screen_name": "akaryy33558",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2108896949843984384/aU8POvHh_200x200.jpg",
+        "created_at": "Fri Aug 07 04:57:10 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HPGB_7Pb0AA9YO-.jpg?name=orig"
+        ]
+    },
+    "2105981417549430829": {
+        "id": "2105981417549430829",
+        "url": "https://x.com/kinakomochi69/status/2105981417549430829",
+        "text": "「沖縄について私たちが知っておきたいこと」\n\n沖縄の基地問題。沖縄の歴史、日本に併合された経緯。\n今や観光地としてのイメージの強い沖縄が、過去も現在も本土の人(ナイチャー)に捨て石にされている事を知る為に必読の書。\n\n#反戦読書部\n#図書館デモ",
+        "author_name": "安倍川もち",
+        "screen_name": "kinakomochi69",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2063960668987064320/TT8bTEpC_200x200.jpg",
+        "created_at": "Fri Oct 02 11:21:11 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HTny4s4aUAATBya.jpg?name=orig"
+        ]
+    },
+    "2069659998045831642": {
+        "id": "2069659998045831642",
+        "url": "https://x.com/uniforbook/status/2069659998045831642",
+        "text": "沖縄について私たちが知っておきたいこと（高橋哲哉）\n昨日6/23は沖縄慰霊の日。全体の7割超の米軍基地が沖縄にあるにもかかわらず、今まであまりにも無関心すぎたと反省。#読了 #反戦読書部",
+        "author_name": "uni",
+        "screen_name": "uniforbook",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1966501863513321473/Nub0lVd6_200x200.jpg",
+        "created_at": "Wed Jun 24 05:52:50 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HLjoy9rWAAAIGk_.jpg?name=orig",
+            "https://pbs.twimg.com/media/HLjoy9rXgAAOaBx.jpg?name=orig"
+        ]
+    },
+    "2100451937481371749": {
+        "id": "2100451937481371749",
+        "url": "https://x.com/hdmn2299/status/2100451937481371749",
+        "text": "読み終わりました\n沖縄の歴史、基地問題、そして構造的差別などについて、主に本土に住む人を対象に平易に書かれてありました\nとても読みやすかったので、ほんと今読まれるといいと思う\n\n#反戦読書部 #反戦積読崩し部 \n#読書は抵抗",
+        "author_name": "まるならん",
+        "screen_name": "hdmn2299",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1058389936049549312/i_lRKgjr_200x200.jpg",
+        "created_at": "Thu Sep 17 05:09:01 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HSZN5thaEAAFzha.jpg?name=orig"
+        ]
+    },
+    "2066167688611897576": {
+        "id": "2066167688611897576",
+        "url": "https://x.com/uniforbook/status/2066167688611897576",
+        "text": "〜反戦読書ビンゴをつくりました〜\n実際に読んだことがある本を中心に、有名な著作を選びましたが、もし問題がある場合は教えてください❕ #反戦読書ビンゴ #反戦読書部",
+        "author_name": "uni",
+        "screen_name": "uniforbook",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1966501863513321473/Nub0lVd6_200x200.jpg",
+        "created_at": "Sun Jun 14 14:35:39 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HKyAj9hagAAcWNg.jpg?name=orig"
+        ]
+    },
+    "2078812589539360820": {
+        "id": "2078812589539360820",
+        "url": "https://x.com/srm8zd/status/2078812589539360820",
+        "text": "#オンライン反戦読書デモ0719\n暑い中国会前に行ってくださった皆様、ありがとうございました。",
+        "author_name": "石",
+        "screen_name": "srm8zd",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1966856492637929472/-FKMIKsj_200x200.jpg",
+        "created_at": "Sun Jul 19 12:01:58 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNltBtva8AANXml.jpg?name=orig"
+        ]
+    },
+    "2101860508911710700": {
+        "id": "2101860508911710700",
+        "url": "https://x.com/arettas/status/2101860508911710700",
+        "text": "#オンライン反戦読書デモ2026秋\n「あの図書館の彼女たち(The Paris Library)」\n戦争の近づく様子が図書館を通して描写され、あっという間にWW2へ。昨日買えてたものが急に買えなくなる、昨日一緒にいた友人が敵性外国人と呼ばれる。戦時下の日常で人がどんな風になってしまうか。\n他人事とは思えない。",
+        "author_name": "紙月",
+        "screen_name": "arettas",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1642353817361727489/ftA_L-go_200x200.png",
+        "created_at": "Mon Sep 21 02:26:10 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HStO_CObcAAgBKP.jpg?name=orig"
+        ]
+    },
+    "2078814023525728737": {
+        "id": "2078814023525728737",
+        "url": "https://x.com/beeeeeyax/status/2078814023525728737",
+        "text": "#オンライン反戦読書デモ0719\n夜になっちゃったけど…\n連帯することが反戦に繋がると信じて",
+        "author_name": "べーや",
+        "screen_name": "beeeeeyax",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1779983241031954432/RLZ6In04_200x200.jpg",
+        "created_at": "Sun Jul 19 12:07:40 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNluU_MacAAx8uK.jpg?name=orig"
+        ]
+    },
+    "2078704350348894703": {
+        "id": "2078704350348894703",
+        "url": "https://x.com/chimakoBlue/status/2078704350348894703",
+        "text": "#オンライン反戦読書デモ0719 \n\n#差別はたいてい悪意のない人がする \n\nこれも読むの大事👍",
+        "author_name": "ちまこBlue(쥐마코 블루)🧩🇵🇸|||🇸🇾🌷🐈‍⬛🐀🏳️‍⚧️🏳️‍🌈",
+        "screen_name": "chimakoBlue",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067964768435273728/OywUs3tE_200x200.jpg",
+        "created_at": "Sun Jul 19 04:51:52 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HNkKloibYAAkfD1.jpg?name=orig"
+        ]
+    },
+    "2087441060054303109": {
+        "id": "2087441060054303109",
+        "url": "https://x.com/hitsuzikusa/status/2087441060054303109",
+        "text": "キム・ジヘ「差別はたいてい悪意のない人がする」を読む。\n反戦読書と少しズレてる気もするが、でも結局は差別とか排外主義とか無理解とかが戦争に行き着くと思うのでまずはここから！\n\n #夏休みオンライン反戦読書デモ2026",
+        "author_name": "名梨@インボイス反対",
+        "screen_name": "hitsuzikusa",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1585586441052393473/DdupBwgc_200x200.jpg",
+        "created_at": "Wed Aug 12 07:28:26 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HPgUkCUbUAAFm_c.jpg?name=orig"
+        ]
+    },
+    "2102638568720269701": {
+        "id": "2102638568720269701",
+        "url": "https://x.com/velvetmonk_pma/status/2102638568720269701",
+        "text": "#オンライン反戦読書デモ2026秋\n戦前戦中に勇ましい好戦論を喧伝してまわる自己陶酔型の自称愛国者ほど、戦況が悪化するにつれダンマリを決め込み\n\n戦後は進駐軍に媚び諂う姿を多数目撃して文豪たちがスッカリ辟易した事実を記したコレも良書\n\n…今でもいるわなその手の連中",
+        "author_name": "めっつ",
+        "screen_name": "velvetmonk_pma",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1780221033871761409/3nadDBLg_200x200.jpg",
+        "created_at": "Wed Sep 23 05:57:54 +0000 2026",
+        "photos": [
+            "https://pbs.twimg.com/media/HS4SoP2aIAAljhF.jpg?name=orig"
+        ]
     }
 };
