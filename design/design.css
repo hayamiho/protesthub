@@ -229,6 +229,51 @@ a {
     padding: 20px 0 40px;
 }
 
+/* 作家一覧モード見出しバー */
+.author-mode-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background: #efe7da;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.author-mode-title {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.author-mode-back {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.author-mode-back:hover {
+    opacity: .7;
+}
+
+/* モーダル内「@xxxの作品一覧」下線リンク */
+.author-page-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity .15s ease;
+}
+
+.author-page-link:hover {
+    opacity: .7;
+}
+
 /* デザインウォール（枠なし・丸みなし・影なし・自然高Masonry） */
 .design-wall {
     display: flex;

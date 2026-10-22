@@ -6,10 +6,16 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 作家専用ページ（xxx.html / ?by=xxx）を持つ作家リスト
+    const AUTHOR_PAGES = [
+        'protesthub_jp'
+    ];
+
     let posters = typeof POSTERS_DATA !== 'undefined' ? POSTERS_DATA : [];
     let filteredPosters = [...posters];
     let activePoster = null;
     let activeColor = null;
+    let activeAuthor = new URLSearchParams(window.location.search).get('by') || null;
 
     // サムネイル用（.webp）とフル画像用（元ファイル名そのまま）のルートを分離
     const imageRoot = "images/";
@@ -93,7 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // 作者の他の作品 - サムネイルはwebp
         const authorList = document.querySelector("#author-list");
         authorList.innerHTML = "";
-        authorTitle.textContent = poster.by ? `@${poster.by}の作品一覧` : "他の作品";
+        if (poster.by) {
+            if (AUTHOR_PAGES.includes(poster.by)) {
+                authorTitle.innerHTML = `<a href="${poster.by}.html" class="author-page-link">@${poster.by}の作品一覧</a>`;
+            } else {
+                authorTitle.textContent = `@${poster.by}の作品一覧`;
+            }
+        } else {
+            authorTitle.textContent = "他の作品";
+        }
 
         if (poster.by) {
             const sameAuthor = posters.filter(p => p.by === poster.by);
@@ -151,10 +165,41 @@ document.addEventListener('DOMContentLoaded', () => {
         printButton.disabled = !isAllowed;
     }
 
+    // 作家一覧モード用の見出しバー表示・更新
+    function updateAuthorHeader() {
+        let banner = document.getElementById("author-mode-banner");
+        if (!activeAuthor) {
+            if (banner) banner.style.display = "none";
+            return;
+        }
+        if (!banner) {
+            banner = document.createElement("div");
+            banner.id = "author-mode-banner";
+            banner.className = "author-mode-banner";
+            wall.parentNode.insertBefore(banner, wall);
+        }
+        banner.style.display = "flex";
+        banner.innerHTML = `
+            <span class="author-mode-title">@${activeAuthor} の作品一覧</span>
+            <a href="index.html" class="author-mode-back">← すべての作品に戻る</a>
+        `;
+    }
+
     function posterMatches(poster) {
         const query = search.value.trim().toLowerCase();
         const categoryValue = category.value;
         const haystack = `${poster.title || ''} ${poster.cat || ''} ${(poster.tags || []).join(" ")} ${poster.file || ''} ${poster.by || ''}`.toLowerCase();
+
+        // 作家一覧モード時は、その作家の作品のみ対象
+        if (activeAuthor && poster.by !== activeAuthor) {
+            return false;
+        }
+
+        // 通常ウォール表示時（検索・色・カテゴリ絞り込みなし＆作家一覧モードでない時）は wall === "0" を除外
+        const isFiltering = !!query || !!activeColor || categoryValue !== "all" || !!activeAuthor;
+        if (!isFiltering && (poster.wall === "0" || poster.wall === 0)) {
+            return false;
+        }
 
         let colorMatch = true;
         if (activeColor) {
@@ -258,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetWall() {
+        updateAuthorHeader();
         const sortValue = sortSelect.value;
 
         // フィルタリング
