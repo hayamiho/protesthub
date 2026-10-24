@@ -6,9 +6,10 @@ window.AUTHOR_TAGS = window.AUTHOR_TAGS || {};
 window.AUTHOR_TAGS["indigorosa33"] = [
     "反戦",
     "憲法",
+    "政治参加",
     "高市",
     "小泉",
-    "沖縄",
     "ヘイト",
+    "沖縄",
     "維新"
 ];
