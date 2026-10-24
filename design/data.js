@@ -2,6 +2,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000001-a.png",
         "set": "1",
+        "wall": "",
         "color": "黒",
         "title": "反戦",
         "desc": "2970×4200px　A3/A4兼用",
@@ -19,6 +20,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000001-b.png",
         "set": "1",
+        "wall": "",
         "color": "緑",
         "title": "反戦",
         "desc": "2970×4200px　A3/A4兼用",
@@ -36,6 +38,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000001-c.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "反戦",
         "desc": "2970×4200px　A3/A4兼用",
@@ -53,6 +56,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000002-a.png",
         "set": "1",
+        "wall": "",
         "color": "黒",
         "title": "NO WAR",
         "desc": "4200×2970px　A3/A4兼用",
@@ -70,6 +74,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000002-b.png",
         "set": "1",
+        "wall": "",
         "color": "緑",
         "title": "NO WAR",
         "desc": "4200×2970px　A3/A4兼用",
@@ -87,6 +92,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000002-c.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "NO WAR",
         "desc": "4200×2970px　A3/A4兼用",
@@ -104,6 +110,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000003-a.png",
         "set": "1",
+        "wall": "",
         "color": "黄",
         "title": "高市首相、減税まだ？",
         "desc": "2970×4200px　A3/A4兼用",
@@ -123,6 +130,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000003-b.png",
         "set": "1",
+        "wall": "",
         "color": "青",
         "title": "高市首相、減税まだ？",
         "desc": "2970×4200px　A3/A4兼用",
@@ -142,6 +150,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000003-c.png",
         "set": "1",
+        "wall": "",
         "color": "赤",
         "title": "高市首相、減税まだ？",
         "desc": "2970×4200px　A3/A4兼用",
@@ -161,6 +170,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000004-a.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "NOWAR",
         "desc": "2970×4200px　A3/A4兼用",
@@ -178,6 +188,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000004-b.png",
         "set": "1",
+        "wall": "",
         "color": "緑",
         "title": "NOWAR",
         "desc": "2970×4200px　A3/A4兼用",
@@ -195,6 +206,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000004-c.png",
         "set": "1",
+        "wall": "",
         "color": "青",
         "title": "NOWAR",
         "desc": "2970×4200px　A3/A4兼用",
@@ -214,6 +226,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000005-a.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "戦争反対",
         "desc": "2970×4200px　A3/A4兼用",
@@ -231,6 +244,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000005-b.png",
         "set": "1",
+        "wall": "",
         "color": "青",
         "title": "戦争反対",
         "desc": "2970×4200px　A3/A4兼用",
@@ -250,6 +264,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000005-c.png",
         "set": "1",
+        "wall": "",
         "color": "赤",
         "title": "戦争反対",
         "desc": "2970×4200px　A3/A4兼用",
@@ -269,6 +284,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000006-a.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "国旗損壊罪 いらない！",
         "desc": "4200×2970px　A3/A4兼用",
@@ -286,6 +302,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000006-b.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "武器輸出 やめて!!",
         "desc": "4200×2970px　A3/A4兼用",
@@ -303,6 +320,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000006-c.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "減税 早くして!",
         "desc": "4200×2970px　A3/A4兼用",
@@ -320,6 +338,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000008-a.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "◯◯いらない!",
         "desc": "上半分に書きこめます。4200×2970px　A3/A4兼用",
@@ -337,6 +356,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000008-b.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "◯◯やめて!!",
         "desc": "上半分に書きこめます。4200×2970px　A3/A4兼用",
@@ -354,6 +374,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000008-c.png",
         "set": "",
+        "wall": "",
         "color": "白|黒",
         "title": "◯◯早くして!",
         "desc": "上半分に書きこめます。4200×2970px　A3/A4兼用",
@@ -371,6 +392,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000009-a.png",
         "set": "1",
+        "wall": "",
         "color": "黄",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
@@ -390,6 +412,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000009-b.png",
         "set": "1",
+        "wall": "",
         "color": "青",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
@@ -409,6 +432,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000009-c.png",
         "set": "1",
+        "wall": "",
         "color": "赤",
         "title": "議員定数 減らすな!",
         "desc": "4200×2970px　A3/A4兼用",
@@ -428,6 +452,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000010-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "自民党の改憲草案 読んでみませんか？",
         "desc": "3580×5033px（高解像度）<br/><a href=\"https://kaikensouan.com/\" target=\"_blank\">改憲草案ドットコム</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -447,6 +472,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000010-b.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "自民党の改憲草案 読んでみませんか？",
         "desc": "5033×3580px（高解像度）<br/><a href=\"https://kaikensouan.com/\" target=\"_blank\">改憲草案ドットコム</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -466,6 +492,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000011-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "デモカレンダー 本日の開催地＋開催数のお知らせ",
         "desc": "3509×4961px（高解像度）<br/><a href=\"https://democalendar.jp/\" target=\"_blank\">デモカレンダー</a>紹介プラカードです。<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -485,6 +512,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-a.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "私たちは悪政に屈しない。",
         "desc": "3508×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -503,6 +531,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "平和国家を過去にしないで。",
         "desc": "3509×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -521,6 +550,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000012-c.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "Don't let PEACE become the past.",
         "desc": "3508×4961px（高解像度）<br/>制作意図に反するものでなければ書き込みも自由です。<br/>（戦争賛美・差別的なこと・紹介しているサイトへの批判 などはNGです）",
@@ -539,6 +569,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000013-a.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "せんそうはんたい！こどもをまもれ！",
         "desc": "3005×4250px（高解像度）<br/>「英語のカッコいいプラカードももちろんいいけど、子どもも読めるデザインのものもあるといいよね」というご意見を頂戴して作りました。ひらがなプラカ広まれ！",
@@ -560,6 +591,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000013-b.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "せかいのみんなとなかよくしよう！",
         "desc": "3005×4250px（高解像度）<br/>「英語のカッコいいプラカードももちろんいいけど、子どもも読めるデザインのものもあるといいよね」というご意見を頂戴して作りました。ひらがなプラカ広まれ！",
@@ -581,6 +613,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000014-a.png",
         "set": "",
+        "wall": "",
         "color": "桃",
         "title": "ひとの税金で武器売買すな！",
         "desc": "3536×5000px（高解像度）",
@@ -601,6 +634,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000014-b.png",
         "set": "",
+        "wall": "",
         "color": "桃",
         "title": "ウチらで平和憲法まもろ！",
         "desc": "3536×5000px（高解像度）<br/>現在の日本国憲法が政治権力を縛り、平和に寄与していることを伝えたく「\"平和\"憲法」という表現にしました。政府の意向にむやみに反対しているのではなく、平和を守りたい一心での言葉であり、主権者はあくまで私たち市民であることを「ウチら」に込めています。",
@@ -621,6 +655,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000015-a.png",
         "set": "",
+        "wall": "",
         "color": "橙",
         "title": "家族（ペット）の命 戦争に奪わせないで",
         "desc": "2970×4200px　A3/A4兼用<br/>ナフサ不足によりペット用の医療器具も不足しはじめています。戦争は弱いものから搾取されていくようになっているので、大切な家族（ペット）を守りたいという思いから作りました。",
@@ -639,6 +674,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000016-a.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "まもって！憲法　NO WAR",
         "desc": "2970×4200px　A3/A4兼用",
@@ -658,6 +694,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000016-b.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "まもって！憲法　消さないで 基本的人権",
         "desc": "2970×4200px　A3/A4兼用",
@@ -677,6 +714,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000017-a.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "主権者はウチら！",
         "desc": "2970×4200px　A3/A4兼用",
@@ -694,6 +732,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000017-b.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "国のコト決めるのはウチら！",
         "desc": "2970×4200px　A3/A4兼用",
@@ -711,6 +750,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000017-c.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "政治を変える手段って、選挙だけじゃない！",
         "desc": "2970×4200px　A3/A4兼用",
@@ -728,6 +768,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000018-a.jpg",
         "set": "",
+        "wall": "",
         "color": "黄|緑",
         "title": "デモって、ウチらの声をそのまま届ける手段だから大事なんだね♡",
         "desc": "4250×3005px（高解像度）",
@@ -745,6 +786,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000018-b.jpg",
         "set": "",
+        "wall": "",
         "color": "緑|青",
         "title": "人生初デモのひと、いま沢山います。",
         "desc": "4250×3005px（高解像度）",
@@ -762,6 +804,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000019-a.png",
         "set": "",
+        "wall": "",
         "color": "桃|緑",
         "title": "戦争イヤなら、ごいっしょに！飛びこみOK　手ぶらでOK　立ってるだけでも大丈夫",
         "desc": "4250×3005px（高解像度）",
@@ -779,6 +822,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000019-b.png",
         "set": "",
+        "wall": "",
         "color": "橙|青",
         "title": "立ってるだけでも大丈夫！　飛びこみOK　手ぶらでOK　5分だけでも大歓迎",
         "desc": "4250×3005px（高解像度）",
@@ -796,6 +840,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000020-a.png",
         "set": "",
+        "wall": "",
         "color": "赤|桃",
         "title": "次のデモは いつ・どこで？そんな時はデモカレンダー！",
         "desc": "3496×4961px（高解像度）<br/>【<a href=\"https://democalendar.jp/\" target=\"_blank\">デモカレンダー</a>】をお知らせするプラカードを作りました。パッと読めるように情報量は少なめ／QRコードでかめにしました。複数枚設置できるシッティングと相性いいかも！<br/>セブンイレブン ネップリ～8/4：3YBTE3BB",
@@ -817,6 +862,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000020-b.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "次のデモは いつ・どこで？そんな時はデモカレンダー！",
         "desc": "3496×4961px（高解像度）<br/>【<a href=\"https://democalendar.jp/\" target=\"_blank\">デモカレンダー</a>】をお知らせするプラカードを作りました。パッと読めるように情報量は少なめ／QRコードでかめにしました。複数枚設置できるシッティングと相性いいかも！<br/>セブンイレブン ネップリ～8/4：Y47LRR2C",
@@ -836,6 +882,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000020-c.png",
         "set": "",
+        "wall": "",
         "color": "灰",
         "title": "次のデモは いつ・どこで？そんな時はデモカレンダー！",
         "desc": "3496×4961px（高解像度）<br/>【<a href=\"https://democalendar.jp/\" target=\"_blank\">デモカレンダー</a>】をお知らせするプラカードを作りました。パッと読めるように情報量は少なめ／QRコードでかめにしました。複数枚設置できるシッティングと相性いいかも！<br/>セブンイレブン ネップリ～8/4：6QB73SZL",
@@ -853,6 +900,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000021-a.jpg",
         "set": "",
+        "wall": "",
         "color": "緑",
         "title": "I HOPE WORLD PEACE",
         "desc": "4200×2970px　A3/A4兼用<br/>・反戦、平和を伝える事が彼の目的です。<br/>・注意事項：著作権放棄してません。二次配布、キャラクターイメージを著しく損なうような表現・改変の禁止。AI学習禁止。営利目的での利用禁止。政党、過激派組織、宗教団体による利用禁止。特定の政党を支持させる目的での利用禁止。",
@@ -873,6 +921,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000021-b.jpg",
         "set": "",
+        "wall": "",
         "color": "橙|黒",
         "title": "デモってなんか怖くね？俺は人権と命がおびやかされる方が怖いゼ！",
         "desc": "2970×4200px　A3/A4兼用<br/>・反戦、平和を伝える事が彼の目的です。<br/>・注意事項：著作権放棄してません。二次配布、キャラクターイメージを著しく損なうような表現・改変の禁止。AI学習禁止。営利目的での利用禁止。政党、過激派組織、宗教団体による利用禁止。特定の政党を支持させる目的での利用禁止。",
@@ -894,6 +943,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000021-c.jpg",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "せんそう やめよ！",
         "desc": "4200×2970px　A3/A4兼用<br/>・反戦、平和を伝える事が彼の目的です。<br/>・注意事項：著作権放棄してません。二次配布、キャラクターイメージを著しく損なうような表現・改変の禁止。AI学習禁止。営利目的での利用禁止。政党、過激派組織、宗教団体による利用禁止。特定の政党を支持させる目的での利用禁止。",
@@ -915,6 +965,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-a.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "YES PEACE",
         "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-a.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
@@ -936,6 +987,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-b.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "LOVE PEACE",
         "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-b.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
@@ -957,6 +1009,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000022-c.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "LOVE PEACE",
         "desc": "3536×5000px（高解像度）<br/>A3対応の<a href=\"https://www.protesthub.jp/design/images/pl-000022-c.pdf\" target=\"_blank\">PDFデータ</a>もあります。",
@@ -978,6 +1031,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000001-a.png",
         "set": "1",
+        "wall": "",
         "color": "黄",
         "title": "＜チラシ表＞Q.どうして野党は反対ばっかりするの？ A.与党が問題のある法案ばかり通すからです。",
         "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらは表面です＞<br/>自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br/>PDF＋トンボつき入稿PDFは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">note</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
@@ -1002,6 +1056,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000001-b.png",
         "set": "1",
+        "wall": "",
         "color": "白",
         "title": "＜チラシ裏＞いま国会で問題になっている主な法案と、その問題点",
         "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらは裏面です＞<br/>自宅やコンビニ印刷・印刷所の入稿・メルカリ出品もOK。ポスティングやデモでの配布にお役立てください。<br/>PDF＋トンボつき入稿PDFは<a href=\"https://note.com/schwarzewald/n/nf95c5ff2f893\" target=\"_blank\">note</a>から。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
@@ -1024,6 +1079,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000023-a.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "めちゃくちゃな政治に抗議するために仕事終わりにデモに来ている",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1043,6 +1099,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000023-b.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "めちゃくちゃな政治に抗議するために趣味の合間にスタンディング",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1062,6 +1119,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000024-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "国会で、やばい法律決まりそう。あなたの自由と権利なくなるの大丈夫そ？THINK ABOUT IT.まずは、知ることから。",
         "desc": "3536×5000px（高解像度）<br/>何が起きてるか知らない人向けに、危機感を共有するプラカードです。",
@@ -1083,6 +1141,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000024-b.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "国会で、やばい法律決まりそう。個人情報、勝手に使われるの怖くない？THINK ABOUT IT.まずは、知ることから。",
         "desc": "3536×5000px（高解像度）<br/>何が起きてるか知らない人向けに、危機感を共有するプラカードです。",
@@ -1104,6 +1163,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000024-c.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "戦争反対、なんてわざわざ言う必要ない？でも、戦争できる国づくり、猛スピードで進んでます。だまっていると、「賛成」に。",
         "desc": "3536×5000px（高解像度）<br/>何が起きてるか知らない人向けに、危機感を共有するプラカードです。",
@@ -1124,6 +1184,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000024-d.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "物価が高い。税金が高い。将来不安。何かしんどい。そのつらさ、政治のせいかもしれません。政治って私たちの生活だ。",
         "desc": "3536×5000px（高解像度）<br/>何が起きてるか知らない人向けに、危機感を共有するプラカードです。",
@@ -1144,6 +1205,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000025-a.png",
         "set": "",
+        "wall": "",
         "color": "黄|黒",
         "title": "政治に怒っていいんだよ！！",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1171,6 +1233,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000025-b.png",
         "set": "",
+        "wall": "",
         "color": "青|黒",
         "title": "政府が個人情報勝手に抜くって言ってるよ！！！！！SNSも本名住所も全部紐付けで筒抜け",
         "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらはYahooニュースのQRコードです＞",
@@ -1191,6 +1254,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000025-c.png",
         "set": "",
+        "wall": "",
         "color": "青|黒",
         "title": "政府が個人情報勝手に抜くって言ってるよ！！！！！SNSも本名住所も全部紐付けで筒抜け",
         "desc": "2970×4200px　A3/A4兼用<br/>＜注：こちらは北海道新聞のQRコードです＞<br/>Yahooニュースの記事が削除された場合にご利用ください。<br/>※全文閲覧には無料会員登録が必要です",
@@ -1211,6 +1275,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000026-a.png",
         "set": "",
+        "wall": "",
         "color": "桃|赤",
         "title": "NO WAR I'm an OTAKU NO arms exports! NO war! Stop amending the constitution!",
         "desc": "3536×5000px（高解像度）",
@@ -1233,6 +1298,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000027-a.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "軍拡よりも防災",
         "desc": "3536×5000px（高解像度）<br/><a href=\"https://x.com/hashtag/%E8%BB%8D%E6%8B%A1%E3%82%88%E3%82%8A%E9%98%B2%E7%81%BD?src=hashtag_click\" target=\"_blank\">#軍拡より防災</a><br/><a href=\"https://x.com/hashtag/%E3%83%9F%E3%82%B5%E3%82%A4%E3%83%AB%E3%82%88%E3%82%8A%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%82%92?src=hashtag_click\" target=\"_blank\">#ミサイルよりエアコンを</a><br/><a href=\"https://x.com/hashtag/%E6%AD%A6%E5%99%A8%E3%82%88%E3%82%8A%E3%81%8A%E7%B1%B3?src=hashtag_click\" target=\"_blank\">#武器よりお米</a>",
@@ -1253,6 +1319,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000027-b.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "憲法変えるな！",
         "desc": "3536×5000px（高解像度）<br/><a href=\"https://x.com/hashtag/%E8%BB%8D%E6%8B%A1%E3%82%88%E3%82%8A%E9%98%B2%E7%81%BD?src=hashtag_click\" target=\"_blank\">#軍拡より防災</a><br/><a href=\"https://x.com/hashtag/%E3%83%9F%E3%82%B5%E3%82%A4%E3%83%AB%E3%82%88%E3%82%8A%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%82%92?src=hashtag_click\" target=\"_blank\">#ミサイルよりエアコンを</a><br/><a href=\"https://x.com/hashtag/%E6%AD%A6%E5%99%A8%E3%82%88%E3%82%8A%E3%81%8A%E7%B1%B3?src=hashtag_click\" target=\"_blank\">#武器よりお米</a>",
@@ -1273,6 +1340,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000028-a.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "反戦積読崩し部　反戦を訴えながら積読の山を崩しています",
         "desc": "2970×4200px　A3/A4兼用<br/>反戦積読崩し部は、外出先でプラカードを立てかけて読書をする部活動です。君も積読崩し部に入部しないか……！？！？<br/><a href=\"https://x.com/hashtag/%E5%8F%8D%E6%88%A6%E7%A9%8D%E8%AA%AD%E5%B4%A9%E3%81%97%E9%83%A8?src=hashtag_click\" target=\"_blank\">#反戦積読崩し部</a><br/><a href=\"https://x.com/hashtag/%E3%83%96%E3%83%83%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC%E3%83%87%E3%83%A2?src=hashtag_click\" target=\"_blank\">#ブックカバーデモ</a><br/><a href=\"https://x.com/hashtag/%E5%A4%8F%E4%BC%91%E3%81%BF%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E5%8F%8D%E6%88%A6%E8%AA%AD%E6%9B%B8%E3%83%87%E3%83%A22026?src=hashtag_click\" target=\"_blank\">#夏休みオンライン反戦読書デモ2026</a>",
@@ -1291,6 +1359,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000028-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "反戦積読崩し部　反戦を訴えながら積読の山を崩しています",
         "desc": "4200×2970px　A3/A4兼用<br/>反戦積読崩し部は、外出先でプラカードを立てかけて読書をする部活動です。君も積読崩し部に入部しないか……！？！？<br/><a href=\"https://x.com/hashtag/%E5%8F%8D%E6%88%A6%E7%A9%8D%E8%AA%AD%E5%B4%A9%E3%81%97%E9%83%A8?src=hashtag_click\" target=\"_blank\">#反戦積読崩し部</a><br/><a href=\"https://x.com/hashtag/%E3%83%96%E3%83%83%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC%E3%83%87%E3%83%A2?src=hashtag_click\" target=\"_blank\">#ブックカバーデモ</a><br/><a href=\"https://x.com/hashtag/%E5%A4%8F%E4%BC%91%E3%81%BF%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E5%8F%8D%E6%88%A6%E8%AA%AD%E6%9B%B8%E3%83%87%E3%83%A22026?src=hashtag_click\" target=\"_blank\">#夏休みオンライン反戦読書デモ2026</a>",
@@ -1309,6 +1378,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000002-a.png",
         "set": "1",
+        "wall": "",
         "color": "灰|黒",
         "title": "＜チラシ表＞国に搾取されてます！",
         "desc": "2480×3508px　A4<br/>＜注：こちらは表面です＞<br/>無関心層への最後の手段……「お金の話」のチラシです！<br/>印刷配布、SNS等への投稿OKです。両面印刷奨励、2枚同時投稿奨励。<br/>憲法とか法律の話は拒否されても、お金の話ならしやすい可能性もあり……！<br/>みんな！政府に怒ってくれ〜！！",
@@ -1331,6 +1401,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000002-b.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "＜チラシ裏＞どうか声を上げてください！",
         "desc": "2480×3508px　A4<br/>＜注：こちらは裏面です＞<br/>無関心層への最後の手段……「お金の話」のチラシです！<br/>印刷配布、SNS等への投稿OKです。両面印刷奨励、2枚同時投稿奨励。<br/>憲法とか法律の話は拒否されても、お金の話ならしやすい可能性もあり……！<br/>みんな！政府に怒ってくれ〜！！",
@@ -1353,6 +1424,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000029-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "手ばなさない 自由と平和 日本国憲法",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1375,6 +1447,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000029-b.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "やっぱり市民と野党の共闘で",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1396,6 +1469,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000003-a.png",
         "set": "1",
+        "wall": "",
         "color": "黒",
         "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります",
         "desc": "5000×3024px（高解像度）<br/>黒バージョン",
@@ -1415,6 +1489,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000003-b.png",
         "set": "1",
+        "wall": "",
         "color": "白",
         "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります",
         "desc": "5000×3024px（高解像度）<br/>白バージョン",
@@ -1434,6 +1509,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000004-a.png",
         "set": "1",
+        "wall": "",
         "color": "黒",
         "title": "全国のデモ・スタンディング情報サイト デモカレンダー",
         "desc": "5000×3024px（高解像度）<br/>黒バージョン",
@@ -1453,6 +1529,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000004-b.png",
         "set": "1",
+        "wall": "",
         "color": "白",
         "title": "全国のデモ・スタンディング情報サイト デモカレンダー",
         "desc": "5000×3024px（高解像度）<br/>白バージョン",
@@ -1472,6 +1549,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000005-a.png",
         "set": "1",
+        "wall": "",
         "color": "黒",
         "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります　全国のデモ・スタンディング情報サイト デモカレンダー",
         "desc": "3536×5000px（高解像度）<br/>黒バージョン<br/>A4両面印刷→10枚分割のミニチラシです。PDFは<a href=\"https://note.com/schwarzewald/n/n4eeada2e6fd7\" target=\"_blank\">note</a>から。おすすめ用紙は<a href=\"https://www.a-one.co.jp/product/search/detail.php?id=51002\" target=\"_blank\">こちら</a>。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
@@ -1492,6 +1570,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000005-b.png",
         "set": "1",
+        "wall": "",
         "color": "白",
         "title": "投票だけが、政治参加ではありません　あなたにできることは、たくさんあります　全国のデモ・スタンディング情報サイト デモカレンダー",
         "desc": "3536×5000px（高解像度）<br/>白バージョン<br/>A4両面印刷→10枚分割のミニチラシです。PDFは<a href=\"https://note.com/schwarzewald/n/n4eeada2e6fd7\" target=\"_blank\">note</a>から。おすすめ用紙は<a href=\"https://www.a-one.co.jp/product/search/detail.php?id=51002\" target=\"_blank\">こちら</a>。<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E7%84%A1%E7%90%86%E3%81%99%E3%81%8E%E3%83%9D%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8?src=hashtag_click\" target=\"_blank\">#自民党無理すぎポスティング部</a>",
@@ -1512,6 +1591,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000030-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "市民の声を聞け【市民のための政治をしろ】求む！まともな政治！",
         "desc": "4094×5789px（高解像度）<br/>暴力とあらゆる差別を許さない、平和的なプロテスト活動でご使用ください。",
@@ -1530,6 +1610,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000030-b.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "現政権は一体【誰の為の政治をしてる？】怒!!!!!!!!",
         "desc": "4093×5789px（高解像度）<br/>暴力とあらゆる差別を許さない、平和的なプロテスト活動でご使用ください。",
@@ -1556,6 +1637,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000031-a.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "戦争しない国に生まれてきたんだ～って子どもの頃の安心感を過去にしないで。",
         "desc": "2480×3508px　A4<br/>粗いデジタル表現と子どものようなイラストで、幼いころの思いを表現しました　可読性は高くありませんが、じっくり読んでもらうことを目的とし、ぱっと見たとき怖くないよう意識してます",
@@ -1573,6 +1655,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000031-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "戦争しない。これから世界中が目指すことをいま捨てるなんてとんでもない。",
         "desc": "2480×3508px　A4<br/>粗いデジタル表現と子どものようなイラストで、幼いころの思いを表現しました　可読性は高くありませんが、じっくり読んでもらうことを目的とし、ぱっと見たとき怖くないよう意識してます",
@@ -1590,6 +1673,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000032-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "自民党広告費予算72億に反対します!!!!",
         "desc": "5000×3536px（高解像度）<br/>関連タグ：<a href=\"https://x.com/hashtag/%E8%87%AA%E6%B0%91%E5%85%9A%E5%BA%83%E5%91%8A%E8%B2%BB%E4%BA%88%E7%AE%9772%E5%84%84%E3%81%AB%E5%8F%8D%E5%AF%BE%E3%81%97%E3%81%BE%E3%81%99?src=hashtag_click\" target=\"_blank\">#自民党広告費予算72億に反対します</a><br/><a href=\"https://x.com/hashtag/%E3%81%9B%E3%83%BC%E3%81%AE%E3%81%A7%E3%82%AD%E3%83%AC%E3%81%A6%E3%81%9372%E5%84%84?src=hashtag_click\" target=\"_blank\">#せーのでキレてこ72億</a>",
@@ -1612,6 +1696,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000033-a.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "独裁者は「今から独裁する」と言わない",
         "desc": "3508×4961px（高解像度）",
@@ -1630,6 +1715,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000033-b.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "戦争に課金しないで",
         "desc": "3508×4961px（高解像度）",
@@ -1648,6 +1734,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000033-c.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "平和外交しか勝たん",
         "desc": "3508×4961px（高解像度）",
@@ -1667,6 +1754,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-a.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "憲法前文 NO WAR",
         "desc": "2970×4200px　A3/A4兼用<br/>【戦争反対・恒久平和の念願】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1684,6 +1772,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第九条 PEACE",
         "desc": "2970×4200px　A3/A4兼用<br/>【平和の希求、戦争放棄】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1701,6 +1790,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-c.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第十一条 HUMAN RIGHTS",
         "desc": "2970×4200px　A3/A4兼用<br/>【基本的人権】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1718,6 +1808,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-d.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第十二条 OUR RIGHTS, OUR RESPONSIBILITY",
         "desc": "2970×4200px　A3/A4兼用<br/>【私たちの自由と権利、私たちの不断の努力】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1735,6 +1826,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-e.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第十二条 OUR RIGHTS, OUR RESPONSIBILITY 私たちの自由と権利、私たちの不断の努力",
         "desc": "2970×4200px　A3/A4兼用<br/>【私たちの自由と権利、私たちの不断の努力】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1752,6 +1844,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-f.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第十三条 RESPECT",
         "desc": "2970×4200px　A3/A4兼用<br/>【個人の尊重】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1769,6 +1862,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000034-g.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "第十四条 EQUAL",
         "desc": "2970×4200px　A3/A4兼用<br/>【法の下に平等】<br/>日本国憲法最高～！のときに平和的に使っていただけます。白黒で印刷できてお財布にやさしい仕様です。",
@@ -1786,6 +1880,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000006-a.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "政治が変だよ チェックしてみて！",
         "desc": "3496×4961px（高解像度）<br/><a href=\"https://x.com/nikamoto08\" target=\"_blank\">にかもとひなび</a>さん制作の『<a href=\"https://houdou-matome-2.jimdosite.com/\" target=\"_blank\">報道記事リンクサイト</a>』をお知らせできるプラカードを作りました。<br/>政治の話をしたけど「報道してないじゃん」と言われた時に「報道してるよ！」と返すための新聞・TVの報道記事リンクサイトです。",
@@ -1807,6 +1902,7 @@ const POSTERS_DATA = [
     {
         "file": "fl-000006-b.png",
         "set": "1",
+        "wall": "",
         "color": "灰",
         "title": "政治が変だよ チェックしてみて！",
         "desc": "3496×4961px（高解像度）<br/><a href=\"https://x.com/nikamoto08\" target=\"_blank\">にかもとひなび</a>さん制作の『<a href=\"https://houdou-matome-2.jimdosite.com/\" target=\"_blank\">報道記事リンクサイト</a>』をお知らせできるミニチラシを作りました。（A3印刷後、カットしてご利用ください）<br/>政治の話をしたけど「報道してないじゃん」と言われた時に「報道してるよ！」と返すための新聞・TVの報道記事リンクサイトです。",
@@ -1828,6 +1924,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000035-a.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "NO WAR 反戦 うちらが主権者",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1845,6 +1942,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000035-b.png",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "反戦 NO WAR",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1864,6 +1962,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000035-c.png",
         "set": "",
+        "wall": "",
         "color": "桃",
         "title": "ウチら、政治に食い潰されてない？",
         "desc": "4200×2970px　A3/A4兼用",
@@ -1883,6 +1982,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000036-a.png",
         "set": "",
+        "wall": "",
         "color": "赤",
         "title": "LOOK AT POLITICS",
         "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
@@ -1900,6 +2000,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000036-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "LOOK AT POLITICS",
         "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
@@ -1917,6 +2018,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000036-c.png",
         "set": "",
+        "wall": "",
         "color": "黒",
         "title": "LOOK AT POLITICS",
         "desc": "5000×3536px（高解像度）<br/><br/>こちらのロゴがデザインされたトップス・バッグ・ステッカー等は<a href=\"https://www.ttrinity.jp/shop/nk8hlu/collection/34569\" target=\"_blank\">Tシャツトリニティ</a>にて購入できます。<br/>社会問題に向き合うクリエイターの方に、収益がきちんと生まれる社会になることを願っています。（運営より）",
@@ -1934,6 +2036,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000037-a.png",
         "set": "",
+        "wall": "",
         "color": "黄",
         "title": "政治が暴走中！？",
         "desc": "2970×4200px　A3/A4兼用<br/>こちらはチラシとしてもお使いいただけます。『<a href=\"https://houdou-matome-2.jimdosite.com/\" target=\"_blank\">報道記事リンクサイト</a>』のQRコードから、各テーマの詳細記事を見ることができます。",
@@ -1958,6 +2061,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000037-b.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "カルトと癒着した政党はいらない",
         "desc": "2970×4200px　A3/A4兼用",
@@ -1976,6 +2080,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000038-a.png",
         "set": "",
+        "wall": "",
         "color": "白",
         "title": "趣味と生活と政治は地続き",
         "desc": "3536×5000px（高解像度）<br/>暴力とあらゆる差別を許さない、平和的なプロテスト活動でご使用ください。",
@@ -1993,6 +2098,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000038-b.jpg",
         "set": "",
+        "wall": "",
         "color": "青",
         "title": "趣味と生活と政治は地続き",
         "desc": "3536×5000px（高解像度）<br/>暴力とあらゆる差別を許さない、平和的なプロテスト活動でご使用ください。",
@@ -2010,6 +2116,7 @@ const POSTERS_DATA = [
     {
         "file": "pl-000038-c.png",
         "set": "",
+        "wall": "",
         "color": "青|赤",
         "title": "NO WAR 無くすな平和憲法",
         "desc": "3536×5000px（高解像度）<br/>暴力とあらゆる差別を許さない、平和的なプロテスト活動でご使用ください。",
@@ -2024,6 +2131,1094 @@ const POSTERS_DATA = [
         ],
         "by": "komakmak",
         "url": "https://x.com/komakmak",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000039-a.png",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "9条 NO WAR",
+        "desc": "2970×4200px　A3/A4兼用<br/>「平和」を花言葉とする、コスモス・デイジー・オリーブを憲法9条に飾りました。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法",
+            "花",
+            "反戦",
+            "戦争反対",
+            "平和"
+        ],
+        "by": "mimi_33_bpm",
+        "url": "https://x.com/mimi_33_bpm",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000039-b.png",
+        "set": "",
+        "wall": "",
+        "color": "青",
+        "title": "9条 NO WAR",
+        "desc": "2970×4200px　A3/A4兼用<br/>「平和」を花言葉とする、コスモス・デイジー・オリーブを憲法9条に飾りました。",
+        "cat": "憲法",
+        "tags": [
+            "英語",
+            "縦",
+            "憲法",
+            "花",
+            "反戦",
+            "戦争反対",
+            "平和"
+        ],
+        "by": "mimi_33_bpm",
+        "url": "https://x.com/mimi_33_bpm",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-a.png",
+        "set": "",
+        "wall": "1",
+        "color": "白",
+        "title": "防衛より防災",
+        "desc": "3536×5000px（高解像度）<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-b.png",
+        "set": "",
+        "wall": "1",
+        "color": "白",
+        "title": "憲法変えるな首相を替えろ",
+        "desc": "3536×5000px（高解像度）<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "高市早苗",
+            "首相",
+            "総理",
+            "護憲",
+            "憲法"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-c.png",
+        "set": "",
+        "wall": "1",
+        "color": "白",
+        "title": "「差し控える」乱発禁止！",
+        "desc": "5000×3536px（高解像度）<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治家",
+            "不祥事"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-d.png",
+        "set": "",
+        "wall": "1",
+        "color": "白",
+        "title": "私の税金で武器を作らないで",
+        "desc": "3536×5000px（高解像度）<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-e.jpg",
+        "set": "",
+        "wall": "1",
+        "color": "白",
+        "title": "私たちはもうニ度と政府の都合で戦争しないと決めた",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-f.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白|赤",
+        "title": "高市やめろ 嘘つき総理はそこをどけ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "高市",
+            "高市早苗",
+            "首相",
+            "総理"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-g.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白|青",
+        "title": "小泉やめろ 非核三原則を守りなさい",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "小泉",
+            "小泉進次郎",
+            "核兵器",
+            "反核",
+            "高市早苗"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-h.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "政治の話をしよう",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-i.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "個人的な事は政治的な事",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-j.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "政治の話を止めるな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-k.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "I LOVE 日本国憲法",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-l.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "私らは黙らないよ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-m.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "戦争に行くか？選挙に行くか？",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "政治参加",
+            "反戦",
+            "戦争反対",
+            "選挙",
+            "投票"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-n.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "GO VOTE OR DIE",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "英語",
+            "縦",
+            "政治参加",
+            "選挙",
+            "投票"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-o.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "戦争は最大の環境破壊だ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "環境問題",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-p.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "外交の失敗が戦争",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-q.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "人を殺してもうけるな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-r.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "ヘイトで飯食うな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "人権",
+            "ヘイト",
+            "差別"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-s.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "ツイ廃の総理はいらない",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "国会",
+            "高市早苗",
+            "首相",
+            "総理"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-t.png",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "国会嫌がる総理はいらない",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "国会",
+            "高市早苗",
+            "首相",
+            "総理"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-u.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "武器を売る国 死の商人",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-v.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "核兵器は絶対悪",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "反核",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-w.png",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "汚い手で平和憲法に触るな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-x.jpg",
+        "set": "",
+        "wall": "",
+        "color": "黒",
+        "title": "総理大臣が改憲指示？それは違憲です",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲",
+            "高市",
+            "高市早苗",
+            "首相",
+            "総理",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-y.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "権力者の暴走を止めるのが平和憲法",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-z.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "武力で平和は作れない",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "反核",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-aa.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "核兵器で平和は作れない",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "反核",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ab.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "小池百合子は9/1に追悼文を送れ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "人権",
+            "ヘイト",
+            "差別",
+            "東京",
+            "朝鮮"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ac.jpg",
+        "set": "",
+        "wall": "",
+        "color": "黒",
+        "title": "大阪都構想しつこい",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "維新",
+            "都構想",
+            "吉村"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ad.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "維新国保逃れ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "維新",
+            "吉村"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ae.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "維新×自民 混ぜるな危険",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "自民党",
+            "維新",
+            "吉村"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-af.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "愚か者の愚か者による愚か者のための政治",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "高市早苗",
+            "首相",
+            "総理",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ag.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "スパイ防止法は統一教会の悲願",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ah.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "緊急事態条項はナチスの全権委任法",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ai.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "高市自民党から生活を取り戻す",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "高市早苗",
+            "首相",
+            "総理"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-aj.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "72億 血税使って洗脳するよ内閣",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "内閣広報費",
+            "税金"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ak.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "この声が聞こえないなら政治家なんか辞めちまえ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "小泉",
+            "小泉進次郎",
+            "高市",
+            "高市早苗",
+            "麻生"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-al.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "戦争と差別 排外主義は手を携えてやって来る",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "人権",
+            "ヘイト",
+            "差別",
+            "反戦",
+            "戦争反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-am.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "裏金議員に改憲させるな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-an.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "罰則付き包括的差別禁止法が必要です",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "人権",
+            "ヘイト",
+            "差別"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ao.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "戦争する国になるの嫌すぎ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ap.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "楽天は殺人ドローンに手を出すな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-aq.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "楽天は死の商人になり下がるな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "武器輸出反対",
+            "小泉",
+            "小泉進次郎"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ar.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "沖縄を返せ 沖縄に返せ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "沖縄"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-as.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "沖縄を再び戦場にするな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "沖縄"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-at.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "沖縄のことは沖縄が決める",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "沖縄"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-au.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "地震大国日本で原発無理",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反原発"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-av.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "「あ！ごめん！うち、9条があるから戦争できないんだ！」",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲",
+            "反戦",
+            "戦争反対"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-aw.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "9条も99条も守れ",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "憲法",
+            "護憲",
+            "反戦",
+            "戦争反対"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ax.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "日本政府はイスラエルとアメリカの戦争に加担するな",
+        "desc": "1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "反戦",
+            "戦争反対",
+            "小泉",
+            "小泉進次郎",
+            "高市",
+            "高市早苗"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
+        "og_title": "",
+        "og_desc": ""
+    },
+    {
+        "file": "pl-000040-ay.jpg",
+        "set": "",
+        "wall": "",
+        "color": "白",
+        "title": "不法滞在者ゼロプランは国際人権法違反",
+        "desc": "2000×1414px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。",
+        "cat": "政治",
+        "tags": [
+            "日本語",
+            "縦",
+            "人権",
+            "ヘイト",
+            "差別"
+        ],
+        "by": "indigorosa33",
+        "url": "https://x.com/indigorosa33",
         "og_title": "",
         "og_desc": ""
     }

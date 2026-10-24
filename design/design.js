@@ -8,14 +8,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 作家専用ページ（xxx.html / ?by=xxx）を持つ作家リスト
     const AUTHOR_PAGES = [
-        'protesthub_jp'
+        'protesthub_jp',
+        'indigorosa33'
     ];
 
     let posters = typeof POSTERS_DATA !== 'undefined' ? POSTERS_DATA : [];
+    // wall="1" が設定されている作家を自動検出（その作家は wall="1" のみ通常ウォールに表示）
+    const authorsWithWallFlag = new Set(
+        posters.filter(p => p.wall === "1" || p.wall === 1).map(p => p.by)
+    );
     let filteredPosters = [...posters];
     let activePoster = null;
     let activeColor = null;
     let activeAuthor = new URLSearchParams(window.location.search).get('by') || null;
+    let activeTag = null;
 
     // サムネイル用（.webp）とフル画像用（元ファイル名そのまま）のルートを分離
     const imageRoot = "images/";
@@ -77,23 +83,31 @@ document.addEventListener('DOMContentLoaded', () => {
         creatorLink.textContent = poster.by ? `@${poster.by}` : "-";
         creatorLink.href = poster.url || "#";
 
-        // バリエーション（同じIDシリーズ）- サムネイルはwebp
+        // バリエーション（同じIDシリーズ＆同じタイトル）- サムネイルはwebp
         const variantList = document.querySelector("#variant-list");
+        const variantSection = variantList ? variantList.parentElement : null;
         const id = poster.id || (poster.file.match(/([a-z]{2}-\d{6})/i) ? poster.file.match(/([a-z]{2}-\d{6})/i)[1] : null);
 
         variantList.innerHTML = "";
         if (id) {
             const variants = posters.filter(p => {
                 const pId = p.id || (p.file.match(/([a-z]{2}-\d{6})/i) ? p.file.match(/([a-z]{2}-\d{6})/i)[1] : null);
-                return pId === id;
+                return pId === id && p.title === poster.title;
             });
-            variants.forEach(v => {
-                const img = document.createElement("img");
-                img.src = imageRoot + toWebp(v.file); // サムネイルはwebp
-                img.className = "variant-thumb";
-                img.onclick = () => openPoster(v);
-                variantList.appendChild(img);
-            });
+            if (variants.length > 1) {
+                if (variantSection) variantSection.style.display = "";
+                variants.forEach(v => {
+                    const img = document.createElement("img");
+                    img.src = imageRoot + toWebp(v.file); // サムネイルはwebp
+                    img.className = "variant-thumb";
+                    img.onclick = () => openPoster(v);
+                    variantList.appendChild(img);
+                });
+            } else if (variantSection) {
+                variantSection.style.display = "none";
+            }
+        } else if (variantSection) {
+            variantSection.style.display = "none";
         }
 
         // 作者の他の作品 - サムネイルはwebp
@@ -115,21 +129,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             sameAuthor.forEach(p => {
                 const designId = p.id || (p.file.match(/([a-z]{2}-\d{6})/i) ? p.file.match(/([a-z]{2}-\d{6})/i)[1] : p.file);
+                const designKey = `${designId}__${p.title || ''}`;
                 if (!uniqueDesigns.some(item => {
                     const itemId = item.id || (item.file.match(/([a-z]{2}-\d{6})/i) ? item.file.match(/([a-z]{2}-\d{6})/i)[1] : item.file);
-                    return itemId === designId;
+                    return `${itemId}__${item.title || ''}` === designKey;
                 })) {
                     uniqueDesigns.push(p);
                 }
             });
 
             const currentDesignId = id || poster.file;
+            const currentDesignKey = `${currentDesignId}__${poster.title || ''}`;
             const filteredDesigns = uniqueDesigns.filter(p => {
                 const pDesignId = p.id || (p.file.match(/([a-z]{2}-\d{6})/i) ? p.file.match(/([a-z]{2}-\d{6})/i)[1] : p.file);
-                return pDesignId !== currentDesignId;
+                return `${pDesignId}__${p.title || ''}` !== currentDesignKey;
             });
 
-            filteredDesigns.slice(0, 12).forEach(v => {
+            filteredDesigns.forEach(v => {
                 const img = document.createElement("img");
                 img.src = imageRoot + toWebp(v.file); // サムネイルはwebp
                 img.className = "variant-thumb";
@@ -165,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         printButton.disabled = !isAllowed;
     }
 
-    // 作家一覧モード用の見出しバー表示・更新
+    // 作家一覧モード用の見出しバー＆タグクラウド表示・更新
     function updateAuthorHeader() {
         let banner = document.getElementById("author-mode-banner");
         if (!activeAuthor) {
@@ -179,10 +195,32 @@ document.addEventListener('DOMContentLoaded', () => {
             wall.parentNode.insertBefore(banner, wall);
         }
         banner.style.display = "flex";
+
+        const authorTags = (window.AUTHOR_TAGS && window.AUTHOR_TAGS[activeAuthor]) ? window.AUTHOR_TAGS[activeAuthor] : [];
+        let tagsHtml = "";
+        if (authorTags.length > 0) {
+            const buttons = authorTags.map(tag => {
+                const isActive = activeTag === tag ? " active" : "";
+                return `<button type="button" class="nav-btn author-tag-btn${isActive}" data-tag="${tag}">${tag}</button>`;
+            }).join("");
+            tagsHtml = `<div class="author-tags-wrap">${buttons}</div>`;
+        }
+
         banner.innerHTML = `
-            <span class="author-mode-title">@${activeAuthor} の作品一覧</span>
+            <div class="author-mode-left">
+                <span class="author-mode-title">@${activeAuthor} の作品一覧</span>
+                ${tagsHtml}
+            </div>
             <a href="index.html" class="author-mode-back">← すべての作品に戻る</a>
         `;
+
+        banner.querySelectorAll(".author-tag-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const clickedTag = btn.getAttribute("data-tag");
+                activeTag = (activeTag === clickedTag) ? null : clickedTag;
+                resetWall();
+            });
+        });
     }
 
     function posterMatches(poster) {
@@ -195,10 +233,21 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-        // 通常ウォール表示時（検索・色・カテゴリ絞り込みなし＆作家一覧モードでない時）は wall === "0" を除外
+        // タグクラウド選択時は、tags または cat にそのタグが含まれるか判定
+        if (activeTag) {
+            const posterTags = poster.tags || [];
+            if (!posterTags.includes(activeTag) && poster.cat !== activeTag) {
+                return false;
+            }
+        }
+
+        // 通常ウォール表示時（検索・色・カテゴリ絞り込みなし＆作家一覧モードでない時）
         const isFiltering = !!query || !!activeColor || categoryValue !== "all" || !!activeAuthor;
-        if (!isFiltering && (poster.wall === "0" || poster.wall === 0)) {
-            return false;
+        if (!isFiltering) {
+            if (poster.wall === "0" || poster.wall === 0) return false;
+            if (authorsWithWallFlag.has(poster.by) && poster.wall !== "1" && poster.wall !== 1) {
+                return false;
+            }
         }
 
         let colorMatch = true;
@@ -316,8 +365,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 [filteredPosters[i], filteredPosters[j]] = [filteredPosters[j], filteredPosters[i]];
             }
         } else if (sortValue === "popular") {
-            // 人気順（views の降順）
-            filteredPosters.sort((a, b) => (b.views || 0) - (a.views || 0));
+            // 人気順（wall="1" を優先しつつ、スプレッドシートの上から順＝記号の若い順）
+            filteredPosters.sort((a, b) => {
+                const aWall = (a.wall === "1" || a.wall === 1) ? 1 : 0;
+                const bWall = (b.wall === "1" || b.wall === 1) ? 1 : 0;
+                if (bWall !== aWall) return bWall - aWall;
+                return 0;
+            });
         } else {
             // 新着順（元の配列を逆順：数字が大きいIDが上）
             filteredPosters = [...posters.filter(posterMatches)].reverse();
@@ -431,6 +485,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function init() {
+        // 作家ページ表示時はプルダウンに「人気順」を追加し、初期選択にする
+        if (activeAuthor && sortSelect) {
+            if (!sortSelect.querySelector('option[value="popular"]')) {
+                const popOpt = document.createElement('option');
+                popOpt.value = 'popular';
+                popOpt.textContent = '人気順';
+                sortSelect.insertBefore(popOpt, sortSelect.firstChild);
+            }
+            sortSelect.value = 'popular';
+        }
+
         setCategoryCounts();
         resetWall();
 
