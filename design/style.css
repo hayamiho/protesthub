@@ -242,6 +242,17 @@ body {
     font-size: 14px;
 }
 
+.author-page-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity .15s ease;
+}
+
+.author-page-link:hover {
+    opacity: .7;
+}
+
 .section-title {
     display: block;
     margin-bottom: 8px;
@@ -255,6 +266,9 @@ body {
     flex-wrap: wrap;
     margin-bottom: 16px;
     align-items: flex-start;
+    max-height: 216px;
+    overflow-y: auto;
+    padding: 4px;
 }
 
 .variant-thumb {
