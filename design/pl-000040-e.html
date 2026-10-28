@@ -22,14 +22,14 @@
     <meta property="og:description" content="1414×2000px自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。">
     <meta property="og:url" content="https://protesthub.jp/design/pl-000040-e.html">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://protesthub.jp/design/images/pl-000040-e.jpg">
+    <meta property="og:image" content="https://protesthub.jp/design/images/pl-000040-e.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@protesthub_jp">
     <meta name="twitter:title" content="私たちはもうニ度と政府の都合で戦争しないと決めた｜Protest Hub">
     <meta name="twitter:description" content="1414×2000px自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。">
-    <meta name="twitter:image" content="https://protesthub.jp/design/images/pl-000040-e.jpg">
+    <meta name="twitter:image" content="https://protesthub.jp/design/images/pl-000040-e.png">
 
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -49,11 +49,11 @@
             <a href="index.html" class="back-link">← デザイン一覧に戻る</a>
             <div class="panel">
                 <div class="art">
-                    <img src="images/pl-000040-e.jpg" alt="私たちはもうニ度と政府の都合で戦争しないと決めた">
+                    <img src="images/pl-000040-e.png" alt="私たちはもうニ度と政府の都合で戦争しないと決めた">
                 </div>
                 <aside class="side">
                     <h1 class="title">私たちはもうニ度と政府の都合で戦争しないと決めた</h1>
-                    <p class="file">pl-000040-e.jpg</p>
+                    <p class="file">pl-000040-e.png</p>
                     <div><span class="tag">政治 / 日本語 / 縦 / 反戦 / 戦争反対</span></div>
                     <p class="desc">1414×2000px<br/>自民党政治が続き、日々洪水のように抗議しなければならない事案が押し寄せて来ます。<br/>抗議のツールの一つであるプラカードは、怒りや提案を訴える「ビジュアルを使ったメッセージ」であると同時に、その事案の問題性を説明する「逆キャッチコピー」の役割も担っていると思います。そのため、各事案の問題点を「なるべく短くまとめた言葉」にしてプラカードを作るように意識しています。<br/>もし、同意して頂ける言葉がありましたら、印刷してお使いください。バナーとしても保存･使用可能です。</p>
 
@@ -115,7 +115,7 @@
 
     <script src="data.js"></script>
     <script>
-        const currentFile = "pl-000040-e.jpg";
+        const currentFile = "pl-000040-e.png";
         const currentBy = "indigorosa33";
 
         const agree = document.getElementById('rights-agree');
@@ -148,43 +148,66 @@
 
         // Dynamic Lists
         function initLists() {
-            const data = POSTERS_DATA;
-            const currentId = currentFile.match(/([a-z]{2}-\d{6})/i)[1];
+            const variantList = document.getElementById('variant-list');
+            const authorList = document.getElementById('author-list');
+            // data.js 側で既に描画済みの場合はスキップ
+            if ((variantList && variantList.children.length > 0) || (authorList && authorList.children.length > 0)) {
+                return;
+            }
 
-            // バリエーション
-            const variants = data.filter(p => p.file.match(/([a-z]{2}-\d{6})/i)[1] === currentId && p.file !== currentFile);
-            if (variants.length > 0) {
-                const list = document.getElementById('variant-list');
+            const data = POSTERS_DATA;
+            const currentPoster = data.find(p => p.file === currentFile);
+            const currentTitle = currentPoster ? currentPoster.title : (document.querySelector('.panel .title')?.textContent.trim() || '');
+            const currentIdMatch = currentFile.match(/([a-z]{2}-\d{6})/i);
+            const currentId = currentIdMatch ? currentIdMatch[1] : currentFile;
+            const toWebp = (filename) => filename.replace(/\.[^/.]+$/, ".webp");
+            const AUTHOR_PAGES = ['protesthub_jp', 'indigorosa33'];
+
+            // バリエーション（同じIDシリーズ かつ 同じタイトル）
+            const variants = data.filter(p => {
+                const m = p.file.match(/([a-z]{2}-\d{6})/i);
+                const pId = m ? m[1] : p.file;
+                return pId === currentId && p.title === currentTitle && p.file !== currentFile;
+            });
+            if (variants.length > 0 && variantList) {
                 variants.forEach(v => {
                     const a = document.createElement('a');
                     a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
-                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
-                    list.appendChild(a);
+                    a.innerHTML = `<img src="images/${toWebp(v.file)}" class="variant-thumb" alt="${v.title}" loading="lazy">`;
+                    variantList.appendChild(a);
                 });
                 document.getElementById('variants-section').style.display = 'block';
             }
 
-            // 作者の他作品
-            const authorWorks = data.filter(p => p.by === currentBy && p.file.match(/([a-z]{2}-\d{6})/i)[1] !== currentId);
-            // 重複デザイン（IDが同じもの）は1つだけ表示
+            // 作者の他作品（ID＋タイトルで重複排除）
+            const currentDesignKey = `${currentId}__${currentTitle}`;
+            const sameAuthor = data.filter(p => p.by === currentBy);
             const uniqueAuthorWorks = [];
-            const seenIds = new Set();
-            authorWorks.forEach(p => {
-                const id = p.file.match(/([a-z]{2}-\d{6})/i)[1];
-                if (!seenIds.has(id)) {
+            const seenKeys = new Set([currentDesignKey]);
+            sameAuthor.forEach(p => {
+                const m = p.file.match(/([a-z]{2}-\d{6})/i);
+                const id = m ? m[1] : p.file;
+                const key = `${id}__${p.title || ''}`;
+                if (!seenKeys.has(key)) {
                     uniqueAuthorWorks.push(p);
-                    seenIds.add(id);
+                    seenKeys.add(key);
                 }
             });
 
-            if (uniqueAuthorWorks.length > 0) {
-                const list = document.getElementById('author-list');
-                document.getElementById('author-title').textContent = currentBy + 'の他作品';
-                uniqueAuthorWorks.slice(0, 12).forEach(v => {
+            if (uniqueAuthorWorks.length > 0 && authorList) {
+                const authorTitle = document.getElementById('author-title');
+                if (authorTitle) {
+                    if (AUTHOR_PAGES.includes(currentBy)) {
+                        authorTitle.innerHTML = `<a href="${currentBy}.html" class="author-page-link">@${currentBy}の作品一覧</a>`;
+                    } else {
+                        authorTitle.textContent = `@${currentBy}の作品一覧`;
+                    }
+                }
+                uniqueAuthorWorks.forEach(v => {
                     const a = document.createElement('a');
                     a.href = v.file.replace(/\.[^/.]+$/, "") + ".html";
-                    a.innerHTML = `<img src="images/${v.file}" class="variant-thumb" alt="${v.title}">`;
-                    list.appendChild(a);
+                    a.innerHTML = `<img src="images/${toWebp(v.file)}" class="variant-thumb" alt="${v.title}" loading="lazy">`;
+                    authorList.appendChild(a);
                 });
                 document.getElementById('author-section').style.display = 'block';
             }
